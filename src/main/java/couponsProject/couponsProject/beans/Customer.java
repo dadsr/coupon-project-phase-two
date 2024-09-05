@@ -21,7 +21,7 @@ public class Customer {
     private String lastName;
     private String email;
     private String password;
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.REMOVE})
     @JoinTable(name = "customers_vs_coupons",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "coupons_id"))

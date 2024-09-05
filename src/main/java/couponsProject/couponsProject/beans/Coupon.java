@@ -32,7 +32,7 @@ public class Coupon {
     private int amount;
     private double price;
     private String image;
-    @ManyToMany(mappedBy = "coupons")
+    @ManyToMany(mappedBy = "coupons", cascade = CascadeType.REMOVE)
     private List<Customer> customers = new ArrayList<>();
 
 }

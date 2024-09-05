@@ -19,6 +19,7 @@ public class  Company {
     @Column(name = "id", nullable = false)
     @Setter(AccessLevel.NONE)
     private int id;
+    @Setter(AccessLevel.NONE)
     private String name;
     private String email;
     private String password;
