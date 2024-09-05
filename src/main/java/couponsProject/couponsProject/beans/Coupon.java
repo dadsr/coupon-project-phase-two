@@ -17,6 +17,7 @@ public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    @Setter(AccessLevel.NONE)
     private int id;
     @ManyToOne
     @JoinColumn(name = "company_id")

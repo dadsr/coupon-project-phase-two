@@ -18,4 +18,6 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
     //@Query("select c from Company c")
     ArrayList<Company> getAllCompanies();
 
+    //@Query("select (count(c) > 0) from Company c where c.name = ?1")
+    boolean existsByName(String name);
 }

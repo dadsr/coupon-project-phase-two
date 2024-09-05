@@ -15,5 +15,6 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     //@Query("select c from Customer c where c.email = ?1 and c.password = ?2")
     Customer findCustomerByEmailAndPassword(String email, String password);
 
-
+    //@Query("select (count(c) > 0) from Customer c where c.email = ?1")
+    boolean existsByEmail(String email);
 }

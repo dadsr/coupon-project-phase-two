@@ -2,6 +2,7 @@ package couponsProject.couponsProject;
 
 import couponsProject.couponsProject.beans.Coupon;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ public class  Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
+    @Setter(AccessLevel.NONE)
     private int id;
     private String name;
     private String email;
