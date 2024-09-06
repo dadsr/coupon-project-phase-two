@@ -2,6 +2,8 @@ package couponsProject.couponsProject.sertvices;
 
 import couponsProject.couponsProject.Company;
 import couponsProject.couponsProject.beans.Customer;
+import couponsProject.couponsProject.controllers.CompanyException;
+import couponsProject.couponsProject.controllers.CustomerException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import couponsProject.couponsProject.repository.CouponRepository;
 import couponsProject.couponsProject.repository.CustomerRepository;
@@ -18,11 +20,8 @@ import java.util.Objects;
 @Slf4j
 @Service
 public class AdminServicesImpl implements AdminServices {
-    @Autowired
     CompanyRepository companyRepository;
-    @Autowired
     CustomerRepository customerRepository;
-    @Autowired
     private CouponRepository couponRepository;
 
     @Override
@@ -47,9 +46,10 @@ public class AdminServicesImpl implements AdminServices {
     //todo is it possible to change Email ? this can cause problems in DB
     @Override
     public void updateCompany(Company company){
-        log.info("entering updateCompany using company id: {}",company.getId());
+        log.info("entering updateCompany, using company id: {}",company.getId());
         if(companyRepository.existsById(company.getId())){
             companyRepository.save(company);
+            log.debug("updateCompany succeeded, company id: {}",company.getId());
         }else{
             log.error("updateCompany throw NoSuchElementException company id: {}",company.getId());
             throw new NoSuchElementException("no such element");
@@ -57,7 +57,7 @@ public class AdminServicesImpl implements AdminServices {
     }
     @Override
     public void deleteCompany(int companyID) {
-        log.info("entering deleteCompany using company id: {}",companyID);
+        log.info("entering deleteCompany, using company id: {}",companyID);
         if(companyRepository.existsById(companyID)) {
             companyRepository.deleteById(companyID);
             deleteCoupons(companyID);

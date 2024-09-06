@@ -3,75 +3,97 @@ package couponsProject.couponsProject.sertvices;
 import couponsProject.couponsProject.Company;
 import couponsProject.couponsProject.beans.Category;
 import couponsProject.couponsProject.beans.Coupon;
+import couponsProject.couponsProject.controllers.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import couponsProject.couponsProject.repository.CouponRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Slf4j
 @AllArgsConstructor
 @Service
-public class CompanyServicesImpl {
+public class CompanyServicesImpl implements CompanyServices {
     private CompanyRepository companyRepository;
     private CouponRepository couponRepository;
 
 
+    @Override
     public int login(String email, String password){
         log.info("entering login using Email: {} Password: {}", email, password);
         int id =-1;
         id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
         if (id >-1) {
-            log.debug("login succeeded company id {}",id);
+            log.debug("Login succeeded, company id {}", id);
             return id;
         }else {
-            log.error("login throw NoSuchElementException Email: {} Password: {}", email, password);
+            log.error("Login failed for Email: {} Password: {}", email, password);
             throw new NoSuchElementException("no such company");
         }
     }
 
+    @Override
+    public Company getCompanyDetails(int companyId){
+        log.info("entering getCompanyDetails using company id : {}",companyId);
+        return companyRepository.findCompaniesById(companyId);
+    }
 
-    void addCoupon(Coupon coupon){
-        log.info("entering addCoupon company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
+    @Override
+    public void addCoupon(Coupon coupon){
+        log.info("entering addCoupon, company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
         if (!couponRepository.existsByCompanyIdAndTitle(coupon.getCompany().getId(),coupon.getTitle())){
             couponRepository.save(coupon);
-            log.debug("addCoupon succeeded coupon id {}",coupon.getId());
+            log.debug("addCoupon succeeded, coupon id {}",coupon.getId());
         }else{
-            log.error("addCoupon throw CouponException  coupon already exists company id: {} and title: {}",coupon.getCompany().getId(),coupon.getTitle());
+            log.error("Coupon already exists for company id: {} and title: {}",coupon.getCompany().getId(),coupon.getTitle());
             throw new CouponException("coupon already exists");
         }
     }
 
-    void updateCoupon(Coupon coupon){
-        log.info("entering updateCoupon coupon id: {}", coupon.getId());
+    @Override
+    public void updateCoupon(Coupon coupon){
+        log.info("entering updateCoupon, coupon id: {}", coupon.getId());
         if (couponRepository.existsById(coupon.getId())){
             couponRepository.save(coupon);
-            log.debug("updateCoupon succeeded coupon id {}",coupon.getId());
+            log.debug("updateCoupon succeeded, coupon id {}",coupon.getId());
         }else{
-            log.error("addCoupon throw NoSuchElementException  company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
+            log.error("No such coupon to update, company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
             throw new NoSuchElementException("coupon already exists");
         }
     }
 
-    void deleteCoupon(int couponID){
-
+    @Override
+    public void deleteCoupon(int couponID){
+        log.info("entering deleteCoupon coupon id: {}", couponID);
+        if (couponRepository.existsById(couponID)){
+            couponRepository.deleteCouponById(couponID);
+            log.debug("deleteCoupon succeeded, coupon id {}",couponID);
+        }else{
+            log.error("No such coupon to update, coupon id: {}", couponID);
+            throw new NoSuchElementException("coupon already exists");
+        }
     }
 
+    @Override
+    public List<Coupon> getCompanyCoupons(int companyId){
+        log.info("entering getCompanyCoupons, company id : {}",companyId);
+        return couponRepository.findAllByCompanyId(companyId);
+    }
 
+    @Override
+    public List<Coupon> getCompanyCoupons(int companyId, Category category){
+        log.info("entering getCompanyCoupons, company id : {} category : {}",companyId,category);
+        return couponRepository.findAllByCompanyIdAndCategory(companyId,category);
+    }
 
-    Company getCompanyDetails()
+    @Override
+    public List<Coupon> getCompanyCoupons(int companyId, Double maxPrice){
+        log.info("entering getCompanyCoupons, company id : {} maxPrice : {}",companyId,maxPrice);
+        return couponRepository.findAllByCompanyIdAndPriceIsLessThanEqual(companyId,maxPrice);
+    }
 
-    int getCompanyID()
-
-    void setCompanyID(int companyID)
-
-    ArrayList<Coupon> getCompanyCoupons()
-
-    ArrayList<Coupon> getCompanyCoupons(Category category)
-
-    ArrayList<Coupon> getCompanyCoupons(Double maxPrice)
-
+//
 }

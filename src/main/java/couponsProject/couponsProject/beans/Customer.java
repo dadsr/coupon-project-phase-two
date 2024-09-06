@@ -1,6 +1,7 @@
 package couponsProject.couponsProject.beans;
 
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
