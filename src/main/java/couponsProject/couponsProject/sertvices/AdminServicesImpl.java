@@ -38,8 +38,8 @@ public class AdminServicesImpl implements AdminServices {
         if(!companyRepository.existsByNameOrEmail(company.getName(),company.getEmail()) {
             companyRepository.save(company);
         }else {
-            log.error("addCompany throw CompanyException name {} or email {} already exists", company.getName(), company.getEmail());
-            throw new CompanyException("company name {} or email {} already exists" + company.getName()+ company.getEmail());
+            log.error("Company already exist for name {} or email {}", company.getName(), company.getEmail());
+            throw new CompanyException("company already exists");
         }
     }
 
@@ -51,8 +51,8 @@ public class AdminServicesImpl implements AdminServices {
             companyRepository.save(company);
             log.debug("updateCompany succeeded, company id: {}",company.getId());
         }else{
-            log.error("updateCompany throw NoSuchElementException company id: {}",company.getId());
-            throw new NoSuchElementException("no such element");
+            log.error("No such company to update, company id: {}",company.getId());
+            throw new NoSuchElementException("Company does not exist");
         }
     }
     @Override
@@ -93,7 +93,7 @@ public class AdminServicesImpl implements AdminServices {
             customerRepository.save(customer);
         }else{
             log.error("addCustomer throw CustomerException email {} already exists", customer.getEmail());
-            throw new CustomerException("customer email {} already exists" + customer.getEmail());
+            throw new CustomerException("customer already exists");
         }
     }
 
@@ -104,7 +104,7 @@ public class AdminServicesImpl implements AdminServices {
             customerRepository.save(customer);
         }else{
             log.error("updateCustomer throw NoSuchElementException customer id: {}",customer.getId());
-            throw new NoSuchElementException("no such element");
+            throw new NoSuchElementException("customer dose not exists");
         }
     }
 
@@ -114,9 +114,10 @@ public class AdminServicesImpl implements AdminServices {
         if(customerRepository.existsById(customerID)) {
             //todo should check if cascade deletes perches too
             customerRepository.deleteById(customerID);
+            log.debug("deleteCustomer succeeded, customer id: {}",customerID);
         }else {
-            log.error("deleteCustomer throw NoSuchElementException customer id: {}",customerID);
-            throw new NoSuchElementException("no such element");
+            log.error("No such customer to delete, customer id: {}",customerID);
+            throw new NoSuchElementException("customer dose not exists");
         }
     }
 
@@ -125,10 +126,11 @@ public class AdminServicesImpl implements AdminServices {
         log.info("entering getOneCustomer using customer id: {}",customerID);
         Customer customer =customerRepository.getCustomerById(customerID);
         if(customer != null) {
+            log.debug("getOneCustomer succeeded, customer id: {}",customerID);
             return customer;
         }else{
-            log.error("getOneCustomer throw NoSuchElementException customer id: {}",customerID);
-            throw new NoSuchElementException("no such element");
+            log.error("No such customer to get, customer id: {}",customerID);
+            throw new NoSuchElementException("customer dose not exists");
         }
     }
 
@@ -146,26 +148,28 @@ public class AdminServicesImpl implements AdminServices {
         log.info("entering getOneCompany using Email: {} Password: {}", email, password);
         Company company =companyRepository.findCompaniesByEmailAndPassword(email,password);
         if(company != null) {
+            log.debug("getOneCompany succeeded, Email: {} Password: {}", email, password);
             return company;
         }else{
-            log.error("getOneCompany throw NoSuchElementException Email: {} Password: {}", email, password);
-            throw new NoSuchElementException("no such element");
+            log.error("No such Company, Email: {} Password: {}", email, password);
+            throw new NoSuchElementException("no such company to get");
         }
     }
     // for customer login
     public Customer getOneCustomer(String email, String password){
-        log.info("entering getOneCustomer using Email: {} Password: {}", email, password);
+        log.info("Entering getOneCustomer, using Email: {} Password: {}", email, password);
         Customer customer =customerRepository.findCustomerByEmailAndPassword(email,password);
         if(customer != null) {
+            log.debug("getOneCustomer succeeded, Email: {} Password: {}", email, password);
             return customer;
         }else{
             log.error("getOneCustomer throw NoSuchElementException Email: {} Password: {}", email, password);
-            throw new NoSuchElementException("no such element");
+            throw new NoSuchElementException("Customer dose not exists");
         }
     }
     // for deleteCompany
     private void deleteCoupons(int companyID) {
-        log.info("entering deleteCoupons using company id: {}",companyID);
+        log.info("Entering deleteCoupons, using company id: {}",companyID);
         //todo should check if cascade deletes perches too
         couponRepository.deleteCouponByCompanyId(companyID);
     }

@@ -23,7 +23,7 @@ public class CompanyServicesImpl implements CompanyServices {
 
     @Override
     public int login(String email, String password){
-        log.info("entering login using Email: {} Password: {}", email, password);
+        log.info("Entering login using Email: {} Password: {}", email, password);
         int id =-1;
         id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
         if (id >-1) {
@@ -31,7 +31,7 @@ public class CompanyServicesImpl implements CompanyServices {
             return id;
         }else {
             log.error("Login failed for Email: {} Password: {}", email, password);
-            throw new NoSuchElementException("no such company");
+            throw new NoSuchElementException("No such company");
         }
     }
 
@@ -43,55 +43,55 @@ public class CompanyServicesImpl implements CompanyServices {
 
     @Override
     public void addCoupon(Coupon coupon){
-        log.info("entering addCoupon, company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
+        log.info("Entering addCoupon, company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
         if (!couponRepository.existsByCompanyIdAndTitle(coupon.getCompany().getId(),coupon.getTitle())){
             couponRepository.save(coupon);
-            log.debug("addCoupon succeeded, coupon id {}",coupon.getId());
+            log.debug("AddCoupon succeeded, coupon id {}",coupon.getId());
         }else{
             log.error("Coupon already exists for company id: {} and title: {}",coupon.getCompany().getId(),coupon.getTitle());
-            throw new CouponException("coupon already exists");
+            throw new CouponException("Coupon already exists");
         }
     }
 
     @Override
     public void updateCoupon(Coupon coupon){
-        log.info("entering updateCoupon, coupon id: {}", coupon.getId());
+        log.info("Entering updateCoupon, coupon id: {}", coupon.getId());
         if (couponRepository.existsById(coupon.getId())){
             couponRepository.save(coupon);
-            log.debug("updateCoupon succeeded, coupon id {}",coupon.getId());
+            log.debug("UpdateCoupon succeeded, coupon id {}",coupon.getId());
         }else{
             log.error("No such coupon to update, company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
-            throw new NoSuchElementException("coupon already exists");
+            throw new NoSuchElementException("Coupon dose not exists");
         }
     }
 
     @Override
     public void deleteCoupon(int couponID){
-        log.info("entering deleteCoupon coupon id: {}", couponID);
+        log.info("Entering deleteCoupon coupon id: {}", couponID);
         if (couponRepository.existsById(couponID)){
             couponRepository.deleteCouponById(couponID);
-            log.debug("deleteCoupon succeeded, coupon id {}",couponID);
+            log.debug("DeleteCoupon succeeded, coupon id {}",couponID);
         }else{
             log.error("No such coupon to update, coupon id: {}", couponID);
-            throw new NoSuchElementException("coupon already exists");
+            throw new NoSuchElementException("Coupon already exists");
         }
     }
 
     @Override
     public List<Coupon> getCompanyCoupons(int companyId){
-        log.info("entering getCompanyCoupons, company id : {}",companyId);
+        log.info("Entering getCompanyCoupons, using company id : {}",companyId);
         return couponRepository.findAllByCompanyId(companyId);
     }
 
     @Override
     public List<Coupon> getCompanyCoupons(int companyId, Category category){
-        log.info("entering getCompanyCoupons, company id : {} category : {}",companyId,category);
+        log.info("Entering getCompanyCoupons, using company id : {} category : {}",companyId,category);
         return couponRepository.findAllByCompanyIdAndCategory(companyId,category);
     }
 
     @Override
     public List<Coupon> getCompanyCoupons(int companyId, Double maxPrice){
-        log.info("entering getCompanyCoupons, company id : {} maxPrice : {}",companyId,maxPrice);
+        log.info("Entering getCompanyCoupons, using company id : {} maxPrice : {}",companyId,maxPrice);
         return couponRepository.findAllByCompanyIdAndPriceIsLessThanEqual(companyId,maxPrice);
     }
 

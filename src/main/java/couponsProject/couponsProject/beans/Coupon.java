@@ -36,4 +36,5 @@ public class Coupon {
     @ManyToMany(mappedBy = "coupons", cascade = CascadeType.REMOVE)
     private List<Customer> customers = new ArrayList<>();
 
+
 }
