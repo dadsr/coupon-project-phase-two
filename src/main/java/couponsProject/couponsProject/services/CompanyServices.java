@@ -1,4 +1,4 @@
-package couponsProject.couponsProject.sertvices;
+package couponsProject.couponsProject.services;
 
 import couponsProject.couponsProject.Company;
 import couponsProject.couponsProject.beans.Category;

@@ -1,15 +1,14 @@
-package couponsProject.couponsProject.sertvices;
+package couponsProject.couponsProject.services;
 
 import couponsProject.couponsProject.Company;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.controllers.CompanyException;
-import couponsProject.couponsProject.controllers.CustomerException;
+import couponsProject.couponsProject.controllers.exseptions.CompanyException;
+import couponsProject.couponsProject.controllers.exseptions.CustomerException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import couponsProject.couponsProject.repository.CouponRepository;
 import couponsProject.couponsProject.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -35,7 +34,7 @@ public class AdminServicesImpl implements AdminServices {
     @Override
     public void addCompany(Company company)  {
         log.info("entering addCompany company name: {} company email {}",company.getName(), company.getEmail());
-        if(!companyRepository.existsByNameOrEmail(company.getName(),company.getEmail()) {
+        if(!companyRepository.existsByNameOrEmail(company.getName(),company.getEmail())) {
             companyRepository.save(company);
         }else {
             log.error("Company already exist for name {} or email {}", company.getName(), company.getEmail());
@@ -66,6 +65,7 @@ public class AdminServicesImpl implements AdminServices {
             throw new NoSuchElementException("no such element");
         }
     }
+
     @Override
     public Company getOneCompany(int companyID){
         log.info("entering getOneCompany using company id: {}",companyID);
@@ -79,6 +79,7 @@ public class AdminServicesImpl implements AdminServices {
 
     //todo
     //  @Override
+    @Override
     public ArrayList<Company> getAllCompanies(){
         log.info("entering getAllCompanies");
         return null;
@@ -136,6 +137,7 @@ public class AdminServicesImpl implements AdminServices {
 
     //todo
     // @Override
+    @Override
     public ArrayList<Customer> getAllCustomers(){
         log.info("entering getAllCustomers");
         return null;
@@ -144,7 +146,7 @@ public class AdminServicesImpl implements AdminServices {
     /****************************** service methods **********************************/
 
     // for company login
-    public Company getOneCompany(String email, String password){
+    private Company getOneCompany(String email, String password){
         log.info("entering getOneCompany using Email: {} Password: {}", email, password);
         Company company =companyRepository.findCompaniesByEmailAndPassword(email,password);
         if(company != null) {
@@ -156,7 +158,7 @@ public class AdminServicesImpl implements AdminServices {
         }
     }
     // for customer login
-    public Customer getOneCustomer(String email, String password){
+    private Customer getOneCustomer(String email, String password){
         log.info("Entering getOneCustomer, using Email: {} Password: {}", email, password);
         Customer customer =customerRepository.findCustomerByEmailAndPassword(email,password);
         if(customer != null) {
@@ -167,12 +169,9 @@ public class AdminServicesImpl implements AdminServices {
             throw new NoSuchElementException("Customer dose not exists");
         }
     }
-    // for deleteCompany
-    private void deleteCoupons(int companyID) {
-        log.info("Entering deleteCoupons, using company id: {}",companyID);
-        //todo should check if cascade deletes perches too
-        couponRepository.deleteCouponByCompanyId(companyID);
-    }
 
+    private void deleteCoupons(int companyID) {
+        companyRepository.deleteById(companyID);
+    }
     //
 }

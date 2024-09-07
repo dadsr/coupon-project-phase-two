@@ -1,9 +1,9 @@
-package couponsProject.couponsProject.sertvices;
+package couponsProject.couponsProject.services;
 
 import couponsProject.couponsProject.beans.Category;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.controllers.CouponException;
+import couponsProject.couponsProject.controllers.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CouponRepository;
 import couponsProject.couponsProject.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
