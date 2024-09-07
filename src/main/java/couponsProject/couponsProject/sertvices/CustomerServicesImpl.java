@@ -34,6 +34,10 @@ public class CustomerServicesImpl {
         }
     }
 
+    public Customer getCustomer(int customerId){
+        log.info("Entering getCustomer using customerId: {}", customerId);
+        return customerRepository.getCustomerById(customerId);
+    }
     //todo where to put transaction
     @Transactional
     public void couponPurchase (int customerId,int couponId){
