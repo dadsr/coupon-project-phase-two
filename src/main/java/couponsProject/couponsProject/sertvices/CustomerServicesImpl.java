@@ -33,53 +33,65 @@ public class CustomerServicesImpl {
             throw new NoSuchElementException("No such customer");
         }
     }
+
     //todo where to put transaction
     @Transactional
-    public int login(String email, String password){
-        void couponPurchase (int customerId,int couponId){
-            log.info("Entering couponPurchase using customerId: {} couponId: {}", customerId, couponId);
-            //todo not working
-            if(couponRepository.existPurchase(customerId,couponId)){
-                Customer customer = customerRepository.getCustomerById(customerId);
-                Coupon coupon = couponRepository.getCouponById(couponId);
-                //coupon list
-                customer.setCoupons(addToList(customer.getCoupons(),coupon));
-                customerRepository.save(customer);
-                //customers list
-                coupon.setCustomers(addToList(coupon.getCustomers(),customer));
-                couponRepository.save(coupon);
-                //amount
-                coupon.setAmount(coupon.getAmount()-1);
-            }else {
-                log.error("Purchase is not possible for customerId: {} couponId: {}", customerId, couponId);
-                throw new CouponException("Purchase is not possible");
-            }
+    public void couponPurchase (int customerId,int couponId){
+        log.info("Entering couponPurchase using customerId: {} couponId: {}", customerId, couponId);
+        //todo not working
+        if(couponRepository.existPurchase(customerId,couponId)){
+            Customer customer = customerRepository.getCustomerById(customerId);
+            Coupon coupon = couponRepository.getCouponById(couponId);
+            //coupon list
+            customer.setCoupons(addToList(customer.getCoupons(),coupon));
+            customerRepository.save(customer);
+            //customers list
+            coupon.setCustomers(addToList(coupon.getCustomers(),customer));
+            couponRepository.save(coupon);
+            //amount
+            coupon.setAmount(coupon.getAmount()-1);
+        }else {
+            log.error("Purchase is not possible for customerId: {} couponId: {}", customerId, couponId);
+            throw new CouponException("Purchase is not possible");
         }
+    }
 
-        public int login(String email, String password){
-            List<Coupon> getCoupons(int customerId) {
-                log.info("Entering getCoupons using customerId: {}", customerId;
-                return customerRepository.getCustomerById(customerId).getCoupons();
-            }
+    public List<Coupon> getCoupons(int customerId) {
+        log.info("Entering getCoupons using customerId: {}", customerId;
+        return customerRepository.getCustomerById(customerId).getCoupons();
+    }
 
-            public int login(String email, String password){
-                List<Coupon> getCoupons(int customerId, Category category) {
-                    log.info("Entering getCoupons using customerId: {} and category: {}", customerId, category);
-                    Customer customer = customerRepository.getCustomerById(customerId);
-                    if (customer != null) {
-                        return customer.getCoupons().stream()
-                                .filter(coupon -> coupon.getCategory().equals(category))
-                                .collect(Collectors.toList());
-                    } else {
-                        return Collections.emptyList();
-                    }
-                }
+    public List<Coupon> getCoupons(int customerId, Category category) {
+        log.info("Entering getCoupons using customerId: {} and category: {}", customerId, category);
+        Customer customer = customerRepository.getCustomerById(customerId);
+        if (customer != null) {
+            return customer.getCoupons().stream()
+                    .filter(coupon -> coupon.getCategory().equals(category))
+                    .collect(Collectors.toList());
+        } else {
+            return Collections.emptyList();
+        }
+    }
 
-                /****************************** service methods **********************************/
-                //generic add to list
-                private <T> List<T> addToList(List<T> list, T obj) {
-                    list.add(obj);
-                    return list;
-                }
+    public List<Coupon> getCoupons(int customerId, double maxPrice) {
+        log.info("Entering getCoupons using customerId: {} and max price of: {}", customerId, maxPrice);
+        Customer customer = customerRepository.getCustomerById(customerId);
+        if (customer != null) {
+            return customer.getCoupons().stream()
+                    .filter(coupon -> coupon.getPrice()<=maxPrice)
+                    .collect(Collectors.toList());
+        } else {
+            return Collections.emptyList();
+        }
+    }
 
-            }
+    /****************************** service methods **********************************/
+//generic add to list
+
+    private <T> List<T> addToList(List<T> list, T obj) {
+        list.add(obj);
+        return list;
+
+    }
+}
+
