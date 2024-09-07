@@ -17,10 +17,11 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @Service
-public class CustomerServicesImpl {
+public class CustomerServicesImpl implements CustomerServices {
     private CustomerRepository customerRepository;
     private CouponRepository couponRepository;
 
+    @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
         int id =-1;
@@ -34,13 +35,15 @@ public class CustomerServicesImpl {
         }
     }
 
+    @Override
     public Customer getCustomer(int customerId){
         log.info("Entering getCustomer using customerId: {}", customerId);
         return customerRepository.getCustomerById(customerId);
     }
     //todo where to put transaction
     @Transactional
-    public void couponPurchase (int customerId,int couponId){
+    @Override
+    public void couponPurchase(int customerId, int couponId){
         log.info("Entering couponPurchase using customerId: {} couponId: {}", customerId, couponId);
         //todo not working
         if(couponRepository.existPurchase(customerId,couponId)){
@@ -60,11 +63,13 @@ public class CustomerServicesImpl {
         }
     }
 
+    @Override
     public List<Coupon> getCoupons(int customerId) {
         log.info("Entering getCoupons using customerId: {}", customerId);
         return customerRepository.getCustomerById(customerId).getCoupons();
     }
 
+    @Override
     public List<Coupon> getCoupons(int customerId, Category category) {
         log.info("Entering getCoupons using customerId: {} and category: {}", customerId, category);
         Customer customer = customerRepository.getCustomerById(customerId);
@@ -77,6 +82,7 @@ public class CustomerServicesImpl {
         }
     }
 
+    @Override
     public List<Coupon> getCoupons(int customerId, double maxPrice) {
         log.info("Entering getCoupons using customerId: {} and max price of: {}", customerId, maxPrice);
         Customer customer = customerRepository.getCustomerById(customerId);
