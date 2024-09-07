@@ -57,7 +57,7 @@ public class CustomerServicesImpl {
     }
 
     public List<Coupon> getCoupons(int customerId) {
-        log.info("Entering getCoupons using customerId: {}", customerId;
+        log.info("Entering getCoupons using customerId: {}", customerId);
         return customerRepository.getCustomerById(customerId).getCoupons();
     }
 
