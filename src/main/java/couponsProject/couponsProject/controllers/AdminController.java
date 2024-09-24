@@ -1,6 +1,6 @@
 package couponsProject.couponsProject.controllers;
 
-import couponsProject.couponsProject.Company;
+import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.services.AdminServices;
 import lombok.AllArgsConstructor;
@@ -17,19 +17,20 @@ import java.util.ArrayList;
 public class AdminController {
     AdminServices adminServices;
 
+    //admin@admin.com:admin
     @GetMapping("login")
     public int login(String email, String password) {
         return adminServices.login(email, password);
     }
 
     @PostMapping("company/add")
-    public void addCompany(Company company) {
-        adminServices.addCompany(company);
+    public void addCompany(String name, String email, String password) {
+        adminServices.addCompany(new Company(name, email, password));
     }
 
     @PutMapping("company/update")
-    public void updateCompany(Company company) {
-        adminServices.updateCompany(company);
+    public void updateCompany(int id, String name, String email, String password)  {
+        adminServices.updateCompany(new Company(id, name, email, password));
     }
     @DeleteMapping("company/delete")
     public void deleteCompany(int companyID) {
@@ -47,13 +48,13 @@ public class AdminController {
     }
 
     @PostMapping("customer/add")
-    public void addCustomer(Customer customer) {
-        adminServices.addCustomer(customer);
+    public void addCustomer(String firstName, String lastName, String email, String password) {
+        adminServices.addCustomer(new Customer(firstName,lastName,email,password));
     }
 
     @PutMapping("customer/update")
-    public void updateCustomer(Customer customer) {
-        adminServices.updateCustomer(customer);
+    public void updateCustomer(int id, String firstName, String lastName, String email, String password) {
+        adminServices.updateCustomer(new Customer(id,firstName,lastName,email,password));
     }
 
     @DeleteMapping("customer/delete")

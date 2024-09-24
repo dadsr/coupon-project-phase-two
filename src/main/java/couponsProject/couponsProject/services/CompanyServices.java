@@ -1,7 +1,7 @@
 package couponsProject.couponsProject.services;
 
-import couponsProject.couponsProject.Company;
-import couponsProject.couponsProject.beans.Category;
+import couponsProject.couponsProject.beans.CategoryEnum;
+import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public interface CompanyServices {
 
     List<Coupon> getCompanyCoupons(int companyId);
 
-    List<Coupon> getCompanyCoupons(int companyId, Category category);
+    List<Coupon> getCompanyCoupons(int companyId, CategoryEnum category);
 
     List<Coupon> getCompanyCoupons(int companyId, Double maxPrice);
 }

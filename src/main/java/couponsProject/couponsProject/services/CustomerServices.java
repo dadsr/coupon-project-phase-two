@@ -1,6 +1,6 @@
 package couponsProject.couponsProject.services;
 
-import couponsProject.couponsProject.beans.Category;
+import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
 import jakarta.transaction.Transactional;
@@ -18,7 +18,7 @@ public interface CustomerServices {
 
     List<Coupon> getCoupons(int customerId);
 
-    List<Coupon> getCoupons(int customerId, Category category);
+    List<Coupon> getCoupons(int customerId, CategoryEnum category);
 
     List<Coupon> getCoupons(int customerId, double maxPrice);
 }

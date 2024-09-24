@@ -1,15 +1,15 @@
 package couponsProject.couponsProject.beans;
 
-import couponsProject.couponsProject.Company;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,9 +23,10 @@ public class Coupon {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private Company company;
-    @ManyToOne
-    @JoinColumn(name = "categor_id")
-    private Category category;
+    @Enumerated
+
+    @JdbcTypeCode(SqlTypes.INTEGER)
+    private CategoryEnum category;
     private String title;
     private String description;
     private Date startDate;
@@ -33,8 +34,24 @@ public class Coupon {
     private int amount;
     private double price;
     private String image;
-    @ManyToMany(mappedBy = "coupons", cascade = CascadeType.REMOVE)
+    @ManyToMany(mappedBy = "coupons")
     private List<Customer> customers = new ArrayList<>();
 
 
+    public Coupon(Company company, CategoryEnum category, String title, String description, Date startDate, Date endDate, int amount, double price, String image, List<Customer> customers) {
+        this.company = company;
+        this.category = category;
+        this.title = title;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.amount = amount;
+        this.price = price;
+        this.image = image;
+        this.customers = customers;
+    }
+    @Builder
+    public static Coupon createInstance(Company company, CategoryEnum category, String title, String description, Date startDate, Date endDate, int amount, double price, String image){
+        return new Coupon(company, category, title, description, startDate, endDate, amount, price,image, null);
+    }
 }

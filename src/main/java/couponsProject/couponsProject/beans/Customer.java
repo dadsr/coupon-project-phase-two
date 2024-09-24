@@ -1,14 +1,12 @@
 package couponsProject.couponsProject.beans;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -23,10 +21,29 @@ public class Customer {
     private String lastName;
     private String email;
     private String password;
-    @ManyToMany(cascade = {CascadeType.REMOVE})
+    @ManyToMany()
     @JoinTable(name = "customers_vs_coupons",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "coupons_id"))
     private List<Coupon> coupons = new ArrayList<>();
 
+    public Customer(String firstName, String lastName, String email, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.coupons = null;
+    }
+
+    public Customer(int id, String firstName, String lastName, String email, String password) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+    }
+    @Builder
+    public static Customer createInstance(String firstName, String lastName, String email, String password){
+        return new Customer(firstName, lastName, email, password);
+    }
 }

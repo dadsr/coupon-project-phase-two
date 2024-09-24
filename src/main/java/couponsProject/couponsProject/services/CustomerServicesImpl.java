@@ -1,6 +1,6 @@
 package couponsProject.couponsProject.services;
 
-import couponsProject.couponsProject.beans.Category;
+import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.controllers.exseptions.CouponException;
@@ -24,9 +24,8 @@ public class CustomerServicesImpl implements CustomerServices {
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-        int id =-1;
-        id = customerRepository.getCustomerByEmailAndPassword(email,password);
-        if (id >-1) {
+        int id = customerRepository.getCustomerByEmailAndPassword(email,password);
+        if (id >0) {
             log.debug("Login succeeded, customer id {}", id);
             return id;
         }else {
@@ -69,8 +68,8 @@ public class CustomerServicesImpl implements CustomerServices {
         return customerRepository.getCustomerById(customerId).getCoupons();
     }
 
-    @Override
-    public List<Coupon> getCoupons(int customerId, Category category) {
+   @Override
+    public List<Coupon> getCoupons(int customerId, CategoryEnum category) {
         log.info("Entering getCoupons using customerId: {} and category: {}", customerId, category);
         Customer customer = customerRepository.getCustomerById(customerId);
         if (customer != null) {

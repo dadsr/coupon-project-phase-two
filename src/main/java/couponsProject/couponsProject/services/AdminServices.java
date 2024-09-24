@@ -1,6 +1,6 @@
 package couponsProject.couponsProject.services;
 
-import couponsProject.couponsProject.Company;
+import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Customer;
 
 import java.util.ArrayList;

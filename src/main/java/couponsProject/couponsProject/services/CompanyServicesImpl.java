@@ -1,7 +1,7 @@
 package couponsProject.couponsProject.services;
 
-import couponsProject.couponsProject.Company;
-import couponsProject.couponsProject.beans.Category;
+import couponsProject.couponsProject.beans.CategoryEnum;
+import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.controllers.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
@@ -24,9 +24,9 @@ public class CompanyServicesImpl implements CompanyServices {
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-        int id =-1;
-        id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
-        if (id >-1) {
+        int id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
+
+        if (id >0) {
             log.debug("Login succeeded, company id {}", id);
             return id;
         }else {
@@ -83,11 +83,14 @@ public class CompanyServicesImpl implements CompanyServices {
         return couponRepository.findAllByCompanyId(companyId);
     }
 
-    @Override
-    public List<Coupon> getCompanyCoupons(int companyId, Category category){
+
+  @Override
+    public List<Coupon> getCompanyCoupons(int companyId, CategoryEnum category){
         log.info("Entering getCompanyCoupons, using company id : {} category : {}",companyId,category);
         return couponRepository.findAllByCompanyIdAndCategory(companyId,category);
     }
+
+
 
     @Override
     public List<Coupon> getCompanyCoupons(int companyId, Double maxPrice){

@@ -1,11 +1,9 @@
 package couponsProject.couponsProject.repository;
 
-import couponsProject.couponsProject.Company;
+import couponsProject.couponsProject.beans.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.jpa.repository.Query;
 
-import java.util.ArrayList;
 
 public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaSpecificationExecutor<Company> {
 

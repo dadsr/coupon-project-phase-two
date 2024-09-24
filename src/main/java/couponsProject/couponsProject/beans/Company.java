@@ -1,14 +1,14 @@
-package couponsProject.couponsProject;
+package couponsProject.couponsProject.beans;
+
 
 import couponsProject.couponsProject.beans.Coupon;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -26,4 +26,21 @@ public class  Company {
     @OneToMany(mappedBy = "company", orphanRemoval = true)
     private List<Coupon> coupons = new ArrayList<>();
 
+    public Company(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Company(int id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
+    @Builder
+    public static Company createInstance(String name, String email, String password) {
+        return new Company(name, email, password);
+    }
 }
