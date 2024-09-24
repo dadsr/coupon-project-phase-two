@@ -17,8 +17,6 @@ public interface AdminServices {
 
     Company getOneCompany(int companyID);
 
-    //todo
-    //  @Override
     ArrayList<Company> getAllCompanies();
 
     void addCustomer(Customer customer);
@@ -29,7 +27,6 @@ public interface AdminServices {
 
     Customer getOneCustomer(int customerID);
 
-    //todo
     ArrayList<Customer> getAllCustomers();
 
 }

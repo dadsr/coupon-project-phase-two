@@ -3,6 +3,11 @@ package couponsProject.couponsProject.repository;
 import couponsProject.couponsProject.beans.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Query;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaSpecificationExecutor<Company> {
@@ -18,4 +23,9 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
 
     //@Query("select c from Company c where c.email = ?1 and c.password = ?2")
     int getCompanyIdByEmailAndPassword(String email, String password);
+
+    @Query("select c from Company c")
+    ArrayList<Company> getAllCompanies();
+
+
 }

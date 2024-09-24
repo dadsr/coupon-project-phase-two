@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
@@ -84,7 +85,7 @@ public class AdminServicesImpl implements AdminServices {
     @Override
     public ArrayList<Company> getAllCompanies(){
         log.info("entering getAllCompanies");
-        return null;
+        return companyRepository.getAllCompanies();
     }
 
     /****************************** Customer methods **********************************/
@@ -142,7 +143,7 @@ public class AdminServicesImpl implements AdminServices {
     @Override
     public ArrayList<Customer> getAllCustomers(){
         log.info("entering getAllCustomers");
-        return null;
+        return customerRepository.getAllCustomers();
     }
 
     /****************************** service methods **********************************/

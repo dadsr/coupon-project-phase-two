@@ -79,14 +79,32 @@ class AdminServicesImplTest {
 
     @Test
     void deleteCompany() {
+        int id =1;
+
+        Assertions.assertThatCode(() -> adminServices.deleteCompany(id)).doesNotThrowAnyException();
+        //NoSuchElementException
+        Assertions.assertThatThrownBy(() -> adminServices.deleteCompany(id))
+                .as("test if company was deleted successful")
+                .isInstanceOf(NoSuchElementException.class)
+                .hasMessageContaining("Company does not exist");
+
     }
 
     @Test
     void getOneCompany() {
+        int id =1;
+        Company company = adminServices.getOneCompany(id);
+        Assertions.assertThat(company).as("test getting company by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
+
+        Assertions.assertThatThrownBy(() -> adminServices.getOneCompany(9999))
+                .as("test when company dose not exist")
+                .isInstanceOf(NoSuchElementException.class)
+                .hasMessageContaining("no such element");
     }
 
     @Test
     void getAllCompanies() {
+
     }
 
     @Test
