@@ -43,14 +43,16 @@ public class CompanyServicesImpl implements CompanyServices {
 
     @Override
     public void addCoupon(Coupon coupon){
-        log.info("Entering addCoupon, company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
-        if (!couponRepository.existsByCompanyIdAndTitle(coupon.getCompany().getId(),coupon.getTitle())){
-            couponRepository.save(coupon);
-            log.debug("AddCoupon succeeded, coupon id {}",coupon.getId());
-        }else{
-            log.error("Coupon already exists for company id: {} and title: {}",coupon.getCompany().getId(),coupon.getTitle());
-            throw new CouponException("Coupon already exists");
-        }
+        Company company =coupon.getCompany();
+        log.info("Entering addCoupon, company id: {} and title: {}",company.getId(),coupon.getTitle());
+            if(company.getCoupons().stream().anyMatch(coupon::equals)){
+                log.error("Coupon already exists for company id: {} and title: {}",company.getId(),coupon.getTitle());
+                throw new CouponException("Coupon already exists");
+            }else {
+                couponRepository.save(coupon);
+                company.getCoupons().add(coupon);
+                log.debug("AddCoupon succeeded, coupon id {}",coupon.getId());
+            }
     }
 
     @Override
@@ -73,7 +75,7 @@ public class CompanyServicesImpl implements CompanyServices {
             log.debug("DeleteCoupon succeeded, coupon id {}",couponID);
         }else{
             log.error("No such coupon to update, coupon id: {}", couponID);
-            throw new NoSuchElementException("Coupon already exists");
+            throw new NoSuchElementException("coupon does not exist");
         }
     }
 

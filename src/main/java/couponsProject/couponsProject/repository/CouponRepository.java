@@ -43,4 +43,6 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
 
     @Query("select c from Coupon c where c.id = ?1")
     Coupon getCouponById(int couponId);
+
+
 }

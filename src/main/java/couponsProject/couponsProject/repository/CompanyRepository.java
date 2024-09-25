@@ -28,4 +28,6 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
     ArrayList<Company> getAllCompanies();
 
 
+
+
 }

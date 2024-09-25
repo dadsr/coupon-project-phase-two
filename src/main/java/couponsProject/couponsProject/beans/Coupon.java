@@ -34,8 +34,8 @@ public class Coupon {
     private int amount;
     private double price;
     private String image;
-    @ManyToMany(mappedBy = "coupons")
-    private List<Customer> customers = new ArrayList<>();
+    @ManyToMany(mappedBy = "coupons", cascade = CascadeType.ALL)
+    private List<Customer> customers;
 
 
     public Coupon(Company company, CategoryEnum category, String title, String description, Date startDate, Date endDate, int amount, double price, String image, List<Customer> customers) {
@@ -48,10 +48,40 @@ public class Coupon {
         this.amount = amount;
         this.price = price;
         this.image = image;
-        this.customers = customers;
+        if(customers!=null) {
+            this.customers = customers;
+        }
     }
+
+    public Coupon(int id, Company company, CategoryEnum category, String title, String description, Date startDate, Date endDate, int amount, double price, String image, List<Customer> customers) {
+        this.id = id;
+        this.company = company;
+        this.category = category;
+        this.title = title;
+        this.description = description;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.amount = amount;
+        this.price = price;
+        this.image = image;
+        if(customers!=null) {
+            this.customers = customers;
+        }
+    }
+
     @Builder
     public static Coupon createInstance(Company company, CategoryEnum category, String title, String description, Date startDate, Date endDate, int amount, double price, String image){
         return new Coupon(company, category, title, description, startDate, endDate, amount, price,image, null);
+    }
+    q
+    public void addCustomer(Customer customer) {
+        if(customers==null) {
+            customers = new ArrayList<>();
+        }
+        customers.add(customer);
+    }
+
+    public void removeCustomer(Customer customer) {
+        customers.remove(customer);
     }
 }

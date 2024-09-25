@@ -1,11 +1,8 @@
 package couponsProject.couponsProject;
 
 import couponsProject.couponsProject.beans.*;
-import couponsProject.couponsProject.repository.CompanyRepository;
-import couponsProject.couponsProject.repository.CouponRepository;
-import couponsProject.couponsProject.repository.CustomerRepository;
+
 import couponsProject.couponsProject.services.AdminServices;
-import couponsProject.couponsProject.services.AdminServicesImpl;
 import couponsProject.couponsProject.services.CompanyServices;
 import couponsProject.couponsProject.services.CustomerServices;
 import org.springframework.boot.SpringApplication;
@@ -13,9 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.sql.Date;
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -48,7 +42,7 @@ public class PhaseTwoApplication {
                             .firstName("first"+i)
                             .lastName("last")
                             .email(i+"@walla.co.il")
-                            .password(String.valueOf(Math.random()))
+                            .password(String.valueOf(Math.random()*10))
                             .build()
             );
         }
@@ -61,7 +55,8 @@ public class PhaseTwoApplication {
         for (Customer customer : customers) {
             adminService.addCustomer(customer);
         }
-        try{
+
+
             for (Company company : companies) {
                 for (int i = 0; i < 30; i++) {
                     companyServices.addCoupon(
@@ -70,8 +65,8 @@ public class PhaseTwoApplication {
                                     .category(CategoryEnum.fromId(rand.nextInt(CategoryEnum.values().length)))
                                     .title("title" + i)
                                     .description("desc" + i)
-                                    .startDate(Date.valueOf("01-11-2024"))
-                                    .endDate(Date.valueOf("01-12-2024"))
+                                    .startDate(Date.valueOf("2024-11-01"))
+                                    .endDate(Date.valueOf("2024-12-01"))
                                     .amount(rand.nextInt(1, 30))
                                     .price(rand.nextDouble(100.00))
                                     .image(null)
@@ -79,32 +74,28 @@ public class PhaseTwoApplication {
                     );
                 }
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+
     }
 
-    // update company
 
-    //update coupon
+        // update company
 
-    //update customer
+        //update coupon
 
-    // delete company
+        //update customer
 
-    //delete coupon
+        // delete company
 
-    //delete customer
+        //delete coupon
 
-    //get all companies
+        //delete customer
 
-    //get all coupons
+        //get all companies
 
-    //get all customers
+        //get all coupons
 
-
-
+        //get all customers
 
 
+    }
 
-}

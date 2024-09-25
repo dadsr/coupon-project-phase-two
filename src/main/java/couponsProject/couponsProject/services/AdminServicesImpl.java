@@ -143,7 +143,7 @@ public class AdminServicesImpl implements AdminServices {
     @Override
     public ArrayList<Customer> getAllCustomers(){
         log.info("entering getAllCustomers");
-        return customerRepository.getAllCustomers();
+        return customerRepository.findAll();
     }
 
     /****************************** service methods **********************************/

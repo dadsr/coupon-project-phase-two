@@ -52,7 +52,7 @@ class AdminServicesImplTest {
 
 
         Assertions.assertThatThrownBy(() -> adminServices.addCompany(company))
-                .as("test if adding company does not throw exception")
+                .as("test if adding exist company does throw exception")
                 .isInstanceOf(CompanyException.class)
                 .hasMessageContaining("company already exists");
 
@@ -146,7 +146,7 @@ class AdminServicesImplTest {
         String updatedEmail = "update" + customer.getEmail();
         customer.setEmail(updatedEmail);
 
-        Assertions.assertThatCode(() -> adminServices.updateCompany(customer)).doesNotThrowAnyException();
+        Assertions.assertThatCode(() -> adminServices.updateCustomer(customer)).doesNotThrowAnyException();
         Assertions.assertThat(
                         adminServices.getOneCustomer(id).getEmail())
                 .as("test if updated customer was updated successful")

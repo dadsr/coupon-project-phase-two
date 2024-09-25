@@ -21,29 +21,44 @@ public class Customer {
     private String lastName;
     private String email;
     private String password;
-    @ManyToMany()
+    @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name = "customers_vs_coupons",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "coupons_id"))
     private List<Coupon> coupons = new ArrayList<>();
 
-    public Customer(String firstName, String lastName, String email, String password) {
+    public Customer(String firstName, String lastName, String email, String password, List<Coupon> coupons) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.coupons = null;
+        if (coupons != null) {
+            this.coupons = coupons;
+        }
     }
 
-    public Customer(int id, String firstName, String lastName, String email, String password) {
+    public Customer(int id, String firstName, String lastName, String email, String password, List<Coupon> coupons) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        if (coupons != null) {
+            this.coupons = coupons;
+        }
     }
     @Builder
-    public static Customer createInstance(String firstName, String lastName, String email, String password){
-        return new Customer(firstName, lastName, email, password);
+    public static Customer createInstance(String firstName, String lastName, String email, String password, List<Coupon> coupons) {
+        return new Customer(firstName, lastName, email, password,coupons);
+    }
+
+    public void addCoupon(Coupon coupon) {
+        this.coupons.add(coupon);
+        coupon.getCustomers().add(this);
+    }
+
+    public void removeCoupon(Coupon coupon) {
+        this.coupons.remove(coupon);
+        coupon.getCustomers().remove(this);
     }
 }

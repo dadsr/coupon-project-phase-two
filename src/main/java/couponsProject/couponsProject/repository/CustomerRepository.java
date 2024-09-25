@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
@@ -22,5 +23,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     int getCustomerByEmailAndPassword(String email, String password);
 
    //@Query("select c from Customer c")
-    ArrayList<Customer> getAllCustomers();
+    //ArrayList<Customer> getAllCustomers();
+   @Override
+   ArrayList <Customer> findAll();
 }
