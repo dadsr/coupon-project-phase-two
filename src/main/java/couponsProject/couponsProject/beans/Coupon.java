@@ -24,7 +24,6 @@ public class Coupon {
     @JoinColumn(name = "company_id")
     private Company company;
     @Enumerated
-
     @JdbcTypeCode(SqlTypes.INTEGER)
     private CategoryEnum category;
     private String title;
@@ -34,7 +33,7 @@ public class Coupon {
     private int amount;
     private double price;
     private String image;
-    @ManyToMany(mappedBy = "coupons", cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "coupons")
     private List<Customer> customers;
 
 
@@ -73,7 +72,7 @@ public class Coupon {
     public static Coupon createInstance(Company company, CategoryEnum category, String title, String description, Date startDate, Date endDate, int amount, double price, String image){
         return new Coupon(company, category, title, description, startDate, endDate, amount, price,image, null);
     }
-    q
+
     public void addCustomer(Customer customer) {
         if(customers==null) {
             customers = new ArrayList<>();

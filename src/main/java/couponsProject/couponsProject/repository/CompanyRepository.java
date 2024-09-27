@@ -22,7 +22,7 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
     boolean existsByNameOrEmail(String name, String email);
 
     //@Query("select c from Company c where c.email = ?1 and c.password = ?2")
-    int getCompanyIdByEmailAndPassword(String email, String password);
+    Integer getCompanyIdByEmailAndPassword(String email, String password);
 
     @Query("select c from Company c")
     ArrayList<Company> getAllCompanies();

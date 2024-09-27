@@ -22,26 +22,14 @@ class CompanyServicesImplTest {
     @Autowired
     private CompanyServices companyServices;
 
-    @Test
-    void login() {
-        int companyId = 1;
-        String email = "test@gmail.com";
-        String password = "test123";
+    String companyEmail ="compAndCo@comp.co.il";
+    String clientEmail ="compAndCo@comp.co.il";
 
-        Assertions.assertThat(companyServices.login(email,password))
-                .as("test login success")
-                .isEqualTo(1);
-        Assertions.assertThat(companyServices.login("wrongemail@admin.com", password))
-                .as("test login wrong mail Failure")
-                .isEqualTo(0);
-        Assertions.assertThat(companyServices.login(email, "wrongpassword"))
-                .as("test login wrong password Failure")
-                .isEqualTo(0);
-    }
+    /**********************************************************************************/
 
     @Test
     void getCompanyDetails() {
-        int id =1;
+        int id = companyServices.login(companyEmail,"123456789");
         Company company = companyServices.getCompanyDetails(id);
         Assertions.assertThat(company).as("test getting company by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
 
@@ -52,8 +40,21 @@ class CompanyServicesImplTest {
     }
 
     @Test
+    void login() {
+        Assertions.assertThat(companyServices.login(companyEmail,"123456789"))
+                .as("test login success")
+                .isEqualTo(1);
+        Assertions.assertThat(companyServices.login("wrongemail@admin.com", "123456789"))
+                .as("test login wrong mail Failure")
+                .isEqualTo(0);
+        Assertions.assertThat(companyServices.login(companyEmail, "wrongpassword"))
+                .as("test login wrong password Failure")
+                .isEqualTo(0);
+    }
+
+    @Test
     void addCoupon() {
-        int id =1;
+        int id = companyServices.login(companyEmail,"123456789");
         Coupon coupon = Coupon.builder()
                 .company(companyServices.getCompanyDetails(id))
                 .category(CategoryEnum.FASHION)
@@ -85,7 +86,7 @@ class CompanyServicesImplTest {
 
     @Test
     void updateCoupon() {
-        int id =1;
+        int id =companyServices.login(companyEmail,"123456789");
         Coupon coupon = companyServices.getCompanyCoupons(id).get(0);
         coupon.setPrice(coupon.getPrice()/2);
 
@@ -105,7 +106,7 @@ class CompanyServicesImplTest {
 
     @Test
     void deleteCoupon() {
-        int id =1;
+        int id = companyServices.login(companyEmail,"123456789");
         Assertions.assertThatCode(() -> companyServices.deleteCoupon(id)).doesNotThrowAnyException();
         //NoSuchElementException
         Assertions.assertThatThrownBy(() -> companyServices.deleteCoupon(id))
@@ -116,7 +117,7 @@ class CompanyServicesImplTest {
 
     @Test
     void getCompanyCoupons() {
-        int id =1;
+        int id = companyServices.login(companyEmail,"123456789");
         List<Coupon> coupons = companyServices.getCompanyCoupons(id);
         Assertions.assertThat(coupons).as("check coupons by company")
                 .isNotNull()

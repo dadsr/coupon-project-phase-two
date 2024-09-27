@@ -11,6 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @SpringBootApplication
@@ -29,9 +30,9 @@ public class PhaseTwoApplication {
         for (int i = 0; i < 5; i++) {
             companies.add(
                     Company.builder()
-                            .name("comp"+i)
-                            .email(i+"@"+"comp"+i+".co.il")
-                            .password(String.valueOf(Math.random()))
+                            .name("comp" + i)
+                            .email(i + "@" + "comp" + i + ".co.il")
+                            .password(String.valueOf(Math.random()*10))
                             .build()
             );
         }
@@ -39,10 +40,10 @@ public class PhaseTwoApplication {
         for (int i = 0; i < 5; i++) {
             customers.add(
                     Customer.builder()
-                            .firstName("first"+i)
+                            .firstName("first" + i)
                             .lastName("last")
-                            .email(i+"@walla.co.il")
-                            .password(String.valueOf(Math.random()*10))
+                            .email(i + "@walla.co.il")
+                            .password(String.valueOf(Math.random() * 10))
                             .build()
             );
         }
@@ -57,44 +58,67 @@ public class PhaseTwoApplication {
         }
 
 
-            for (Company company : companies) {
-                for (int i = 0; i < 30; i++) {
-                    companyServices.addCoupon(
-                            Coupon.builder()
-                                    .company(company)
-                                    .category(CategoryEnum.fromId(rand.nextInt(CategoryEnum.values().length)))
-                                    .title("title" + i)
-                                    .description("desc" + i)
-                                    .startDate(Date.valueOf("2024-11-01"))
-                                    .endDate(Date.valueOf("2024-12-01"))
-                                    .amount(rand.nextInt(1, 30))
-                                    .price(rand.nextDouble(100.00))
-                                    .image(null)
-                                    .build()
-                    );
-                }
+        for (Company company : companies) {
+            for (int i = 0; i < 30; i++) {
+                companyServices.addCoupon(
+                        Coupon.builder()
+                                .company(company)
+                                .category(CategoryEnum.fromId(rand.nextInt(CategoryEnum.values().length)))
+                                .title("title" + i)
+                                .description("desc" + i)
+                                .startDate(Date.valueOf("2024-11-01"))
+                                .endDate(Date.valueOf("2024-12-01"))
+                                .amount(rand.nextInt(1, 30))
+                                .price(rand.nextDouble(100.00))
+                                .image(null)
+                                .build()
+                );
             }
+        }
+
+        // update company
+        for (Company company : companies) {
+            company.setEmail("comp" + company.getEmail());
+            adminService.updateCompany(company);
+        }
+
+        //get all companies
+        companies = adminService.getAllCompanies();
+        // delete company
+        adminService.deleteCompany(companies.get(0).getId());
+
+
+        //update customer
+        for (Customer customer : customers) {
+            customer.setEmail("customer" + customer.getEmail());
+            adminService.updateCustomer(customer);
+        }
+        //get all customers
+        customers= adminService.getAllCustomers();
+
+        //delete customer
+        adminService.deleteCustomer(customers.get(0).getId());
+
+
+        //get all coupons
+        companies = adminService.getAllCompanies();
+        List<Coupon> coupons =companies.get(0).getCoupons();
+        //update coupon
+        for (Coupon coupon : coupons) {
+            coupon.setPrice(coupon.getPrice()/2);
+            companyServices.updateCoupon(coupon);
+        }
+
+        //delete coupon
+        companyServices.deleteCoupon(coupons.get(0).getId());
+
+
 
     }
 
 
-        // update company
 
-        //update coupon
 
-        //update customer
-
-        // delete company
-
-        //delete coupon
-
-        //delete customer
-
-        //get all companies
-
-        //get all coupons
-
-        //get all customers
 
 
     }

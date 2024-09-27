@@ -24,7 +24,7 @@ public class  Company {
     private String name;
     private String email;
     private String password;
-    @OneToMany(mappedBy = "company", orphanRemoval = true, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "company", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Coupon> coupons = new ArrayList<>();
 
     public Company(String name, String email, String password, List<Coupon> coupons) {

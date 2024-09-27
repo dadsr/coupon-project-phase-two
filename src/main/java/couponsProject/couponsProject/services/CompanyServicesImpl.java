@@ -9,24 +9,27 @@ import couponsProject.couponsProject.repository.CouponRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
-@Slf4j
 @AllArgsConstructor
+@Slf4j
 @Service
 public class CompanyServicesImpl implements CompanyServices {
     private CompanyRepository companyRepository;
     private CouponRepository couponRepository;
 
-
+    @Transactional(readOnly = true)
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-        int id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
 
-        if (id >0) {
+            Integer id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
+
+
+        if (id != null && id > 0) {
             log.debug("Login succeeded, company id {}", id);
             return id;
         }else {

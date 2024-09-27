@@ -3,6 +3,7 @@ package couponsProject.couponsProject.services;
 import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,7 +15,7 @@ public interface CompanyServices {
     void addCoupon(Coupon coupon);
 
     void updateCoupon(Coupon coupon);
-
+    @Transactional
     void deleteCoupon(int couponID);
 
     List<Coupon> getCompanyCoupons(int companyId);

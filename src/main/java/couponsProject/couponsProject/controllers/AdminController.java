@@ -25,16 +25,16 @@ public class AdminController {
 
     @PostMapping("company/add")
     public void addCompany(String name, String email, String password) {
-        adminServices.addCompany(new Company(name, email, password));
+   //     adminServices.addCompany(new Company(name, email, password));
     }
 
     @PutMapping("company/update")
     public void updateCompany(int id, String name, String email, String password)  {
-        adminServices.updateCompany(new Company(id, name, email, password));
+      //  adminServices.updateCompany(new Company(id, name, email, password));
     }
     @DeleteMapping("company/delete")
     public void deleteCompany(int companyID) {
-        adminServices.deleteCompany(companyID);
+  //      adminServices.deleteCompany(companyID);
     }
 
     @GetMapping("company/get")
@@ -49,12 +49,12 @@ public class AdminController {
 
     @PostMapping("customer/add")
     public void addCustomer(String firstName, String lastName, String email, String password) {
-        adminServices.addCustomer(new Customer(firstName,lastName,email,password));
+       // adminServices.addCustomer(new Customer(firstName,lastName,email,password));
     }
 
     @PutMapping("customer/update")
     public void updateCustomer(int id, String firstName, String lastName, String email, String password) {
-        adminServices.updateCustomer(new Customer(id,firstName,lastName,email,password));
+      //  adminServices.updateCustomer(new Customer(id,firstName,lastName,email,password));
     }
 
     @DeleteMapping("customer/delete")

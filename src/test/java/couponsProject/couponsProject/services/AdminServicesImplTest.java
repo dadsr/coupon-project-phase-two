@@ -9,16 +9,25 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.ArrayList;
 import java.util.NoSuchElementException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class AdminServicesImplTest {
     @Autowired
     private AdminServices adminServices;
+    @Autowired
+    private CompanyServices companyServices;
+    @Autowired
+    private CustomerServices customerServices;
 
+/**********************************************************************************/
+    int companiesSize = 9;
+    String companyName = "compAndCo";
+    String companyEmail ="compAndCo@comp.co.il";
+    int clientsSize = 5;
+    String clientEmail ="client@mail.co.il";
+
+/********************************** companies *************************************/
     @Test
     void testLogin() {
         //admin@admin.com:admin
@@ -37,11 +46,12 @@ class AdminServicesImplTest {
     void addCompany() {
         Company company = Company.builder()
                 .name("compAndCo")
-                .email("compAndCo@comp.co.il")
-                .password(String.valueOf(Math.random()))
+                .email(companyEmail)
+                .password("123456789")
                 .build();
 
-        Assertions.assertThatCode(() -> adminServices.addCompany(company))
+        Assertions.assertThatCode(
+                () -> adminServices.addCompany(company))
                 .as("test if adding company does not throw any exception")
                 .doesNotThrowAnyException();
 
@@ -51,7 +61,8 @@ class AdminServicesImplTest {
                 .isEqualTo(1);
 
 
-        Assertions.assertThatThrownBy(() -> adminServices.addCompany(company))
+        Assertions.assertThatThrownBy(
+                () -> adminServices.addCompany(company))
                 .as("test if adding exist company does throw exception")
                 .isInstanceOf(CompanyException.class)
                 .hasMessageContaining("company already exists");
@@ -60,41 +71,28 @@ class AdminServicesImplTest {
 
     @Test
     void updateCompany() {
-        int id =1;
-        Company company = adminServices.getOneCompany(id);
+
+        Company company = adminServices.getOneCompany(companyServices.login(companyName,companyEmail));
         String updatedEmail = "update" + company.getEmail();
         company.setEmail(updatedEmail);
 
         Assertions.assertThatCode(() -> adminServices.updateCompany(company)).doesNotThrowAnyException();
         Assertions.assertThat(
-                adminServices.getOneCompany(id).getEmail())
+                adminServices.getOneCompany(company.getId()).getEmail())
                 .as("test if updated company was updated successful")
                 .isEqualTo(updatedEmail);
 
         //NoSuchElementException
-        //id is empty
-        Assertions.assertThatThrownBy(() -> adminServices.updateCompany(company))
+        Assertions.assertThatThrownBy(
+                () -> adminServices.updateCompany(company))
                 .as("Test if updating a non-existent company throws NoSuchElementException")
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("Company does not exist");
     }
 
     @Test
-    void deleteCompany() {
-        int id =1;
-
-        Assertions.assertThatCode(() -> adminServices.deleteCompany(id)).doesNotThrowAnyException();
-        //NoSuchElementException
-        Assertions.assertThatThrownBy(() -> adminServices.deleteCompany(id))
-                .as("test if company was deleted successful")
-                .isInstanceOf(NoSuchElementException.class)
-                .hasMessageContaining("Company does not exist");
-
-    }
-
-    @Test
     void getOneCompany() {
-        int id =1;
+        int id =companyServices.login(companyEmail,"123456789");
         Company company = adminServices.getOneCompany(id);
         Assertions.assertThat(company).as("test getting company by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
 
@@ -105,18 +103,31 @@ class AdminServicesImplTest {
     }
 
     @Test
-    void getAllCompanies() {
-        int size = 9;
-        Assertions.assertThat(adminServices.getAllCompanies()).hasSize(size);
+    void deleteCompany() {
+        int id =companyServices.login(companyEmail,"123456789");
+
+        Assertions.assertThatCode(() -> adminServices.deleteCompany(id)).doesNotThrowAnyException();
+        //NoSuchElementException
+        Assertions.assertThatThrownBy(
+                () -> adminServices.deleteCompany(id))
+                .as("test if company was deleted successful")
+                .isInstanceOf(NoSuchElementException.class)
+                .hasMessageContaining("Company does not exist");
     }
 
+    @Test
+    void getAllCompanies() {
+        Assertions.assertThat(adminServices.getAllCompanies()).hasSize(companiesSize);
+    }
+
+    /********************************** customers *************************************/
     @Test
     void addCustomer() {
         Customer customer =Customer.builder()
                 .firstName("first")
                 .lastName("last")
-                .email("@walla.co.il")
-                .password(String.valueOf(Math.random()))
+                .email(clientEmail)
+                .password("987654321")
                 .build();
 
         Assertions.assertThatCode(() -> adminServices.addCustomer(customer))
@@ -124,45 +135,54 @@ class AdminServicesImplTest {
                 .doesNotThrowAnyException();
 
         Assertions.assertThat(
-                adminServices.getAllCustomers().stream().filter(
-                        c ->c.getFirstName().equals(customer.getFirstName())
-                                && c.getLastName().equals(customer.getLastName())
-                                && c.getEmail().equals(customer.getEmail()))
-                        .count())
+                        adminServices.getAllCustomers().stream().filter(
+                                        c ->c.getFirstName().equals(customer.getFirstName())
+                                                && c.getLastName().equals(customer.getLastName())
+                                                && c.getEmail().equals(customer.getEmail()))
+                                .count())
                 .as("test if adding customer was successful")
                 .isEqualTo(1);
 
-        Assertions.assertThatThrownBy(() -> adminServices.addCustomer(customer))
+        Assertions.assertThatThrownBy(
+                () -> adminServices.addCustomer(customer))
                 .as("test if adding customer does not throw exception")
                 .isInstanceOf(CustomerException.class)
                 .hasMessageContaining("customer already exists");
-
     }
 
     @Test
     void updateCustomer() {
-        int id =1;
-        Customer customer = adminServices.getOneCustomer(id);
+        Customer customer = adminServices.getOneCustomer(customerServices.login(clientEmail,"987654321"));
         String updatedEmail = "update" + customer.getEmail();
         customer.setEmail(updatedEmail);
 
         Assertions.assertThatCode(() -> adminServices.updateCustomer(customer)).doesNotThrowAnyException();
         Assertions.assertThat(
-                        adminServices.getOneCustomer(id).getEmail())
+                        adminServices.getOneCustomer(customer.getId()).getEmail())
                 .as("test if updated customer was updated successful")
                 .isEqualTo(updatedEmail);
 
         //NoSuchElementException
-        //id is empty
         Assertions.assertThatThrownBy(() -> adminServices.updateCustomer(customer))
                 .as("Test if updating a non-existent customer throws NoSuchElementException")
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("Customer does not exist");
     }
+    @Test
+    void getOneCustomer() {
+        int id =customerServices.login(clientEmail,"987654321");
+        Customer customer = adminServices.getOneCustomer(id);
+        Assertions.assertThat(customer).as("test getting customer by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
+
+        Assertions.assertThatThrownBy(() -> adminServices.getOneCustomer(9999))
+                .as("test when customer dose not exist")
+                .isInstanceOf(NoSuchElementException.class)
+                .hasMessageContaining("customer dose not exists");
+    }
 
     @Test
     void deleteCustomer() {
-        int id =1;
+        int id =customerServices.login(clientEmail,"987654321");
 
         Assertions.assertThatCode(() -> adminServices.deleteCustomer(id)).doesNotThrowAnyException();
         //NoSuchElementException
@@ -174,20 +194,7 @@ class AdminServicesImplTest {
     }
 
     @Test
-    void getOneCustomer() {
-        int id =1;
-        Customer customer = adminServices.getOneCustomer(id);
-        Assertions.assertThat(customer).as("test getting customer by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
-
-        Assertions.assertThatThrownBy(() -> adminServices.getOneCustomer(9999))
-                .as("test when customer dose not exist")
-                .isInstanceOf(NoSuchElementException.class)
-                .hasMessageContaining("customer dose not exists");
-    }
-
-    @Test
     void getAllCustomers() {
-        int size = 9;
-        Assertions.assertThat(adminServices.getAllCustomers()).hasSize(size);
+        Assertions.assertThat(adminServices.getAllCustomers()).hasSize(clientsSize);
     }
 }
