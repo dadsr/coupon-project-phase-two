@@ -3,11 +3,13 @@ package couponsProject.couponsProject.beans;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.proxy.HibernateProxy;
 import org.hibernate.type.SqlTypes;
 
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @NoArgsConstructor
 @Getter
@@ -83,4 +85,14 @@ public class Coupon {
     public void removeCustomer(Customer customer) {
         customers.remove(customer);
     }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coupon coupon = (Coupon) o;
+        return Objects.equals(title, coupon.title) &&
+                Objects.equals(company.getId(), coupon.company.getId());
+    }
+
 }

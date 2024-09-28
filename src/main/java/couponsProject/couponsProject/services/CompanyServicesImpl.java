@@ -25,9 +25,7 @@ public class CompanyServicesImpl implements CompanyServices {
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-
-            Integer id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
-
+        Integer id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
 
         if (id != null && id > 0) {
             log.debug("Login succeeded, company id {}", id);
@@ -41,7 +39,12 @@ public class CompanyServicesImpl implements CompanyServices {
     @Override
     public Company getCompanyDetails(int companyId){
         log.info("entering getCompanyDetails using company id : {}",companyId);
-        return companyRepository.findCompaniesById(companyId);
+        if(companyRepository.existsById(companyId)) {
+            return companyRepository.findCompaniesById(companyId);
+        }else {
+            log.error("getOneCompany throw NoSuchElementException company id: {}",companyId);
+            throw new NoSuchElementException("no such company to get");
+        }
     }
 
     @Override
@@ -66,7 +69,7 @@ public class CompanyServicesImpl implements CompanyServices {
             log.debug("UpdateCoupon succeeded, coupon id {}",coupon.getId());
         }else{
             log.error("No such coupon to update, company id: {} and title: {}", coupon.getCompany().getId(),coupon.getTitle());
-            throw new NoSuchElementException("Coupon dose not exists");
+            throw new NoSuchElementException("Coupon does not exists");
         }
     }
 

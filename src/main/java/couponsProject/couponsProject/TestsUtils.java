@@ -12,12 +12,12 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.function.Supplier;
 
-public class TestsUtils {
-    Random rand = new Random();
+public  class TestsUtils {
+    static Random rand = new Random();
 
 
     // Generic method to create a list of entities
-    public <T> List<T> createEntities(int num, Supplier<T> entitySupplier) {
+    public static <T> List<T> createEntities(int num, Supplier<T> entitySupplier) {
         List<T> entities = new ArrayList<>();
         for (int i = 0; i < num; i++) {
             entities.add(entitySupplier.get());
@@ -26,7 +26,7 @@ public class TestsUtils {
     }
 
 
-    public List<Company> createCompanies(int num) {
+    public static List<Company> createCompanies(int num) {
         return createEntities(num, () -> Company.builder()
                 .name("comp" + Math.random())
                 .email((int) (Math.random() * 100) + "@comp.co.il")
@@ -35,7 +35,7 @@ public class TestsUtils {
     }
 
 
-    public List<Customer> createCustomers(int num) {
+    public static List<Customer> createCustomers(int num) {
         return createEntities(num, () -> Customer.builder()
                 .firstName("first" + Math.random())
                 .lastName("last")
@@ -47,8 +47,9 @@ public class TestsUtils {
     /**
      * dose not update company for coupon
      */
-    public List<Coupon> createCoupons(int num) {
+    public static List<Coupon> createCoupons(Company company ,int num) {
         return createEntities(num,() -> Coupon.builder()
+                .company(company)
                 .category(CategoryEnum.fromId(rand.nextInt(CategoryEnum.values().length)))
                 .title("title" + rand.nextInt(1,99))
                 .description("desc" + rand.nextInt(1,99))

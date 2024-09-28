@@ -21,7 +21,7 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
     //@Query("select (count(c) > 0) from Company c where c.name = ?1 or c.email = ?2")
     boolean existsByNameOrEmail(String name, String email);
 
-    //@Query("select c from Company c where c.email = ?1 and c.password = ?2")
+    @Query("SELECT c.id FROM Company c WHERE c.email = :email AND c.password = :password")
     Integer getCompanyIdByEmailAndPassword(String email, String password);
 
     @Query("select c from Company c")

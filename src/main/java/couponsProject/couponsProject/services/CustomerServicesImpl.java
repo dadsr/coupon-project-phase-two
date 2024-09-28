@@ -27,8 +27,8 @@ public class CustomerServicesImpl implements CustomerServices {
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-        int id = customerRepository.getCustomerByEmailAndPassword(email,password);
-        if (id >0) {
+        Integer id = customerRepository.getCustomerByEmailAndPassword(email,password);
+        if (id != null && id > 0) {
             log.debug("Login succeeded, customer id {}", id);
             return id;
         }else {
@@ -42,7 +42,6 @@ public class CustomerServicesImpl implements CustomerServices {
         log.info("Entering getCustomer using customerId: {}", customerId);
         return customerRepository.getCustomerById(customerId);
     }
-    //todo where to put transaction
     @Transactional
     @Override
     public void couponPurchase(int customerId, int couponId){
@@ -68,7 +67,13 @@ public class CustomerServicesImpl implements CustomerServices {
     @Override
     public List<Coupon> getCoupons(int customerId) {
         log.info("Entering getCoupons using customerId: {}", customerId);
-        return customerRepository.getCustomerById(customerId).getCoupons();
+        Customer customer = customerRepository.getCustomerById(customerId);
+        if(customer.getId() == customerId ){
+            return customer.getCoupons();
+        }else{
+            throw new CouponException("customer doesn't exists");
+        }
+
     }
 
    @Override

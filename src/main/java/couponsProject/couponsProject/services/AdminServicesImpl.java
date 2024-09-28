@@ -70,12 +70,12 @@ public class AdminServicesImpl implements AdminServices {
     }
 
     @Override
-    public Company getOneCompany(int companyID){
-        log.info("entering getOneCompany using company id: {}",companyID);
-        if(companyRepository.existsById(companyID)) {
-            return companyRepository.findCompaniesById(companyID);
+    public Company getOneCompany(int companyId){
+        log.info("entering getOneCompany using company id: {}",companyId);
+        if(companyRepository.existsById(companyId)) {
+            return companyRepository.findCompaniesById(companyId);
         }else {
-            log.error("getOneCompany throw NoSuchElementException company id: {}",companyID);
+            log.error("getOneCompany throw NoSuchElementException company id: {}",companyId);
             throw new NoSuchElementException("no such element");
         }
     }
