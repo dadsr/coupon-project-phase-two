@@ -86,7 +86,7 @@ class CustomerServicesImplTest {
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,category))
                 .as("test getting coupons by category and id")
                 .doesNotThrowAnyException();
-        List<Coupon> coupons = customerServices.getCoupons(customerId,category);
+        coupons = customerServices.getCoupons(customerId,category);
 
         Assertions.assertThat(coupons.size())
                 .as("test coupons size")
@@ -97,7 +97,7 @@ class CustomerServicesImplTest {
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,maxPrice))
                 .as("test getting coupons by max price and customer id")
                 .doesNotThrowAnyException();
-        List<Coupon> coupons = customerServices.getCoupons(customerId,maxPrice);
+        coupons = customerServices.getCoupons(customerId,maxPrice);
 
         Assertions.assertThat(coupons.size())
                 .as("test coupons size")

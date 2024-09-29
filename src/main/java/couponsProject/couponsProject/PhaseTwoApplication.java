@@ -21,12 +21,15 @@ public class PhaseTwoApplication {
         ConfigurableApplicationContext ctx = SpringApplication.run(PhaseTwoApplication.class, args);
         AdminServices adminService = ctx.getBean(AdminServices.class);
         CompanyServices companyServices = ctx.getBean(CompanyServices.class);
-        CustomerServices companyCustomerServices = ctx.getBean(CustomerServices.class);
+        CustomerServices customerServices = ctx.getBean(CustomerServices.class);
 
         Random rand = new Random();
         ArrayList<Company> companies = new ArrayList<>();
         ArrayList<Customer> customers = new ArrayList<>();
 
+
+
+/*
         for (int i = 0; i < 5; i++) {
             companies.add(
                     Company.builder()
@@ -112,14 +115,21 @@ public class PhaseTwoApplication {
         //delete coupon
         companyServices.deleteCoupon(coupons.get(0).getId());
 
+        //couponPurchase
+        customers= adminService.getAllCustomers();
+        companies = adminService.getAllCompanies();
+        coupons =companies.get(0).getCoupons();
+        for (Coupon coupon : coupons) {
+            for (Customer customer : customers) {
+                customerServices.couponPurchase(customer.getId(), coupon.getId());
+            }
+        }
 
+
+
+
+*/
 
     }
-
-
-
-
-
-
-    }
+}
 

@@ -28,18 +28,12 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
     //@Query("select c from Coupon c where c.company.id = ?1 and c.price <= ?2")
     List<Coupon> findAllByCompanyIdAndPriceIsLessThanEqual(int companyID, Double maxPrice);
 
-/*    @Modifying
-    @Query("select c from Coupon c where c.id = ?1 and c.startDate >= getdate() and c.endDate >= getdate() and c.amount >0")
-    boolean findCouponsByIdAndStartDateIsAfterAndEndDateIsAfterAndAmountGreaterThan(int id);
-*/
-    @Query(value = "SELECT 1 WHERE " +
-            "EXISTS (" +
-            "SELECT 1 FROM customers_vs_coupons WHERE customer_id = :customerId AND coupons_id = :couponId) " +
-            "AND EXISTS (" +
-            "SELECT 1 FROM coupons WHERE id = :couponId AND start_date <= CURDATE() AND end_date >= CURDATE() AND amount > 0);"
-            , nativeQuery = true)
-    boolean existPurchase(@Param("customerId") int customerId,
-                          @Param("couponId") int couponId);
+    //JPA's method query derivation is limited when handling nested relationships such as ManyToMany.
+    @Query("SELECT CASE WHEN COUNT(c) > 0 THEN true ELSE false END " +
+            "FROM Customer cust JOIN cust.coupons c " +
+            "WHERE cust.id = :customerId AND c.id = :couponId")
+    boolean existsPurchase(@Param("customerId") int customerId, @Param("couponId") int couponId);
+
 
     @Query("select c from Coupon c where c.id = ?1")
     Coupon getCouponById(int couponId);

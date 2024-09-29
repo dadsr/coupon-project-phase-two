@@ -46,8 +46,7 @@ public class CustomerServicesImpl implements CustomerServices {
     @Override
     public void couponPurchase(int customerId, int couponId){
         log.info("Entering couponPurchase using customerId: {} couponId: {}", customerId, couponId);
-        //todo not working
-        if(couponRepository.existPurchase(customerId,couponId)){
+        if(!couponRepository.existsPurchase(customerId,couponId)){
             Customer customer = customerRepository.getCustomerById(customerId);
             Coupon coupon = couponRepository.getCouponById(couponId);
             //coupon list

@@ -2,6 +2,7 @@ package couponsProject.couponsProject.services;
 
 
 import couponsProject.couponsProject.beans.Company;
+import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.controllers.exseptions.CompanyException;
 import couponsProject.couponsProject.controllers.exseptions.CustomerException;
@@ -57,10 +58,17 @@ public class AdminServicesImpl implements AdminServices {
             throw new NoSuchElementException("Company does not exist");
         }
     }
+
     @Override
     public void deleteCompany(int companyID) {
         log.info("entering deleteCompany, using company id:{}",companyID);
         if(companyRepository.existsById(companyID)) {
+            // Remove coupon associations with customers to Resolve the Foreign Key Constraint
+            Company company = companyRepository.findCompaniesById(companyID);
+            for (Coupon coupon :company.getCoupons() ) {
+                coupon.getCustomers().clear();
+                couponRepository.save(coupon);
+            }
             companyRepository.deleteById(companyID);
             deleteCoupons(companyID);
         }else {
