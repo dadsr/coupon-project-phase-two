@@ -122,7 +122,7 @@ public class AdminServicesImpl implements AdminServices {
             customerRepository.save(customer);
         }else{
             log.error("updateCustomer throw NoSuchElementException customer id:{}",customer.getId());
-            throw new NoSuchElementException("customer dose not exists");
+            throw new NoSuchElementException("customer does not exist");
         }
     }
 
@@ -135,7 +135,7 @@ public class AdminServicesImpl implements AdminServices {
             log.debug("deleteCustomer succeeded, customer id:{}",customerID);
         }else {
             log.error("No such customer to delete, customer id:{}",customerID);
-            throw new NoSuchElementException("customer dose not exists");
+            throw new NoSuchElementException("customer does not exists");
         }
     }
 

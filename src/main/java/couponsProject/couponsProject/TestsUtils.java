@@ -29,8 +29,8 @@ public  class TestsUtils {
     public static List<Company> createCompanies(int num) {
         return createEntities(num, () -> Company.builder()
                 .name("comp" + Math.random())
-                .email((int) (Math.random() * 100) + "@comp.co.il")
-                .password(String.valueOf(Math.random() * 10))
+                .email(rand.nextInt(1,1000) + "@comp.co.il")
+                .password(String.valueOf(rand.nextInt(1,1000000)))
                 .build());
     }
 
@@ -39,8 +39,8 @@ public  class TestsUtils {
         return createEntities(num, () -> Customer.builder()
                 .firstName("first" + Math.random())
                 .lastName("last")
-                .email((int) (Math.random() * 100) + "@walla.co.il")
-                .password(String.valueOf(Math.random() * 10))
+                .email(rand.nextInt(1,1000) + "@walla.co.il")
+                .password(String.valueOf(rand.nextInt(1,1000000)))
                 .build());
     }
 
@@ -51,8 +51,8 @@ public  class TestsUtils {
         return createEntities(num,() -> Coupon.builder()
                 .company(company)
                 .category(CategoryEnum.fromId(rand.nextInt(CategoryEnum.values().length)))
-                .title("title" + rand.nextInt(1,99))
-                .description("desc" + rand.nextInt(1,99))
+                .title("title" + rand.nextInt(1,1000000))
+                .description("desc" + rand.nextInt(1,1000000))
                 .startDate(Date.valueOf("2024-11-01"))
                 .endDate(Date.valueOf("2024-12-01"))
                 .amount(rand.nextInt(1, 30))

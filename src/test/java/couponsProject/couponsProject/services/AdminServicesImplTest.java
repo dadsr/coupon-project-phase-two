@@ -109,7 +109,7 @@ Random rand = new Random();
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("no such element");
     }
-
+//todo
     @Test
     void deleteCompany() {
         Company company = TestsUtils.createCompanies(1).get(0);
@@ -150,18 +150,21 @@ Random rand = new Random();
 
     @Test
     void getAllCompanies() {
-        Assertions.assertThat(adminServices.getAllCompanies()).hasSize(companiesSize);
+        int size = adminServices.getAllCompanies().size();
+
+        List<Company> companies = TestsUtils.createCompanies(10);
+
+        for (Company company : companies) {
+            adminServices.addCompany(company);
+        }
+        Assertions.assertThat(adminServices.getAllCompanies()).hasSize(size +10);
+
     }
 
     /********************************** customers *************************************/
     @Test
     void addCustomer() {
-        Customer customer =Customer.builder()
-                .firstName("first")
-                .lastName("last")
-                .email(clientEmail)
-                .password("987654321")
-                .build();
+        Customer customer = TestsUtils.createCustomers(1).get(0);
 
         Assertions.assertThatCode(() -> adminServices.addCustomer(customer))
                 .as("test if adding customer does not throw any exception")
@@ -185,27 +188,31 @@ Random rand = new Random();
 
     @Test
     void updateCustomer() {
-        Customer customer = adminServices.getOneCustomer(customerServices.login(clientEmail,"987654321"));
-        String updatedEmail = "update" + customer.getEmail();
-        customer.setEmail(updatedEmail);
+        Customer customer = TestsUtils.createCustomers(1).get(0);
+        adminServices.addCustomer(customer);
+        customer.setEmail("update" + customer.getEmail());
 
         Assertions.assertThatCode(() -> adminServices.updateCustomer(customer)).doesNotThrowAnyException();
         Assertions.assertThat(
                         adminServices.getOneCustomer(customer.getId()).getEmail())
                 .as("test if updated customer was updated successful")
-                .isEqualTo(updatedEmail);
+                .isEqualTo(customer.getEmail());
 
         //NoSuchElementException
-        Assertions.assertThatThrownBy(() -> adminServices.updateCustomer(customer))
+        Customer customer2 = TestsUtils.createCustomers(1).get(0);
+        Assertions.assertThatThrownBy(() -> adminServices.updateCustomer(customer2))
                 .as("Test if updating a non-existent customer throws NoSuchElementException")
                 .isInstanceOf(NoSuchElementException.class)
-                .hasMessageContaining("Customer does not exist");
+                .hasMessageContaining("customer does not exist");
     }
     @Test
     void getOneCustomer() {
-        int id =customerServices.login(clientEmail,"987654321");
-        Customer customer = adminServices.getOneCustomer(id);
-        Assertions.assertThat(customer).as("test getting customer by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
+        Customer customer = TestsUtils.createCustomers(1).get(0);
+        adminServices.addCustomer(customer);
+
+        Customer customerDb = adminServices.getOneCustomer(customer.getId());
+
+        Assertions.assertThat(customerDb).as("test getting customer by id").isNotNull().hasFieldOrPropertyWithValue("id",customer.getId());
 
         Assertions.assertThatThrownBy(() -> adminServices.getOneCustomer(9999))
                 .as("test when customer dose not exist")
@@ -215,19 +222,27 @@ Random rand = new Random();
 
     @Test
     void deleteCustomer() {
-        int id =customerServices.login(clientEmail,"987654321");
+        Customer customer = TestsUtils.createCustomers(1).get(0);
+        adminServices.addCustomer(customer);
 
-        Assertions.assertThatCode(() -> adminServices.deleteCustomer(id)).doesNotThrowAnyException();
+        Assertions.assertThatCode(() -> adminServices.deleteCustomer(customer.getId())).doesNotThrowAnyException();
         //NoSuchElementException
-        Assertions.assertThatThrownBy(() -> adminServices.deleteCustomer(id))
+        Assertions.assertThatThrownBy(() -> adminServices.deleteCustomer(customer.getId()))
                 .as("test if customer was deleted successful")
                 .isInstanceOf(NoSuchElementException.class)
-                .hasMessageContaining("Customer does not exist");
+                .hasMessageContaining("customer does not exists");
 
     }
 
     @Test
     void getAllCustomers() {
-        Assertions.assertThat(adminServices.getAllCustomers()).hasSize(clientsSize);
+        int size = adminServices.getAllCustomers().size();
+
+        List<Customer> customers = TestsUtils.createCustomers(10);
+
+        for (Customer customer : customers) {
+            adminServices.addCustomer(customer);
+        }
+        Assertions.assertThat(adminServices.getAllCustomers()).hasSize(size +10);
     }
 }
