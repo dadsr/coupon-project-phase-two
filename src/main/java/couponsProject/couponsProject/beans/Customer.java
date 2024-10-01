@@ -53,12 +53,12 @@ public class Customer {
     }
 
     public void addCoupon(Coupon coupon) {
-        this.coupons.add(coupon);
+        coupons.add(coupon);
         coupon.getCustomers().add(this);
     }
 
     public void removeCoupon(Coupon coupon) {
-        this.coupons.remove(coupon);
+        coupons.remove(coupon);
         coupon.getCustomers().remove(this);
     }
 }

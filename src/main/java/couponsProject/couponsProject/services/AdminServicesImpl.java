@@ -29,7 +29,7 @@ public class AdminServicesImpl implements AdminServices {
 
     @Override
     public int login(String email, String password){
-        log.info("entering login using Email: {} Password: {}", email, password);
+        log.info("Entering login using Email: {} Password: {}", email, password);
         return (Objects.equals(email, "admin@admin.com") && Objects.equals(password, "admin"))?1:0;
     }
 
@@ -61,16 +61,22 @@ public class AdminServicesImpl implements AdminServices {
 
     @Override
     public void deleteCompany(int companyID) {
-        log.info("entering deleteCompany, using company id:{}",companyID);
+        log.info("Entering deleteCompany, using company id:{}",companyID);
+        log.info("Entering companyRepository.existsById company id:{}",companyID);
         if(companyRepository.existsById(companyID)) {
+         /*
             // Remove coupon associations with customers to Resolve the Foreign Key Constraint
             Company company = companyRepository.findCompaniesById(companyID);
             for (Coupon coupon :company.getCoupons() ) {
-                coupon.getCustomers().clear();
                 couponRepository.save(coupon);
             }
-            companyRepository.deleteById(companyID);
+
+
             deleteCoupons(companyID);
+
+          */
+            log.info("Entering companyRepository.deleteById company id:{}",companyID);
+            companyRepository.deleteById(companyID);
         }else {
             log.error("deleteCompany throw NoSuchElementException customer id:{}",companyID);
             throw new NoSuchElementException("no such element");
@@ -79,7 +85,7 @@ public class AdminServicesImpl implements AdminServices {
 
     @Override
     public Company getOneCompany(int companyId){
-        log.info("entering getOneCompany using company id: {}",companyId);
+        log.info("Entering getOneCompany using company id: {}",companyId);
         if(companyRepository.existsById(companyId)) {
             return companyRepository.findCompaniesById(companyId);
         }else {
@@ -100,7 +106,7 @@ public class AdminServicesImpl implements AdminServices {
 
     @Override
     public void addCustomer(Customer customer){
-        log.info("entering addCustomer customer email:{}",customer.getEmail());
+        log.info("Entering addCustomer customer email:{}",customer.getEmail());
         if(!customerRepository.existsByEmail(customer.getEmail())){
             customerRepository.save(customer);
         }else{
@@ -181,8 +187,9 @@ public class AdminServicesImpl implements AdminServices {
         }
     }
 
-    private void deleteCoupons(int companyID) {
-        companyRepository.deleteById(companyID);
+    private void deleteCoupons(int companyId) {
+        log.info("Entering deleteCoupons using company Id: {}", companyId);
+        companyRepository.deleteById(companyId);
     }
     //
 }

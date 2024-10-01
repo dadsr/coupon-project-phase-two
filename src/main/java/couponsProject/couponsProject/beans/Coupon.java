@@ -35,7 +35,7 @@ public class Coupon {
     private int amount;
     private double price;
     private String image;
-    @ManyToMany(mappedBy = "coupons")
+    @ManyToMany(mappedBy = "coupons", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Customer> customers;
 
 
@@ -78,12 +78,14 @@ public class Coupon {
     public void addCustomer(Customer customer) {
         if(customers==null) {
             customers = new ArrayList<>();
+            customer.getCoupons().add(this);
         }
         customers.add(customer);
     }
 
     public void removeCustomer(Customer customer) {
         customers.remove(customer);
+        customer.getCoupons().remove(this);
     }
 
     @Override

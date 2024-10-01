@@ -38,7 +38,7 @@ public class CompanyServicesImpl implements CompanyServices {
 
     @Override
     public Company getCompanyDetails(int companyId){
-        log.info("entering getCompanyDetails using company id : {}",companyId);
+        log.info("Entering getCompanyDetails using company id : {}",companyId);
         if(companyRepository.existsById(companyId)) {
             return companyRepository.findCompaniesById(companyId);
         }else {

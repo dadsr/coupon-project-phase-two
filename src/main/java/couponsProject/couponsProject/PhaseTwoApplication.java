@@ -29,7 +29,7 @@ public class PhaseTwoApplication {
 
 
 
-/*
+
         for (int i = 0; i < 5; i++) {
             companies.add(
                     Company.builder()
@@ -128,7 +128,7 @@ public class PhaseTwoApplication {
 
 
 
-*/
+
 
     }
 }
