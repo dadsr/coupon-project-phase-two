@@ -245,3 +245,592 @@
 01-10-2024 23:52:40 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 01-10-2024 23:52:40 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 01-10-2024 23:52:40 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 15:33:44 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 17668 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 15:33:44 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 15:33:48 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 15:33:49 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 809 ms. Found 3 JPA repository interfaces.
+02-10-2024 15:33:54 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 15:33:54 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 15:33:55 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 15:33:58 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 15:33:58 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 15:34:01 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6caa4dc5
+02-10-2024 15:34:01 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 15:34:06 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 15:34:07 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:34:08 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 15:34:11 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 15:34:13 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 30.773 seconds (process running for 36.372)
+02-10-2024 15:34:15 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3573793773480407 and company email:684@comp.co.il
+02-10-2024 15:34:16 - c.c.services.CompanyServicesImpl - Entering login using Email: 684@comp.co.il Password: 488623
+02-10-2024 15:34:16 - c.c.services.CompanyServicesImpl - Entering login using Email: wrongemail@admin.com Password: 488623
+02-10-2024 15:34:16 - c.c.services.CompanyServicesImpl - Login failed for Email: wrongemail@admin.com Password: 488623
+02-10-2024 15:34:16 - c.c.services.CompanyServicesImpl - Entering login using Email: 684@comp.co.il Password: wrongpassword
+02-10-2024 15:34:16 - c.c.services.CompanyServicesImpl - Login failed for Email: 684@comp.co.il Password: wrongpassword
+02-10-2024 15:34:16 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:34:16 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 15:34:16 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 15:37:30 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 18020 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 15:37:30 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 15:37:32 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 15:37:33 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 408 ms. Found 3 JPA repository interfaces.
+02-10-2024 15:37:34 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 15:37:34 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 15:37:34 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 15:37:36 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 15:37:36 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 15:37:37 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7440265c
+02-10-2024 15:37:37 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 15:37:41 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 15:37:41 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:37:42 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 15:37:44 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 15:37:45 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 16.059 seconds (process running for 18.646)
+02-10-2024 15:37:46 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.30654188016661954 and company email:776@comp.co.il
+02-10-2024 15:37:46 - c.c.services.CompanyServicesImpl - Entering getCompanyDetails using company id : 31
+02-10-2024 15:37:47 - c.c.services.CompanyServicesImpl - Entering getCompanyDetails using company id : 9999
+02-10-2024 15:37:47 - c.c.services.CompanyServicesImpl - getOneCompany throw NoSuchElementException company id: 9999
+02-10-2024 15:37:47 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:37:47 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 15:37:47 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 15:48:51 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 18716 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 15:48:51 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 15:48:54 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 15:48:54 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 366 ms. Found 3 JPA repository interfaces.
+02-10-2024 15:48:55 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 15:48:56 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 15:48:56 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 15:48:57 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 15:48:57 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 15:48:58 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1224e1b6
+02-10-2024 15:48:58 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 15:49:02 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 15:49:02 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:49:03 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 15:49:05 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 15:49:06 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 15.529 seconds (process running for 18.094)
+02-10-2024 15:49:07 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.5187238513621011 and company email:267@comp.co.il
+02-10-2024 15:49:08 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 32 and title: title491224
+02-10-2024 15:49:08 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 32
+02-10-2024 15:49:08 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 32 and title: title491224
+02-10-2024 15:49:08 - c.c.services.CompanyServicesImpl - Coupon already exists for company id: 32 and title: title491224
+02-10-2024 15:49:08 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:49:08 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 15:49:08 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 15:52:09 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 4924 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 15:52:09 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 15:52:12 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 15:52:12 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 374 ms. Found 3 JPA repository interfaces.
+02-10-2024 15:52:14 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 15:52:14 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 15:52:14 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 15:52:16 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 15:52:16 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 15:52:17 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5fe5c68b
+02-10-2024 15:52:17 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 15:52:21 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 15:52:21 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:52:21 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 15:52:23 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 15:52:25 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 17.688 seconds (process running for 30.725)
+02-10-2024 15:52:27 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.33995283946224364 and company email:936@comp.co.il
+02-10-2024 15:52:27 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 33 and title: title889739
+02-10-2024 15:52:27 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 33
+02-10-2024 15:52:49 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 33 and title: title889739
+02-10-2024 15:52:49 - c.c.services.CompanyServicesImpl - Coupon already exists for company id: 33 and title: title889739
+02-10-2024 15:53:54 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s79ms592µs600ns).
+02-10-2024 15:55:46 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m52s231ms466µs).
+02-10-2024 15:55:46 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:55:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 15:55:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 15:55:56 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 10776 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 15:55:56 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 15:55:59 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 15:55:59 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 331 ms. Found 3 JPA repository interfaces.
+02-10-2024 15:56:01 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 15:56:01 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 15:56:01 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 15:56:02 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 15:56:02 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 15:56:03 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c1c9881
+02-10-2024 15:56:03 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 15:56:07 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 15:56:07 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:56:08 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 15:56:10 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 15:56:11 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 15.897 seconds (process running for 18.933)
+02-10-2024 15:56:13 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.22515323086662686 and company email:701@comp.co.il
+02-10-2024 15:56:13 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title389806
+02-10-2024 15:56:13 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 34
+02-10-2024 15:56:13 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title389806
+02-10-2024 15:56:13 - c.c.services.CompanyServicesImpl - Coupon already exists for company id: 34 and title: title389806
+02-10-2024 15:56:13 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 15:56:13 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 15:56:13 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:02:32 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 5412 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:02:32 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:02:35 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:02:35 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 364 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:02:37 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:02:37 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:02:37 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:02:38 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:02:38 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:02:39 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22e813fc
+02-10-2024 16:02:39 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:02:42 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:02:43 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:02:43 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:02:45 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:02:47 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 15.629 seconds (process running for 18.682)
+02-10-2024 16:02:48 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.4099627317602621 and company email:467@comp.co.il
+02-10-2024 16:02:48 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title221172
+02-10-2024 16:05:14 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m34s536ms311µs300ns).
+02-10-2024 16:05:14 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:05:14 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:05:14 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 35
+02-10-2024 16:05:14 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:05:19 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 16540 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:05:19 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:05:21 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:05:22 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 346 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:05:23 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:05:23 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:05:23 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:05:25 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:05:25 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:05:25 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e9fb485
+02-10-2024 16:05:25 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:05:30 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:05:30 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:05:30 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:05:33 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:05:34 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 16.107 seconds (process running for 19.035)
+02-10-2024 16:05:42 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.17578035703108685 and company email:27@comp.co.il
+02-10-2024 16:05:43 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.17578035703108685 or email:27@comp.co.il
+02-10-2024 16:05:51 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:05:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:05:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:07:06 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 13308 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:07:06 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:07:08 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:07:09 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 347 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:07:10 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:07:10 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:07:10 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:07:11 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:07:11 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:07:12 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e9fb485
+02-10-2024 16:07:12 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:07:16 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:07:16 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:07:17 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:07:19 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:07:20 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 15.313 seconds (process running for 18.114)
+02-10-2024 16:07:30 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.44572318480879014 and company email:501@comp.co.il
+02-10-2024 16:07:45 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title543483
+02-10-2024 16:08:21 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 36
+02-10-2024 16:08:46 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 36
+02-10-2024 16:09:32 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title543483
+02-10-2024 16:10:20 - c.c.services.CompanyServicesImpl - Coupon already exists for company id: 36 and title: title543483
+02-10-2024 16:14:27 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m38s538ms329µs400ns).
+02-10-2024 16:14:27 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:14:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:14:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:14:38 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 12216 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:14:38 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:14:42 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:14:42 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 345 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:14:44 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:14:44 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:14:44 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:14:45 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:14:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:14:46 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ffb0d10
+02-10-2024 16:14:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:14:50 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:14:51 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:14:51 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:14:54 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:14:56 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 18.509 seconds (process running for 21.844)
+02-10-2024 16:15:06 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.5430246362449485 and company email:990@comp.co.il
+02-10-2024 16:15:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title726280
+02-10-2024 16:15:07 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 37
+02-10-2024 16:15:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title726280
+02-10-2024 16:15:19 - c.c.services.CompanyServicesImpl - Coupon already exists for company id: 37 and title: title726280
+02-10-2024 16:15:36 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s264ms573µs300ns).
+02-10-2024 16:15:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title726280
+02-10-2024 16:15:36 - c.c.services.CompanyServicesImpl - Coupon already exists for company id: 37 and title: title726280
+02-10-2024 16:15:39 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:15:39 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:15:39 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:33:30 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 3324 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:33:30 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:33:32 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:33:32 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 205 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:33:33 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:33:34 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:33:34 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:33:35 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:33:35 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:33:36 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@68a5aadd
+02-10-2024 16:33:36 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:33:38 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:33:39 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:33:39 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:33:41 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:33:42 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 12.914 seconds (process running for 15.433)
+02-10-2024 16:33:43 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.2649801009735703 and company email:937@comp.co.il
+02-10-2024 16:33:43 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title752535
+02-10-2024 16:33:43 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 38
+02-10-2024 16:33:43 - c.c.services.CompanyServicesImpl - Entering updateCoupon, coupon id: 7
+02-10-2024 16:33:44 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 7
+02-10-2024 16:33:44 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:33:44 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:33:44 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:34:58 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 15964 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:34:58 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:35:00 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:35:00 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 185 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:35:01 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:35:01 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:35:01 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:35:02 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:35:02 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:35:03 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@794cb26b
+02-10-2024 16:35:03 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:35:05 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:35:05 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:35:06 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:35:08 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:35:09 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 11.383 seconds (process running for 13.474)
+02-10-2024 16:35:09 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.6597714246000859 and company email:827@comp.co.il
+02-10-2024 16:35:10 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 39 and title: title235384
+02-10-2024 16:35:10 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 39
+02-10-2024 16:35:10 - c.c.services.CompanyServicesImpl - Entering updateCoupon, coupon id: 8
+02-10-2024 16:35:10 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 39
+02-10-2024 16:35:10 - c.c.services.CompanyServicesImpl - Entering updateCoupon, coupon id: 0
+02-10-2024 16:35:10 - c.c.services.CompanyServicesImpl - No such coupon to update, company id: 39 and title: title542919
+02-10-2024 16:35:10 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:35:10 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:35:10 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:46:48 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 2160 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:46:48 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:46:50 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:46:50 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 185 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:46:51 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:46:51 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:46:52 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:46:52 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:46:53 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:46:53 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@794cb26b
+02-10-2024 16:46:53 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:46:56 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:46:56 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:46:56 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:46:58 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:46:59 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 11.468 seconds (process running for 13.512)
+02-10-2024 16:47:00 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.12778618585054358 and company email:87@comp.co.il
+02-10-2024 16:47:00 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.12778618585054358 or email:87@comp.co.il
+02-10-2024 16:47:00 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:47:00 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:47:00 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:48:01 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 7064 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:48:01 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:48:03 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:48:03 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 183 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:48:04 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:48:04 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:48:04 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:48:05 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:48:05 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:48:05 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e4afd10
+02-10-2024 16:48:05 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:48:08 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:48:08 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:48:09 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:48:10 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:48:11 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 10.962 seconds (process running for 12.993)
+02-10-2024 16:48:12 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.18003805494887448 and company email:462@comp.co.il
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title297129
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title946980
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title351896
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title755458
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title61462
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title514393
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title536375
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title923313
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title754990
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title688955
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title2921
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title369806
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title635778
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title506964
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title555940
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title738157
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title16127
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title194941
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title56343
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 40 and title: title807760
+02-10-2024 16:48:12 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 40
+02-10-2024 16:48:13 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:48:13 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:48:13 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:48:37 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 3960 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:48:37 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:48:39 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:48:39 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 205 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:48:40 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:48:40 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:48:40 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:48:41 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:48:41 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:48:42 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@18db3b3c
+02-10-2024 16:48:42 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:48:44 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:48:45 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:48:45 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:48:47 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:48:48 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 11.73 seconds (process running for 13.99)
+02-10-2024 16:48:48 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.582419612652406 and company email:631@comp.co.il
+02-10-2024 16:48:49 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 41 and title: title250977
+02-10-2024 16:48:49 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 41
+02-10-2024 16:48:49 - c.c.services.CompanyServicesImpl - Entering updateCoupon, coupon id: 29
+02-10-2024 16:48:49 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 41
+02-10-2024 16:48:49 - c.c.services.CompanyServicesImpl - Entering updateCoupon, coupon id: 0
+02-10-2024 16:48:49 - c.c.services.CompanyServicesImpl - No such coupon to update, company id: 41 and title: title488856
+02-10-2024 16:48:49 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:48:49 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:48:49 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:48:58 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 9680 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:48:58 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:49:00 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:49:00 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 207 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:49:01 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:49:01 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:49:01 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:49:02 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:49:02 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:49:03 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d8be7b9
+02-10-2024 16:49:03 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:49:05 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:49:06 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:49:06 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:49:08 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:49:09 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 11.182 seconds (process running for 13.162)
+02-10-2024 16:49:09 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.19654806680023507 and company email:668@comp.co.il
+02-10-2024 16:49:10 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 42 and title: title527684
+02-10-2024 16:49:10 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 30
+02-10-2024 16:49:10 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 30
+02-10-2024 16:49:10 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:49:10 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:49:10 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:50:51 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 18656 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:50:51 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:50:53 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:50:54 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 183 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:50:55 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:50:55 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:50:55 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:50:56 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:50:56 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:50:56 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@632c3f55
+02-10-2024 16:50:56 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:50:59 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:50:59 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:51:00 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:51:01 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:51:02 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 11.534 seconds (process running for 13.634)
+02-10-2024 16:51:03 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7791008314219274 and company email:879@comp.co.il
+02-10-2024 16:51:03 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 43 and title: title145545
+02-10-2024 16:51:04 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 31
+02-10-2024 16:51:04 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 31
+02-10-2024 16:51:04 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:51:04 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:51:04 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:53:18 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 1216 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:53:18 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:53:20 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:53:20 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 188 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:53:21 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:53:21 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:53:21 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:53:22 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:53:22 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:53:23 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22e813fc
+02-10-2024 16:53:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:53:26 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:53:26 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:53:26 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:53:28 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:53:29 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 12.234 seconds (process running for 14.66)
+02-10-2024 16:53:30 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7713050430640113 and company email:920@comp.co.il
+02-10-2024 16:53:30 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 44 and title: title192127
+02-10-2024 16:53:31 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 32
+02-10-2024 16:54:16 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52s818ms807µs).
+02-10-2024 16:54:35 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 32
+02-10-2024 16:54:40 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:54:40 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:54:40 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:55:14 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 18912 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:55:14 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:55:16 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:55:17 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 202 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:55:18 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:55:18 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:55:18 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:55:19 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:55:19 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:55:19 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@13dc6649
+02-10-2024 16:55:19 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:55:22 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:55:22 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:55:23 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:55:25 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:55:26 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 12.381 seconds (process running for 14.685)
+02-10-2024 16:55:27 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.30197941888216306 and company email:372@comp.co.il
+02-10-2024 16:57:23 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m3s74ms311µs800ns).
+02-10-2024 16:57:28 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 45 and title: title870199
+02-10-2024 16:57:42 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 33
+02-10-2024 16:58:04 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 33
+02-10-2024 16:58:23 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:58:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 16:58:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 16:59:31 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.2 with PID 1924 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 16:59:31 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 16:59:33 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 16:59:33 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 195 ms. Found 3 JPA repository interfaces.
+02-10-2024 16:59:35 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 16:59:35 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 16:59:35 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 16:59:36 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 16:59:36 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 16:59:37 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@402a69f
+02-10-2024 16:59:37 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 16:59:39 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 16:59:40 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 16:59:40 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 16:59:42 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 16:59:43 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 12.524 seconds (process running for 14.942)
+02-10-2024 16:59:44 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9103184167853077 and company email:272@comp.co.il
+02-10-2024 16:59:44 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 46 and title: title640573
+02-10-2024 17:00:02 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 34
+02-10-2024 17:01:08 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m350ms749µs300ns).
+02-10-2024 17:02:16 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m7s650ms352µs400ns).
+02-10-2024 17:02:16 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 34
+02-10-2024 17:02:16 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:02:16 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 17:02:16 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 17:09:38 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 17348 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 17:09:38 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 17:09:40 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 17:09:41 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 229 ms. Found 3 JPA repository interfaces.
+02-10-2024 17:09:42 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 17:09:42 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 17:09:42 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 17:09:43 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 17:09:43 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 17:09:44 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6076c66
+02-10-2024 17:09:44 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 17:09:46 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 17:09:47 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:09:47 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 17:09:49 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 17:09:50 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 13.168 seconds (process running for 15.891)
+02-10-2024 17:09:51 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:689@walla.co.il
+02-10-2024 17:09:51 - c.c.services.CustomerServicesImpl - Entering login using Email: 689@walla.co.il Password: 163134
+02-10-2024 17:09:51 - c.c.services.CustomerServicesImpl - Entering login using Email: wrongemail@admin.com Password: 163134
+02-10-2024 17:09:51 - c.c.services.CustomerServicesImpl - Login failed for Email: wrongemail@admin.com Password: 163134
+02-10-2024 17:09:51 - c.c.services.CustomerServicesImpl - Entering login using Email: 689@walla.co.il Password: wrongpassword
+02-10-2024 17:09:51 - c.c.services.CustomerServicesImpl - Login failed for Email: 689@walla.co.il Password: wrongpassword
+02-10-2024 17:09:51 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:09:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 17:09:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 17:12:53 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 4112 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 17:12:53 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 17:12:55 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 17:12:55 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 207 ms. Found 3 JPA repository interfaces.
+02-10-2024 17:12:56 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 17:12:56 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 17:12:56 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 17:12:57 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 17:12:57 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 17:12:58 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@aa0dbca
+02-10-2024 17:12:58 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 17:13:00 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 17:13:01 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:13:01 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 17:13:03 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 17:13:04 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.302 seconds (process running for 13.344)
+02-10-2024 17:13:05 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:155@walla.co.il
+02-10-2024 17:13:05 - c.c.services.CustomerServicesImpl - Entering getCustomer using customerId: 25
+02-10-2024 17:13:05 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:13:05 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 17:13:05 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 17:15:21 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 18596 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 17:15:21 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 17:15:23 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 17:15:23 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 222 ms. Found 3 JPA repository interfaces.
+02-10-2024 17:15:24 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 17:15:24 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 17:15:25 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 17:15:25 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 17:15:25 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 17:15:26 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@794cb26b
+02-10-2024 17:15:26 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 17:15:29 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 17:15:29 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:15:29 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 17:15:31 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 17:15:32 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 12.052 seconds (process running for 14.121)
+02-10-2024 17:15:32 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:190@walla.co.il
+02-10-2024 17:15:33 - c.c.services.CustomerServicesImpl - Entering getCustomer using customerId: 26
+02-10-2024 17:15:33 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:15:33 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 17:15:33 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 17:18:17 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 11276 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 17:18:17 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 17:18:19 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 17:18:19 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 180 ms. Found 3 JPA repository interfaces.
+02-10-2024 17:18:20 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 17:18:20 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 17:18:20 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 17:18:21 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 17:18:21 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 17:18:22 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f7cd50e
+02-10-2024 17:18:22 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 17:18:24 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 17:18:24 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:18:25 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 17:18:27 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 17:18:28 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.197 seconds (process running for 13.248)
+02-10-2024 17:18:28 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:569@walla.co.il
+02-10-2024 17:18:29 - c.c.services.CustomerServicesImpl - Entering getCustomer using customerId: 27
+02-10-2024 17:18:29 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:18:29 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 17:18:29 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+02-10-2024 17:25:44 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 10516 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+02-10-2024 17:25:44 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+02-10-2024 17:25:46 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+02-10-2024 17:25:46 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 174 ms. Found 3 JPA repository interfaces.
+02-10-2024 17:25:47 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+02-10-2024 17:25:48 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+02-10-2024 17:25:48 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+02-10-2024 17:25:48 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+02-10-2024 17:25:49 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+02-10-2024 17:25:49 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f7cd50e
+02-10-2024 17:25:49 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+02-10-2024 17:25:52 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+02-10-2024 17:25:52 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:25:52 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+02-10-2024 17:25:54 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+02-10-2024 17:25:55 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.213 seconds (process running for 13.228)
+02-10-2024 17:25:56 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3520673653950833 and company email:661@comp.co.il
+02-10-2024 17:25:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 47 and title: title851782
+02-10-2024 17:25:56 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:547@walla.co.il
+02-10-2024 17:25:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 28 couponId: 35
+02-10-2024 17:25:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 28 couponId: 35
+02-10-2024 17:25:56 - c.c.services.CustomerServicesImpl - Purchase is not possible for customerId: 28 couponId: 35
+02-10-2024 17:25:56 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+02-10-2024 17:25:56 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+02-10-2024 17:25:56 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

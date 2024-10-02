@@ -24,13 +24,6 @@ class AdminServicesImplTest {
     @Autowired
     private CustomerServices customerServices;
 
-/**********************************************************************************/
-Random rand = new Random();
-    int companiesSize = 9;
-    String companyName = "compAndCo";
-    String companyEmail ="compAndCo@comp.co.il";
-    int clientsSize = 5;
-    String clientEmail ="client@mail.co.il";
 
 /********************************** companies *************************************/
     @Test

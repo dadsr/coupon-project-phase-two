@@ -21,39 +21,43 @@ import java.util.NoSuchElementException;
 @SpringBootTest
 class CompanyServicesImplTest {
     @Autowired
+    private AdminServices adminServices;
+    @Autowired
     private CompanyServices companyServices;
 
-    int companyId =6;
-    String companyEmail ="compAndCo@comp.co.il";
-    String clientEmail ="compAndCo@comp.co.il";
+    String companyEmail =null;
+
 
     /**********************************************************************************/
 
 
     @Test
     void login() {
-        Assertions.assertThat(companyServices.login(companyEmail,"123456789"))
-                .as("test login success")
-                .isEqualTo(companyId);
+        Company company = TestsUtils.createCompanies(1).get(0);
+        adminServices.addCompany(company);
 
-        Assertions.assertThatThrownBy(() -> companyServices.login("wrongemail@admin.com", "123456789"))
+        Assertions.assertThat(companyServices.login(company.getEmail(), company.getPassword()))
+                .as("test login success")
+                .isEqualTo(company.getId());
+
+        Assertions.assertThatThrownBy(() -> companyServices.login("wrongemail@admin.com",  company.getPassword()))
                 .as("test login wrong mail Failure")
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("No such company");
 
-        Assertions.assertThatThrownBy(() -> companyServices.login(companyEmail, "wrongpassword"))
+        Assertions.assertThatThrownBy(() -> companyServices.login( company.getEmail(), "wrongpassword"))
                 .as("test login wrong password Failure")
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("No such company");
-
       }
 
     @Test
     void getCompanyDetails() {
+        Company company = TestsUtils.createCompanies(1).get(0);
+        adminServices.addCompany(company);
 
-        int id = companyServices.login(companyEmail,"123456789");
-        Company company = companyServices.getCompanyDetails(id);
-        Assertions.assertThat(company).as("test getting company by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
+        Company companyDb = companyServices.getCompanyDetails(company.getId());
+        Assertions.assertThat(companyDb).as("test getting company by id").isNotNull().hasFieldOrPropertyWithValue("id",company.getId());
 
         Assertions.assertThatThrownBy(() -> companyServices.getCompanyDetails(9999))
                 .as("test when company does not exist")
@@ -64,86 +68,84 @@ class CompanyServicesImplTest {
 
     @Test
     void addCoupon() {
-        int id = companyServices.login(companyEmail,"123456789");
-        Coupon coupon = Coupon.builder()
-                .company(companyServices.getCompanyDetails(id))
-                .category(CategoryEnum.FASHION)
-                .title("title")
-                .description("desc")
-                .startDate(Date.valueOf("2024-11-01"))
-                .endDate(Date.valueOf("2024-12-01"))
-                .amount(30)
-                .price(99.99)
-                .image(null)
-                .build();
+        Company company = TestsUtils.createCompanies(1).get(0);
+        adminServices.addCompany(company);
+        Coupon coupon= TestsUtils.createCoupons(company,1).get(0);
 
         Assertions.assertThatCode(() -> companyServices.addCoupon(coupon))
                 .as("test if adding coupon does not throw any exception")
                 .doesNotThrowAnyException();
 
-        Assertions.assertThat(
-                        companyServices.getCompanyCoupons(id).stream().filter(c -> c.getTitle().equals(coupon.getTitle())
+        Assertions.assertThat(companyServices.getCompanyCoupons(company.getId()).stream().filter(c -> c.getTitle().equals(coupon.getTitle())
                                 && c.getDescription().equals(coupon.getDescription())).count())
                 .as("test if adding coupon was successful")
                 .isEqualTo(1);
 
-
+//todo
         Assertions.assertThatThrownBy(() -> companyServices.addCoupon(coupon))
                 .as("test if adding exist coupon does throw exception")
                 .isInstanceOf(CouponException.class)
-               // .hasMessageContaining("Coupon already exists")
-        ;
+                .hasMessageContaining("Coupon already exists");
+
     }
 
     @Test
     void updateCoupon() {
-        int id =companyServices.login(companyEmail,"123456789");
-        Coupon coupon = companyServices.getCompanyCoupons(id).get(0);
-        coupon.setPrice(coupon.getPrice()/2);
+        Company company = TestsUtils.createCompanies(1).get(0);
+        adminServices.addCompany(company);
+        Coupon coupon= TestsUtils.createCoupons(company,1).get(0);
+        companyServices.addCoupon(coupon);
 
-        Assertions.assertThatCode(() -> companyServices.updateCoupon(coupon)).doesNotThrowAnyException();
-        Assertions.assertThat(
-                        companyServices.getCompanyCoupons(id).get(0).getPrice())
+        Coupon couponDb = companyServices.getCompanyCoupons(company.getId()).get(0);
+        Double price = coupon.getPrice()/2;
+        couponDb.setPrice(price);
+
+        Assertions.assertThatCode(() -> companyServices.updateCoupon(couponDb)).doesNotThrowAnyException();
+
+        Assertions.assertThat(companyServices.getCompanyCoupons(company.getId()).get(0).getPrice())
                 .as("test if updated coupon was updated successful")
-                .isEqualTo(coupon.getPrice());
+                .isEqualTo(price);
 
         //NoSuchElementException
-        Coupon coupon2 = Coupon.builder()
-                .company(companyServices.getCompanyDetails(id))
-                .category(CategoryEnum.FASHION)
-                .title("non")
-                .description("exists")
-                .build();
+        Coupon coupon2 = TestsUtils.createCoupons(company,1).get(0);
+
         Assertions.assertThatThrownBy(() -> companyServices.updateCoupon(coupon2))
                 .as("Test if updating a non-exists coupon throws NoSuchElementException")
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("Coupon does not exists");
     }
-
+//todo
     @Test
     void deleteCoupon() {
-        int id = companyServices.login(companyEmail,"123456789");
-        int coupId = companyServices.getCompanyCoupons(id).get(0).getId();
+        Company company = TestsUtils.createCompanies(1).get(0);
+        adminServices.addCompany(company);
+        Coupon coupon= TestsUtils.createCoupons(company,1).get(0);
+        companyServices.addCoupon(coupon);
+;
 
-        Assertions.assertThatCode(() -> companyServices.deleteCoupon(coupId)).doesNotThrowAnyException();
+        Assertions.assertThatCode(() -> companyServices.deleteCoupon(coupon.getId())).doesNotThrowAnyException();
 
         //NoSuchElementException
-        Assertions.assertThatThrownBy(() -> companyServices.deleteCoupon(coupId))
+       Assertions.assertThatThrownBy(() -> companyServices.deleteCoupon(coupon.getId()))
                 .as("test if coupon was deleted successful")
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("coupon does not exist");
+
     }
 
     @Test
     void getCompanyCoupons() {
-        int id = companyServices.login(companyEmail,"123456789");
-        List<Coupon> coupons = companyServices.getCompanyCoupons(id);
-        int size = coupons.size();
-        companyServices.addCoupon(TestsUtils.createCoupons(companyServices.getCompanyDetails(id),1).get(0));
-        coupons = companyServices.getCompanyCoupons(id);
-        Assertions.assertThat(coupons).as("check coupons by company")
+        Company company = TestsUtils.createCompanies(1).get(0);
+        adminServices.addCompany(company);
+        List <Coupon> coupons = TestsUtils.createCoupons(company,20);
+        for (Coupon coupon : coupons) {
+            companyServices.addCoupon(coupon);
+        }
+        List <Coupon> couponsDb = companyServices.getCompanyCoupons(company.getId());
+        Assertions.assertThat(couponsDb)
+                .as("check coupons by company")
                 .isNotNull()
-                .hasSize(size+1);
+                .hasSize(coupons.size());
     }
 
 
