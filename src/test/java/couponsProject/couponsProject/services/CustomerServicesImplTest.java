@@ -8,9 +8,11 @@ import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.controllers.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.event.annotation.BeforeTestMethod;
 
 import java.util.Calendar;
 import java.util.List;
@@ -79,7 +81,6 @@ class CustomerServicesImplTest {
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
 
-
         Assertions.assertThatCode(() -> customerServices.couponPurchase(customer.getId(),coupon.getId()))
                 .as("test purchase process")
                 .doesNotThrowAnyException();
@@ -126,7 +127,7 @@ class CustomerServicesImplTest {
                 .doesNotThrowAnyException();
         couponsDb = customerServices.getCoupons(customerId,category);
 
-        Assertions.assertThat(coupons.size())
+        Assertions.assertThat(couponsDb.size())
                 .as("test coupons size")
                 .isNotNull()
                 .isEqualTo(coupons.stream().filter(coupon -> coupon.getCategory().equals(category)).count());

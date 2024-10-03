@@ -21,11 +21,11 @@ public class Customer {
     private String lastName;
     private String email;
     private String password;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "customers_vs_coupons",
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "coupons_id"))
-    private List<Coupon> coupons = new ArrayList<>();
+    private List<Coupon> coupons ;
 
     public Customer(String firstName, String lastName, String email, String password, List<Coupon> coupons) {
         this.firstName = firstName;
@@ -57,8 +57,10 @@ public class Customer {
         coupon.getCustomers().add(this);
     }
 
+
     public void removeCoupon(Coupon coupon) {
         coupons.remove(coupon);
         coupon.getCustomers().remove(this);
     }
+
 }

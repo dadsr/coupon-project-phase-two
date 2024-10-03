@@ -30,7 +30,7 @@ public class  Company {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Coupon> coupons = new ArrayList<>();
+    private List<Coupon> coupons ;
 
     public Company(String name, String email, String password, List<Coupon> coupons) {
         this.name = name;

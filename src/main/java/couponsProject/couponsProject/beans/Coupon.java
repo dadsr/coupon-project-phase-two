@@ -35,7 +35,7 @@ public class Coupon {
     private int amount;
     private double price;
     private String image;
-    @ManyToMany(mappedBy = "coupons", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "coupons", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Customer> customers;
 
 

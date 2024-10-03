@@ -51,12 +51,12 @@ public class CompanyServicesImpl implements CompanyServices {
     public void addCoupon(Coupon coupon){
         Company company =coupon.getCompany();
         log.info("Entering addCoupon, company id: {} and title: {}",company.getId(),coupon.getTitle());
-            if(company.getCoupons().stream().anyMatch(coupon::equals)){
+            if(company.getCoupons()!=null && company.getCoupons().stream().anyMatch(coupon::equals)){
                 log.error("Coupon already exists for company id: {} and title: {}",company.getId(),coupon.getTitle());
                 throw new CouponException("Coupon already exists");
             }else {
                 couponRepository.save(coupon);
-                company.getCoupons().add(coupon);
+              //  company.getCoupons().add(coupon);
                 log.debug("AddCoupon succeeded, coupon id {}",coupon.getId());
             }
     }

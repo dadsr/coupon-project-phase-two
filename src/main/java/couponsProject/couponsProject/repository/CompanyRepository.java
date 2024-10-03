@@ -27,7 +27,4 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
     @Query("select c from Company c")
     ArrayList<Company> getAllCompanies();
 
-
-
-
 }

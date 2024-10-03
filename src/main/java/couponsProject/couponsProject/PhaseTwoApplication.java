@@ -28,7 +28,25 @@ public class PhaseTwoApplication {
         ArrayList<Customer> customers = new ArrayList<>();
 
 
+        Company company = TestsUtils.createCompanies(1).get(0);
+        List<Coupon> coupons = TestsUtils.createCoupons(company,10);
+        Customer customer = TestsUtils.createCustomers(1).get(0);
+        adminService.addCompany(company);
+        adminService.addCustomer(customer);
+        for (Coupon coupon : coupons) {
+            companyServices.addCoupon(coupon);
+            customerServices.couponPurchase(customer.getId(), coupon.getId());
+        }
+        company =adminService.getOneCompany(company.getId());
+        System.out.print(company.getCoupons());
+        System.out.print(customer.getCoupons());
+        System.out.print(coupons.get(0).getCustomers());
 
+
+
+
+
+/*
 
         for (int i = 0; i < 5; i++) {
             companies.add(
@@ -127,7 +145,7 @@ public class PhaseTwoApplication {
 
 
 
-
+*/
 
 
     }

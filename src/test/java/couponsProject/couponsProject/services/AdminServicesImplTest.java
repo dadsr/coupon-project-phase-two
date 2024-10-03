@@ -7,6 +7,7 @@ import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.controllers.exseptions.CompanyException;
 import couponsProject.couponsProject.controllers.exseptions.CustomerException;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +27,7 @@ class AdminServicesImplTest {
 
 
 /********************************** companies *************************************/
+
     @Test
     void testLogin() {
         //admin@admin.com:admin
@@ -39,7 +41,7 @@ class AdminServicesImplTest {
                 .as("test login wrong password Failure")
                 .isEqualTo(0);
     }
-
+@BeforeEach
     @Test
     void addCompany() {
         Company company = TestsUtils.createCompanies(1).get(0);
