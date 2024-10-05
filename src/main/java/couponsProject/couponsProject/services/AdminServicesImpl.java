@@ -12,6 +12,7 @@ import couponsProject.couponsProject.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,9 +23,9 @@ import java.util.Objects;
 @Slf4j
 @Service
 public class AdminServicesImpl implements AdminServices {
-    CompanyRepository companyRepository;
-    CustomerRepository customerRepository;
-    private CouponRepository couponRepository;
+    private final CompanyRepository companyRepository;
+    private final CustomerRepository customerRepository;
+    private final CouponRepository couponRepository;
 
 
     @Override
@@ -58,29 +59,27 @@ public class AdminServicesImpl implements AdminServices {
             throw new NoSuchElementException("Company does not exist");
         }
     }
-
+    @Transactional
     @Override
     public void deleteCompany(int companyID) {
         log.info("Entering deleteCompany, using company id:{}",companyID);
-        log.info("Entering companyRepository.existsById company id:{}",companyID);
-        if(companyRepository.existsById(companyID)) {
-         /*
-            // Remove coupon associations with customers to Resolve the Foreign Key Constraint
-            Company company = companyRepository.findCompaniesById(companyID);
-            for (Coupon coupon :company.getCoupons() ) {
-                couponRepository.save(coupon);
+
+        log.info("Entering companyRepository.findById company id:{}",companyID);
+        Company company = companyRepository.findById(companyID)
+                .orElseThrow(()-> {
+                    log.error("deleteCompany throw NoSuchElementException company id:{}",companyID);
+                    return new NoSuchElementException("Company does not exist");
+                });
+        for (Coupon coupon : company.getCoupons()) {
+            for (Customer customer : coupon.getCustomers()) {
+                //detach customer
+                customer.getCoupons().remove(coupon);
             }
-
-
-            deleteCoupons(companyID);
-
-          */
-            log.info("Entering companyRepository.deleteById company id:{}",companyID);
-            companyRepository.deleteById(companyID);
-        }else {
-            log.error("deleteCompany throw NoSuchElementException customer id:{}",companyID);
-            throw new NoSuchElementException("no such element");
         }
+
+        log.info("Entering companyRepository.deleteAllIgnoreCase(company) delete company id:{}",companyID);
+        companyRepository.delete(company);
+
     }
 
     @Override
@@ -158,6 +157,12 @@ public class AdminServicesImpl implements AdminServices {
     public ArrayList<Customer> getAllCustomers(){
         log.info("entering getAllCustomers");
         return customerRepository.findAll();
+    }
+
+    @Override
+    public List<Coupon> getAllCoupons() {
+        log.info("entering getAllCoupons");
+        return couponRepository.findAll();
     }
 
     /****************************** service methods **********************************/

@@ -3,6 +3,7 @@ package couponsProject.couponsProject.services;
 import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
+import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.controllers.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import couponsProject.couponsProject.repository.CouponRepository;
@@ -73,16 +74,23 @@ public class CompanyServicesImpl implements CompanyServices {
         }
     }
 
+    @Transactional
     @Override
     public void deleteCoupon(int couponID){
         log.info("Entering deleteCoupon coupon id: {}", couponID);
-        if (couponRepository.existsById(couponID)){
-            couponRepository.deleteCouponById(couponID);
-            log.debug("DeleteCoupon succeeded, coupon id {}",couponID);
-        }else{
+        Coupon coupon = couponRepository.findById(couponID).orElseThrow(()->{
             log.error("No such coupon to update, coupon id: {}", couponID);
-            throw new NoSuchElementException("coupon does not exist");
+            return new NoSuchElementException("coupon does not exist");
+        });
+        for (Customer customer : coupon.getCustomers()) {
+            customer.getCoupons().remove(coupon);
         }
+        //detach company
+        coupon.detachCompany();
+        couponRepository.delete(coupon);
+        log.debug("DeleteCoupon succeeded, coupon id {}",couponID);
+
+
     }
 
     @Override

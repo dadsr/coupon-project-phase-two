@@ -14,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.Random;
 
 @SpringBootTest
 class AdminServicesImplTest {
@@ -29,7 +28,7 @@ class AdminServicesImplTest {
 /********************************** companies *************************************/
 
     @Test
-    void testLogin() {
+    void Login() {
         //admin@admin.com:admin
         Assertions.assertThat(adminServices.login("admin@admin.com", "admin"))
                 .as("test login success")
@@ -96,7 +95,6 @@ class AdminServicesImplTest {
         adminServices.addCompany(company);
         int id =companyServices.login(company.getEmail(),company.getPassword());
 
-        Company company2 = adminServices.getOneCompany(id);
         Assertions.assertThat(company).as("getOneCompany - test getting company by id").isNotNull().hasFieldOrPropertyWithValue("id",id);
 
         Assertions.assertThatThrownBy(() -> adminServices.getOneCompany(9999))
@@ -122,7 +120,6 @@ class AdminServicesImplTest {
         customer =customerServices.getCustomer(customerServices.login(customer.getEmail(),customer.getPassword()));
 
         for (Coupon coupon : coupons) {
-           // companyServices.addCoupon(coupon);
             customerServices.couponPurchase(customer.getId(),coupon.getId());
         }
 

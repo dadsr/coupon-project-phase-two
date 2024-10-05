@@ -35,7 +35,7 @@ public class Coupon {
     private int amount;
     private double price;
     private String image;
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "coupons", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "coupons")
     private List<Customer> customers;
 
 
@@ -51,6 +51,8 @@ public class Coupon {
         this.image = image;
         if(customers!=null) {
             this.customers = customers;
+        }else {
+            this.customers = new ArrayList<>();
         }
     }
 
@@ -67,6 +69,8 @@ public class Coupon {
         this.image = image;
         if(customers!=null) {
             this.customers = customers;
+        }else {
+            this.customers = new ArrayList<>();
         }
     }
 
@@ -95,6 +99,11 @@ public class Coupon {
         Coupon coupon = (Coupon) o;
         return Objects.equals(title, coupon.title) &&
                 Objects.equals(company.getId(), coupon.company.getId());
+    }
+
+    public void detachCompany() {
+        getCompany().getCoupons().remove(this);
+        setCompany(null);
     }
 
 }

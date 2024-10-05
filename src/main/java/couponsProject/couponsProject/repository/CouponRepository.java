@@ -1,6 +1,7 @@
 package couponsProject.couponsProject.repository;
 
 import couponsProject.couponsProject.beans.CategoryEnum;
+import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -38,5 +39,6 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
     @Query("select c from Coupon c where c.id = ?1")
     Coupon getCouponById(int couponId);
 
+    void delete(Coupon coupon);
 
 }

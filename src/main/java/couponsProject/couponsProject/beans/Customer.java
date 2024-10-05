@@ -34,6 +34,8 @@ public class Customer {
         this.password = password;
         if (coupons != null) {
             this.coupons = coupons;
+        }else {
+            this.coupons = new ArrayList<>();
         }
     }
 
@@ -45,6 +47,8 @@ public class Customer {
         this.password = password;
         if (coupons != null) {
             this.coupons = coupons;
+        }else{
+            this.coupons = new ArrayList<>();
         }
     }
     @Builder

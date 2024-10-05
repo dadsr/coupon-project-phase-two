@@ -46,17 +46,12 @@ public class CustomerServicesImpl implements CustomerServices {
     @Override
     public void couponPurchase(int customerId, int couponId){
         log.info("Entering couponPurchase using customerId: {} couponId: {}", customerId, couponId);
-        if(!couponRepository.existsPurchase(customerId,couponId)){
+        Coupon coupon = couponRepository.getCouponById(couponId);
+        if((!couponRepository.existsPurchase(customerId,couponId)) && coupon.getAmount()>0){
             Customer customer = customerRepository.getCustomerById(customerId);
-            Coupon coupon = couponRepository.getCouponById(couponId);
-            //coupon list
-            customer.setCoupons(addToList(customer.getCoupons(),coupon));
-            customerRepository.save(customer);
-            //customers list
-            coupon.setCustomers(addToList(coupon.getCustomers(),customer));
-            couponRepository.save(coupon);
-            //amount
+            coupon.addCustomer(customer);
             coupon.setAmount(coupon.getAmount()-1);
+            customer.addCoupon(coupon);
         }else {
             log.error("Purchase is not possible for customerId: {} couponId: {}", customerId, couponId);
             throw new CouponException("Purchase is not possible");

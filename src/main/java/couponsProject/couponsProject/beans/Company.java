@@ -39,6 +39,8 @@ public class  Company {
         if (coupons != null) {
             this.coupons = coupons;
             coupons.forEach(coupon -> coupon.setCompany(this));//just in case
+        }else{
+            this.coupons = new ArrayList<>();
         }
     }
 
@@ -50,6 +52,7 @@ public class  Company {
         this.password = password;
         if (coupons != null)
             this.coupons = coupons;
+        else this.coupons = new ArrayList<>();
     }
 
     @Builder

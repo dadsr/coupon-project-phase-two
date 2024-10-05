@@ -4,6 +4,7 @@ import couponsProject.couponsProject.TestsUtils;
 import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
+import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.controllers.exseptions.CompanyException;
 import couponsProject.couponsProject.controllers.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
@@ -24,8 +25,8 @@ class CompanyServicesImplTest {
     private AdminServices adminServices;
     @Autowired
     private CompanyServices companyServices;
-
-    String companyEmail =null;
+    @Autowired
+    private CustomerServices customerServices;
 
 
     /**********************************************************************************/
@@ -117,10 +118,14 @@ class CompanyServicesImplTest {
 //todo
     @Test
     void deleteCoupon() {
+
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
         Coupon coupon= TestsUtils.createCoupons(company,1).get(0);
         companyServices.addCoupon(coupon);
+        Customer customer =TestsUtils.createCustomers(1).get(0);
+        adminServices.addCustomer(customer);
+        customerServices.couponPurchase(customer.getId(), coupon.getId());
 ;
 
         Assertions.assertThatCode(() -> companyServices.deleteCoupon(coupon.getId())).doesNotThrowAnyException();

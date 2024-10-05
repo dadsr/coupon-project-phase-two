@@ -1,9 +1,11 @@
 package couponsProject.couponsProject.services;
 
 import couponsProject.couponsProject.beans.Company;
+import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface AdminServices {
     int login(String email, String password);
@@ -28,5 +30,7 @@ public interface AdminServices {
     Customer getOneCustomer(int customerID);
 
     ArrayList<Customer> getAllCustomers();
+
+    List<Coupon> getAllCoupons();
 
 }

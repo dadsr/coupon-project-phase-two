@@ -29,11 +29,7 @@ class CustomerServicesImplTest {
     @Autowired
     private CompanyServices companyServices;
 
-    int customerId =6;
-    int companyId =7;
-    int couponsSize = 1;
-    CategoryEnum category =CategoryEnum.ELECTRONICS;
-    double maxPrice = 10;
+    Random rand = new Random();
 
     String customerEmail ="client@mail.co.il";
     @Autowired
@@ -69,7 +65,7 @@ class CustomerServicesImplTest {
                 .as("test get customer success")
                 .isEqualTo(customer.getId());
     }
-//todo
+
     @Test
     void couponPurchase() {
         Company company = TestsUtils.createCompanies(1).get(0);
@@ -93,7 +89,7 @@ class CustomerServicesImplTest {
 
     @Test
     void getCoupons() {
-        Random rand = new Random();
+
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
@@ -108,23 +104,27 @@ class CustomerServicesImplTest {
             customerServices.couponPurchase(customerId,coupon.getId());
         }
 
-
         /***************** by id *****************/
+
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId))
                 .as("test getting coupons by customer id")
                 .doesNotThrowAnyException();
+
         List<Coupon> couponsDb = customerServices.getCoupons(customerId);
 
         Assertions.assertThat(couponsDb.size())
                 .as("test coupons size")
                 .isNotNull()
                 .isEqualTo(coupons.size());
+
         /***************** by category *****************/
 
         CategoryEnum category = coupons.get(0).getCategory();
+
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,category))
                 .as("test getting coupons by category and id")
                 .doesNotThrowAnyException();
+
         couponsDb = customerServices.getCoupons(customerId,category);
 
         Assertions.assertThat(couponsDb.size())
@@ -133,15 +133,17 @@ class CustomerServicesImplTest {
                 .isEqualTo(coupons.stream().filter(coupon -> coupon.getCategory().equals(category)).count());
 
         /***************** by maxPrice *****************/
+
+        double maxPrice = coupons.get(rand.nextInt(coupons.size())).getPrice();
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,maxPrice))
                 .as("test getting coupons by max price and customer id")
                 .doesNotThrowAnyException();
-        coupons = customerServices.getCoupons(customerId,maxPrice);
+        couponsDb = customerServices.getCoupons(customerId,maxPrice);
 
-        Assertions.assertThat(coupons.size())
+        Assertions.assertThat(couponsDb.size())
                 .as("test coupons size")
                 .isNotNull()
-                .isGreaterThan(0);
+                .isEqualTo(coupons.stream().filter(coupon -> coupon.getPrice() <= maxPrice).count());
     }
 
 }

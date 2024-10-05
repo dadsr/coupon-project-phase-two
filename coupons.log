@@ -1,1025 +1,501 @@
-03-10-2024 11:36:55 - c.c.services.AdminServicesImplTest - Starting AdminServicesImplTest using Java 18.0.2 with PID 5172 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 11:36:55 - c.c.services.AdminServicesImplTest - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 11:36:59 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 11:36:59 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 399 ms. Found 3 JPA repository interfaces.
-03-10-2024 11:37:01 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 11:37:01 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 11:37:01 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 11:37:03 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 11:37:03 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 11:37:04 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2036f83
-03-10-2024 11:37:04 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 11:37:08 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 11:37:09 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 11:37:10 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 11:37:13 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 11:37:15 - c.c.services.AdminServicesImplTest - Started AdminServicesImplTest in 21.074 seconds (process running for 24.771)
-03-10-2024 11:37:16 - c.c.services.AdminServicesImpl - Entering login using Email: admin@admin.com Password: admin
-03-10-2024 11:37:17 - c.c.services.AdminServicesImpl - Entering login using Email: wrongemail@admin.com Password: admin
-03-10-2024 11:37:17 - c.c.services.AdminServicesImpl - Entering login using Email: admin@admin.com Password: wrongpassword
-03-10-2024 11:37:17 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 11:37:17 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 11:37:17 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 11:56:15 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 10976 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 11:56:15 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 11:56:18 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 11:56:18 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 248 ms. Found 3 JPA repository interfaces.
-03-10-2024 11:56:20 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 11:56:20 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 11:56:20 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 11:56:22 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 11:56:22 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 11:56:23 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d5ae78e
-03-10-2024 11:56:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 11:56:27 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 11:56:27 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 11:56:28 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 11:56:31 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 11:56:32 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 18.108 seconds (process running for 21.627)
-03-10-2024 11:56:33 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:984@walla.co.il
-03-10-2024 11:56:34 - c.c.services.CustomerServicesImpl - Entering getCustomer using customerId: 1
-03-10-2024 11:56:34 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:805@walla.co.il
-03-10-2024 11:56:34 - c.c.services.CustomerServicesImpl - Entering login using Email: 805@walla.co.il Password: 110812
-03-10-2024 11:56:34 - c.c.services.CustomerServicesImpl - Entering login using Email: wrongemail@admin.com Password: 110812
-03-10-2024 11:56:34 - c.c.services.CustomerServicesImpl - Login failed for Email: wrongemail@admin.com Password: 110812
-03-10-2024 11:56:34 - c.c.services.CustomerServicesImpl - Entering login using Email: 805@walla.co.il Password: wrongpassword
-03-10-2024 11:56:34 - c.c.services.CustomerServicesImpl - Login failed for Email: 805@walla.co.il Password: wrongpassword
-03-10-2024 11:56:34 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.46448577536247593 and company email:808@comp.co.il
-03-10-2024 11:56:34 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title365845
-03-10-2024 11:56:34 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title593839
-03-10-2024 11:56:34 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title465351
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title727054
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title477263
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title952677
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title547451
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title531179
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title547951
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title35325
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title80896
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title68220
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title679068
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title774850
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title399827
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title156146
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title251498
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title318754
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title485161
-03-10-2024 11:56:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title80925
-03-10-2024 11:56:35 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:130@walla.co.il
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 1
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 2
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 3
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 4
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 5
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 6
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 7
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 8
-03-10-2024 11:56:35 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 9
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 10
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 11
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 12
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 13
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 14
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 15
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 16
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 17
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 18
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 19
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 20
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 3
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 3
-03-10-2024 11:56:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.48942334449053004 and company email:350@comp.co.il
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title789900
-03-10-2024 11:56:36 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:119@walla.co.il
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 21
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 21
-03-10-2024 11:56:36 - c.c.services.CustomerServicesImpl - Purchase is not possible for customerId: 4 couponId: 21
-03-10-2024 11:56:36 - o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [couponsProject.couponsProject.services.CompanyServicesImplTest]: CompanyServicesImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-03-10-2024 11:56:36 - o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration couponsProject.couponsProject.PhaseTwoApplication for test class couponsProject.couponsProject.services.CompanyServicesImplTest
-03-10-2024 11:56:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7845701177134983 and company email:108@comp.co.il
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title996161
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 3
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering updateCoupon, coupon id: 22
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 3
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering updateCoupon, coupon id: 0
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - No such coupon to update, company id: 3 and title: title289333
-03-10-2024 11:56:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9820563358010158 and company email:339@comp.co.il
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title338746
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 23
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 23
-03-10-2024 11:56:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9294425165815033 and company email:487@comp.co.il
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title128325
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 5
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title128325
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Coupon already exists for company id: 5 and title: title128325
-03-10-2024 11:56:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.036257895260019435 and company email:952@comp.co.il
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering login using Email: 952@comp.co.il Password: 637509
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering login using Email: wrongemail@admin.com Password: 637509
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Login failed for Email: wrongemail@admin.com Password: 637509
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering login using Email: 952@comp.co.il Password: wrongpassword
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Login failed for Email: 952@comp.co.il Password: wrongpassword
-03-10-2024 11:56:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.035588912899076175 and company email:782@comp.co.il
-03-10-2024 11:56:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title626200
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title22198
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title813365
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title59579
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title583178
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title612379
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title191389
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title928
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title921825
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title280370
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title4040
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title479148
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title749872
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title825131
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title669688
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title694388
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title647135
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title577128
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title689796
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title447804
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 7
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.22475258634231932 and company email:309@comp.co.il
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering getCompanyDetails using company id : 8
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - Entering getCompanyDetails using company id : 9999
-03-10-2024 11:56:37 - c.c.services.CompanyServicesImpl - getOneCompany throw NoSuchElementException company id: 9999
-03-10-2024 11:56:37 - o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [couponsProject.couponsProject.services.AdminServicesImplTest]: AdminServicesImplTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-03-10-2024 11:56:37 - o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration couponsProject.couponsProject.PhaseTwoApplication for test class couponsProject.couponsProject.services.AdminServicesImplTest
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.6261258374780387 and company email:410@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.6261258374780387 and company email:410@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.6261258374780387 or email:410@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:389@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering deleteCustomer using customer id:5
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering deleteCustomer using customer id:5
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - No such customer to delete, customer id:5
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.14414957531271588 and company email:307@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.14414957531271588 and company email:307@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.14414957531271588 or email:307@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.010119922021912808 and company email:239@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.010119922021912808 and company email:239@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.010119922021912808 or email:239@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.5098768258598522 and company email:529@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.5098768258598522 and company email:529@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.5098768258598522 or email:529@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering login using Email: admin@admin.com Password: admin
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering login using Email: wrongemail@admin.com Password: admin
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering login using Email: admin@admin.com Password: wrongpassword
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.11997546205844944 and company email:750@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.11997546205844944 and company email:750@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.11997546205844944 or email:750@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3873993696197364 and company email:621@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering updateCompany, using company id:14
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering getOneCompany using company id: 14
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering updateCompany, using company id:0
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - No such company to update, company id:0
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.809124280105153 and company email:412@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.809124280105153 and company email:412@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.809124280105153 or email:412@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:481@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCustomers
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:481@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - addCustomer throw CustomerException email:481@walla.co.il already exists
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9621641735118271 and company email:765@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9621641735118271 and company email:765@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.9621641735118271 or email:765@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCustomers
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:552@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:508@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:770@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:511@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:730@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:177@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:118@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:605@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:961@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:442@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCustomers
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.6381944806933119 and company email:761@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.6381944806933119 and company email:761@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.6381944806933119 or email:761@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:117@walla.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getOneCustomer using customer id:17
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getOneCustomer using customer id:9999
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - No such customer to get, customer id:9999
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.2803052240457813 and company email:992@comp.co.il
-03-10-2024 11:56:37 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.2803052240457813 and company email:992@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.2803052240457813 or email:992@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.28135980103084557 and company email:543@comp.co.il
-03-10-2024 11:56:38 - c.c.services.CompanyServicesImpl - Entering login using Email: 543@comp.co.il Password: 941475
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Entering getOneCompany using company id: 19
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Entering getOneCompany using company id: 9999
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - getOneCompany throw NoSuchElementException company id: 9999
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9689559863807792 and company email:356@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9689559863807792 and company email:356@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.9689559863807792 or email:356@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3825789946350415 and company email:301@comp.co.il
-03-10-2024 11:56:38 - c.c.services.CompanyServicesImpl - Entering login using Email: 301@comp.co.il Password: 941462
-03-10-2024 11:56:38 - c.c.services.CompanyServicesImpl - Entering getCompanyDetails using company id : 21
-03-10-2024 11:56:38 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 21 and title: title771113
-03-10-2024 11:56:38 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 21 and title: title674997
-03-10-2024 11:56:38 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 21 and title: title399048
-03-10-2024 11:56:38 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 21
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:47@walla.co.il
-03-10-2024 11:56:38 - c.c.services.CustomerServicesImpl - Entering login using Email: 47@walla.co.il Password: 966547
-03-10-2024 11:56:38 - c.c.services.CustomerServicesImpl - Entering getCustomer using customerId: 18
-03-10-2024 11:56:38 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 18 couponId: 45
-03-10-2024 11:56:38 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 18 couponId: 46
-03-10-2024 11:56:38 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 18 couponId: 47
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Entering deleteCompany, using company id:21
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Entering companyRepository.existsById company id:21
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Entering companyRepository.deleteById company id:21
-03-10-2024 11:56:38 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 18
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.41472704287614515 and company email:540@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.41472704287614515 and company email:540@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.41472704287614515 or email:540@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.4344218141060395 and company email:783@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.38172351629676504 and company email:360@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.40100565408642663 and company email:363@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.24611630039320298 and company email:659@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7718408174451634 and company email:477@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3299475494169931 and company email:685@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.8529450393647988 and company email:83@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7217805721661205 and company email:144@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.02244221120904155 and company email:636@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.4108920469673625 and company email:648@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9525819407424305 and company email:260@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering getAllCompanies
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9525819407424305 and company email:260@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Company already exist for name:comp0.9525819407424305 or email:260@comp.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:947@walla.co.il
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering updateCustomer using customer id:19
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering getOneCustomer using customer id:19
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - entering updateCustomer using customer id:0
-03-10-2024 11:56:38 - c.c.services.AdminServicesImpl - updateCustomer throw NoSuchElementException customer id:0
-03-10-2024 11:56:38 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 11:56:38 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 11:56:38 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 11:58:19 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 4480 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 11:58:19 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 11:58:22 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 11:58:23 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 323 ms. Found 3 JPA repository interfaces.
-03-10-2024 11:58:24 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 11:58:24 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 11:58:24 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 11:58:26 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 11:58:26 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 11:58:26 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7440265c
-03-10-2024 11:58:26 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 11:58:30 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 11:58:30 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 11:58:31 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 11:58:33 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 11:58:35 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 16.13 seconds (process running for 19.206)
-03-10-2024 11:58:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9038980049430548 and company email:283@comp.co.il
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title393488
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title906460
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title570224
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title482998
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title527478
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title715803
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title514547
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title341522
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title510168
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title639718
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title363077
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title812835
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title425338
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title371193
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title268724
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title375973
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title394860
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title451970
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title881723
-03-10-2024 11:58:36 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 34 and title: title370727
-03-10-2024 11:58:36 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:103@walla.co.il
-03-10-2024 11:58:36 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 48
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 49
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 50
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 51
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 52
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 53
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 54
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 55
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 56
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 57
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 58
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 59
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 60
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 61
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 62
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 63
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 64
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 65
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 66
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 20 couponId: 67
-03-10-2024 11:58:37 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 20
-03-10-2024 11:58:38 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 20
-03-10-2024 11:58:38 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 11:58:38 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 11:58:38 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 12:01:51 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 10308 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 12:01:51 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 12:01:53 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 12:01:53 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 306 ms. Found 3 JPA repository interfaces.
-03-10-2024 12:01:55 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 12:01:55 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 12:01:55 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 12:01:56 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 12:01:57 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 12:01:57 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@22aefae0
-03-10-2024 12:01:57 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 12:02:01 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 12:02:01 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:02:02 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 12:02:04 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 12:02:06 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 15.907 seconds (process running for 18.924)
-03-10-2024 12:02:07 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7526125379494042 and company email:261@comp.co.il
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title542782
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title389279
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title534618
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title700882
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title900977
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title278283
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title221751
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title137485
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title593791
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title871515
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title527469
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title891331
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title182275
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title261995
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title792448
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title680883
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title927762
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title611237
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title87415
-03-10-2024 12:02:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 35 and title: title890493
-03-10-2024 12:02:07 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:174@walla.co.il
-03-10-2024 12:02:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 68
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 69
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 70
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 71
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 72
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 73
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 74
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 75
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 76
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 77
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 78
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 79
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 80
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 81
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 82
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 83
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 84
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 85
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 86
-03-10-2024 12:02:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 21 couponId: 87
-03-10-2024 12:02:09 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 21
-03-10-2024 12:02:09 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 21
-03-10-2024 12:02:09 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 21 and category: FOOD
-03-10-2024 12:02:09 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 21 and category: FOOD
-03-10-2024 12:02:09 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:02:09 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 12:02:09 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 12:06:16 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 7536 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 12:06:16 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 12:06:19 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 12:06:20 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 384 ms. Found 3 JPA repository interfaces.
-03-10-2024 12:06:22 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 12:06:22 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 12:06:23 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 12:06:25 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 12:06:26 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 12:06:27 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43a59289
-03-10-2024 12:06:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 12:06:33 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 12:06:33 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:06:34 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 12:06:37 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 12:06:39 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 25.451 seconds (process running for 31.555)
-03-10-2024 12:07:28 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m604ms737µs800ns).
-03-10-2024 12:07:30 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.9285430908105914 and company email:948@comp.co.il
-03-10-2024 12:07:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title652265
-03-10-2024 12:07:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title631383
-03-10-2024 12:07:42 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title837713
-03-10-2024 12:07:44 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title102705
-03-10-2024 12:07:44 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title819639
-03-10-2024 12:07:45 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title969098
-03-10-2024 12:07:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title307795
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title492914
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title103048
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title637952
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title792649
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title417628
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title250804
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title352369
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title511934
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title302584
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title204812
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title157382
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title652667
-03-10-2024 12:07:50 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 36 and title: title892473
-03-10-2024 12:07:50 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:626@walla.co.il
-03-10-2024 12:07:59 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 88
-03-10-2024 12:08:01 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 89
-03-10-2024 12:08:01 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 90
-03-10-2024 12:08:01 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 91
-03-10-2024 12:08:02 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 92
-03-10-2024 12:08:02 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 93
-03-10-2024 12:08:02 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 94
-03-10-2024 12:08:03 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 95
-03-10-2024 12:08:03 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 96
-03-10-2024 12:08:04 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 97
-03-10-2024 12:08:04 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 98
-03-10-2024 12:08:05 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 99
-03-10-2024 12:08:05 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 100
-03-10-2024 12:08:05 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 101
-03-10-2024 12:08:06 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 102
-03-10-2024 12:08:06 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 103
-03-10-2024 12:08:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 104
-03-10-2024 12:08:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 105
-03-10-2024 12:08:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 106
-03-10-2024 12:08:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 22 couponId: 107
-03-10-2024 12:08:40 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 22
-03-10-2024 12:09:00 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 22
-03-10-2024 12:09:23 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 22 and category: FOOD
-03-10-2024 12:10:15 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=55s141ms430µs600ns).
-03-10-2024 12:10:28 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 22 and category: FOOD
-03-10-2024 12:11:43 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m27s786ms189µs).
-03-10-2024 12:11:43 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:11:43 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 12:11:43 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 12:12:07 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 17904 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 12:12:07 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 12:12:14 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 12:12:15 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 879 ms. Found 3 JPA repository interfaces.
-03-10-2024 12:12:18 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 12:12:19 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 12:12:20 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 12:12:24 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 12:12:24 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 12:12:28 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@433d93e7
-03-10-2024 12:12:28 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 12:12:40 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 12:12:41 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:12:44 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 12:12:49 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 12:12:51 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 48.544 seconds (process running for 58.028)
-03-10-2024 12:13:12 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.8335100974556667 and company email:662@comp.co.il
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title286061
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title164560
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title233609
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title373542
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title425041
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title314178
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title611979
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title676092
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title326351
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title44799
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title363105
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title537656
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title597088
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title14122
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title423738
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title300388
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title722683
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title425949
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title36015
-03-10-2024 12:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 37 and title: title681748
-03-10-2024 12:13:14 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:146@walla.co.il
-03-10-2024 12:13:14 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 108
-03-10-2024 12:13:15 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 109
-03-10-2024 12:13:15 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 110
-03-10-2024 12:13:15 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 111
-03-10-2024 12:13:15 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 112
-03-10-2024 12:13:15 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 113
-03-10-2024 12:13:15 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 114
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 115
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 116
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 117
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 118
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 119
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 120
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 121
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 122
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 123
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 124
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 125
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 126
-03-10-2024 12:13:16 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 23 couponId: 127
-03-10-2024 12:13:17 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 23
-03-10-2024 12:13:17 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 23
-03-10-2024 12:13:17 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 23 and category: FOOD
-03-10-2024 12:13:17 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 23 and category: FOOD
-03-10-2024 12:15:51 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2m47s717ms373µs200ns).
-03-10-2024 12:15:51 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 23 and max price of: 10.0
-03-10-2024 12:15:51 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 23 and max price of: 10.0
-03-10-2024 12:15:51 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:15:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 12:15:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 12:15:59 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.2 with PID 2448 (started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 12:15:59 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 12:16:02 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 12:16:02 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 302 ms. Found 3 JPA repository interfaces.
-03-10-2024 12:16:03 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 12:16:04 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 12:16:04 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 12:16:05 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 12:16:06 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 12:16:06 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@749d7c01
-03-10-2024 12:16:06 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 12:16:10 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 12:16:11 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:16:11 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 12:16:14 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 12:16:16 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 17.919 seconds (process running for 21.399)
-03-10-2024 12:16:17 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7774995840120351 and company email:403@comp.co.il
-03-10-2024 12:16:17 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title446274
-03-10-2024 12:16:17 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title500821
-03-10-2024 12:16:17 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title959786
-03-10-2024 12:16:17 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title84325
-03-10-2024 12:16:17 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title525067
-03-10-2024 12:16:17 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title886087
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title501123
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title100179
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title515827
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title890508
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title793357
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title773593
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title850818
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title829892
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title872643
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title672095
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title368309
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title706144
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title876569
-03-10-2024 12:16:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 38 and title: title271795
-03-10-2024 12:16:18 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:883@walla.co.il
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 128
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 129
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 130
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 131
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 132
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 133
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 134
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 135
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 136
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 137
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 138
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 139
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 140
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 141
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 142
-03-10-2024 12:16:18 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 143
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 144
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 145
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 146
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 24 couponId: 147
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 24
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 24
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 24 and category: FASHION
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 24 and category: FASHION
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 24 and max price of: 10.0
-03-10-2024 12:16:19 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 24 and max price of: 10.0
-03-10-2024 12:16:19 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:16:19 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 12:16:19 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 12:50:39 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 11180 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 12:50:39 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 12:50:41 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 12:50:42 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 243 ms. Found 3 JPA repository interfaces.
-03-10-2024 12:50:42 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 12:50:42 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 12:50:42 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 12:50:43 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 12:50:43 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3161 ms
-03-10-2024 12:50:43 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 12:50:43 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 12:50:43 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 12:50:44 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 12:50:44 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 12:50:44 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24fef542
-03-10-2024 12:50:44 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 12:50:46 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 12:50:47 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:50:47 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 12:50:48 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 12:50:49 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 12:50:49 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 10.411 seconds (process running for 11.895)
-03-10-2024 12:54:12 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:54:12 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 12:54:12 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 12:56:56 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 8764 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 12:56:56 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 12:56:57 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 12:56:58 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138 ms. Found 3 JPA repository interfaces.
-03-10-2024 12:56:58 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 12:56:58 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 12:56:58 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 12:56:58 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 12:56:58 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2178 ms
-03-10-2024 12:56:59 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 12:56:59 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 12:56:59 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 12:56:59 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 12:56:59 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 12:57:00 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51813065
-03-10-2024 12:57:00 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 12:57:01 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 12:57:02 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:57:02 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 12:57:03 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 12:57:04 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 12:57:04 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 8.404 seconds (process running for 9.227)
-03-10-2024 12:57:04 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.8749071696196731 and company email:233@comp.co.il
-03-10-2024 12:57:04 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:306@walla.co.il
-03-10-2024 12:57:04 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 0
-03-10-2024 12:59:21 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:59:21 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 12:59:21 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 12:59:25 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 14324 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 12:59:25 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 12:59:26 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 12:59:27 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 355 ms. Found 3 JPA repository interfaces.
-03-10-2024 12:59:28 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 12:59:28 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 12:59:28 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 12:59:28 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 12:59:28 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3141 ms
-03-10-2024 12:59:28 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 12:59:29 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 12:59:29 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 12:59:29 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 12:59:30 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 12:59:30 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1328f482
-03-10-2024 12:59:30 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 12:59:33 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 12:59:33 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 12:59:33 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 12:59:35 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 12:59:36 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 12:59:36 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 11.63 seconds (process running for 12.969)
-03-10-2024 12:59:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.728608236236283 and company email:846@comp.co.il
-03-10-2024 12:59:36 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:668@walla.co.il
-03-10-2024 12:59:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 0
-03-10-2024 13:01:11 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m40s739ms385µs100ns).
-03-10-2024 13:01:23 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:01:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:01:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:01:31 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 12696 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:01:31 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:01:32 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:01:32 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 142 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:01:33 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:01:33 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:01:33 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:01:33 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:01:33 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2264 ms
-03-10-2024 13:01:33 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:01:33 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:01:33 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:01:34 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:01:34 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:01:34 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1aaf46e6
-03-10-2024 13:01:34 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:01:36 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:01:36 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:01:37 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:01:37 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:01:38 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:01:38 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 8.104 seconds (process running for 8.94)
-03-10-2024 13:01:38 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3780931320476175 and company email:612@comp.co.il
-03-10-2024 13:01:38 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:667@walla.co.il
-03-10-2024 13:01:38 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title917450
-03-10-2024 13:05:22 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:05:22 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:05:22 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:05:28 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 15988 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:05:28 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:05:29 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:05:29 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:05:30 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:05:30 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:05:30 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:05:30 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:05:30 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2217 ms
-03-10-2024 13:05:30 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:05:30 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:05:30 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:05:31 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:05:31 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:05:31 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72a34537
-03-10-2024 13:05:31 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:05:33 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:05:33 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:05:34 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:05:34 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:05:35 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:05:35 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 8.049 seconds (process running for 8.804)
-03-10-2024 13:05:35 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.4116449301670171 and company email:677@comp.co.il
-03-10-2024 13:05:35 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:595@walla.co.il
-03-10-2024 13:05:35 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title715085
-03-10-2024 13:07:43 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:07:43 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:07:43 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:07:49 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 2276 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:07:49 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:07:50 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:07:50 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 135 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:07:51 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:07:51 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:07:51 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:07:51 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:07:51 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2176 ms
-03-10-2024 13:07:51 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:07:51 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:07:51 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:07:52 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:07:52 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:07:52 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39acd1f1
-03-10-2024 13:07:52 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:07:54 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:07:54 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:07:55 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:07:55 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:07:56 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:07:56 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 7.96 seconds (process running for 8.736)
-03-10-2024 13:07:56 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.28369932012999843 and company email:198@comp.co.il
-03-10-2024 13:07:56 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:719@walla.co.il
-03-10-2024 13:07:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title485172
-03-10-2024 13:07:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 2
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title246574
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 3
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title626531
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 4
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title626788
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 5
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title623239
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 6
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title158986
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 7
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title91313
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 8
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title770731
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 9
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title273648
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 10
-03-10-2024 13:07:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title438607
-03-10-2024 13:07:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 11
-03-10-2024 13:10:46 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:10:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:10:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:10:48 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 13692 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:10:48 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:10:49 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:10:50 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 137 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:10:50 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:10:50 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:10:50 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:10:50 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:10:50 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2247 ms
-03-10-2024 13:10:51 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:10:51 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:10:51 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:10:51 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:10:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:10:52 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@92e2c93
-03-10-2024 13:10:52 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:10:53 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:10:54 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:10:54 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:10:55 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:10:56 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:10:56 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 8.398 seconds (process running for 9.152)
-03-10-2024 13:10:56 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.2972811541738747 and company email:820@comp.co.il
-03-10-2024 13:10:56 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:474@walla.co.il
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title117783
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 1
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title580654
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 2
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title159102
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 3
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title136497
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 4
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title152671
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 5
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title324401
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 6
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title442640
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 7
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title17613
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 8
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title698059
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 9
-03-10-2024 13:10:56 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title233400
-03-10-2024 13:10:56 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 10
-03-10-2024 13:14:42 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:14:42 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:14:42 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:14:47 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 5564 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:14:47 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:14:48 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:14:49 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 139 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:14:49 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:14:49 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:14:49 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:14:49 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:14:49 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2188 ms
-03-10-2024 13:14:50 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:14:50 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:14:50 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:14:50 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:14:50 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:14:51 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@51813065
-03-10-2024 13:14:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:14:52 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:14:52 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:14:53 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:14:54 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:14:54 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:14:54 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 8.043 seconds (process running for 8.831)
-03-10-2024 13:14:54 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.7920769049972806 and company email:252@comp.co.il
-03-10-2024 13:14:55 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:660@walla.co.il
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title819638
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 11
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title352042
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 12
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title708972
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 13
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title60670
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 14
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title393692
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 15
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title572371
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 16
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title55523
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 17
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title94379
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 18
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title70182
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 19
-03-10-2024 13:14:55 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title332110
-03-10-2024 13:14:55 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 20
-03-10-2024 13:14:55 - c.c.services.AdminServicesImpl - Entering getOneCompany using company id: 2
-03-10-2024 13:15:23 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:15:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:15:23 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:15:26 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 5172 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:15:26 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:15:27 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:15:28 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 429 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:15:29 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:15:29 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:15:29 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:15:29 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:15:29 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3043 ms
-03-10-2024 13:15:29 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:15:29 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:15:29 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:15:30 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:15:30 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:15:31 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f6fd101
-03-10-2024 13:15:31 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:15:34 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:15:34 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:15:34 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:15:35 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:15:36 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:15:36 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 11.267 seconds (process running for 12.397)
-03-10-2024 13:15:36 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.8679563189306015 and company email:719@comp.co.il
-03-10-2024 13:15:37 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:347@walla.co.il
-03-10-2024 13:15:37 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title249459
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 21
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title472356
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 22
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title954847
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 23
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title583489
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 24
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title367594
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 25
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title244401
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 26
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title948538
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 27
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title210635
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 28
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title675437
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 29
-03-10-2024 13:15:46 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title488520
-03-10-2024 13:15:46 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 30
-03-10-2024 13:16:14 - c.c.services.AdminServicesImpl - Entering getOneCompany using company id: 3
-03-10-2024 13:19:15 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m1s741ms580µs100ns).
-03-10-2024 13:44:27 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:44:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:44:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:45:44 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 8708 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:45:44 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:45:45 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:45:45 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:45:46 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:45:46 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:45:46 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:45:46 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:45:46 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2236 ms
-03-10-2024 13:45:46 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:45:46 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:45:46 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:45:47 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:45:47 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:45:47 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f20b022
-03-10-2024 13:45:47 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:45:49 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:45:49 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:45:49 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:45:50 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:45:51 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:45:51 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 8.139 seconds (process running for 8.953)
-03-10-2024 13:45:51 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3090839732183628 and company email:35@comp.co.il
-03-10-2024 13:45:51 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:408@walla.co.il
-03-10-2024 13:45:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title98570
-03-10-2024 13:45:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 31
-03-10-2024 13:45:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title901516
-03-10-2024 13:45:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 32
-03-10-2024 13:45:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title73336
-03-10-2024 13:45:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 33
-03-10-2024 13:45:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title568461
-03-10-2024 13:45:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 34
-03-10-2024 13:45:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title570155
-03-10-2024 13:45:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 35
-03-10-2024 13:45:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title4353
-03-10-2024 13:45:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 36
-03-10-2024 13:45:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title388572
-03-10-2024 13:45:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 37
-03-10-2024 13:45:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title902359
-03-10-2024 13:45:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 38
-03-10-2024 13:45:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title328836
-03-10-2024 13:45:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 39
-03-10-2024 13:45:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title192482
-03-10-2024 13:45:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 40
-03-10-2024 13:45:52 - c.c.services.AdminServicesImpl - Entering getOneCompany using company id: 4
-03-10-2024 13:50:27 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:50:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:50:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-03-10-2024 13:50:32 - c.couponsProject.PhaseTwoApplication - Starting PhaseTwoApplication using Java 18.0.2 with PID 4248 (G:\My Drive\javaProjects\couponsProject\PHASE TWO\target\classes started by vesty in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
-03-10-2024 13:50:32 - c.couponsProject.PhaseTwoApplication - No active profile set, falling back to 1 default profile: "default"
-03-10-2024 13:50:34 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-03-10-2024 13:50:34 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 166 ms. Found 3 JPA repository interfaces.
-03-10-2024 13:50:35 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-03-10-2024 13:50:35 - o.a.catalina.core.StandardService - Starting service [Tomcat]
-03-10-2024 13:50:35 - o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.28]
-03-10-2024 13:50:35 - o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-03-10-2024 13:50:35 - o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2582 ms
-03-10-2024 13:50:35 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-03-10-2024 13:50:35 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
-03-10-2024 13:50:35 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-03-10-2024 13:50:36 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-03-10-2024 13:50:36 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-03-10-2024 13:50:36 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24fef542
-03-10-2024 13:50:36 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-03-10-2024 13:50:38 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-03-10-2024 13:50:38 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:50:39 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
-03-10-2024 13:50:39 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-03-10-2024 13:50:40 - o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-03-10-2024 13:50:40 - c.couponsProject.PhaseTwoApplication - Started PhaseTwoApplication in 8.434 seconds (process running for 9.228)
-03-10-2024 13:50:40 - c.c.services.AdminServicesImpl - entering addCompany company name:comp0.3806018834972966 and company email:98@comp.co.il
-03-10-2024 13:50:40 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:429@walla.co.il
-03-10-2024 13:50:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title82837
-03-10-2024 13:50:40 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 41
-03-10-2024 13:50:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title777682
-03-10-2024 13:50:40 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 42
-03-10-2024 13:50:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title1993
-03-10-2024 13:50:40 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 43
-03-10-2024 13:50:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title53283
-03-10-2024 13:50:40 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 44
-03-10-2024 13:50:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title391543
-03-10-2024 13:50:40 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 45
-03-10-2024 13:50:41 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title392176
-03-10-2024 13:50:41 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 46
-03-10-2024 13:50:41 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title433351
-03-10-2024 13:50:41 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 47
-03-10-2024 13:50:41 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title968470
-03-10-2024 13:50:41 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 48
-03-10-2024 13:50:41 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title211621
-03-10-2024 13:50:41 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 49
-03-10-2024 13:50:41 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title600085
-03-10-2024 13:50:41 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 50
-03-10-2024 13:52:51 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-03-10-2024 13:52:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-03-10-2024 13:52:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 16:26:10 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.1.1 with PID 3988 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 16:26:10 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 16:26:12 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 16:26:12 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 156 ms. Found 3 JPA repository interfaces.
+05-10-2024 16:26:13 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 16:26:13 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 16:26:13 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 16:26:14 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 16:26:14 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 16:26:15 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72a3462f
+05-10-2024 16:26:15 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 16:26:17 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 16:26:17 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 16:26:18 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 16:26:20 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 16:26:22 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 12.755 seconds (process running for 14.858)
+05-10-2024 16:26:23 - c.c.services.AdminServicesImpl - entering addCompany company name:comp910 and company email:910@comp.co.il
+05-10-2024 16:26:23 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title255501
+05-10-2024 16:26:23 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:315@walla.co.il
+05-10-2024 16:26:23 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 1
+05-10-2024 16:26:23 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 1
+05-10-2024 16:26:24 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 1
+05-10-2024 16:26:24 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 16:26:24 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 16:26:24 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 16:33:57 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.1.1 with PID 13756 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 16:33:57 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 16:33:59 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 16:33:59 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138 ms. Found 3 JPA repository interfaces.
+05-10-2024 16:34:00 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 16:34:00 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 16:34:00 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 16:34:01 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 16:34:01 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 16:34:01 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@632c3f55
+05-10-2024 16:34:01 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 16:34:03 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 16:34:04 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 16:34:04 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 16:34:05 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 16:34:06 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 9.331 seconds (process running for 11.128)
+05-10-2024 16:34:07 - c.c.services.AdminServicesImpl - entering addCompany company name:comp996 and company email:996@comp.co.il
+05-10-2024 16:34:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title235271
+05-10-2024 16:34:07 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:15@walla.co.il
+05-10-2024 16:34:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 2 couponId: 2
+05-10-2024 16:34:07 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 2
+05-10-2024 16:34:07 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 2
+05-10-2024 16:34:07 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 16:34:07 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 16:34:07 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 16:38:47 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.1.1 with PID 7148 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 16:38:47 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 16:38:49 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 16:38:49 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 144 ms. Found 3 JPA repository interfaces.
+05-10-2024 16:38:50 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 16:38:50 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 16:38:50 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 16:38:51 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 16:38:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 16:38:51 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ddf42dd
+05-10-2024 16:38:51 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 16:38:54 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 16:38:54 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 16:38:54 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 16:38:55 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 16:38:56 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 9.854 seconds (process running for 11.994)
+05-10-2024 16:38:57 - c.c.services.AdminServicesImpl - entering addCompany company name:comp687 and company email:687@comp.co.il
+05-10-2024 16:38:57 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title460999
+05-10-2024 16:38:57 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:611@walla.co.il
+05-10-2024 16:38:57 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 3 couponId: 3
+05-10-2024 16:38:57 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 3
+05-10-2024 16:38:57 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 3
+05-10-2024 16:38:57 - c.c.services.CompanyServicesImpl - No such coupon to update, coupon id: 3
+05-10-2024 16:38:58 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 16:38:58 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 16:38:58 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:00:55 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.1.1 with PID 15700 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:00:55 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:00:57 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:00:57 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 167 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:00:58 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:00:58 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:00:59 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:01:00 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:01:00 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:01:00 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@485c84d7
+05-10-2024 17:01:00 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:01:03 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:01:03 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:01:04 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:01:05 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:01:06 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 11.768 seconds (process running for 13.726)
+05-10-2024 17:01:07 - c.c.services.AdminServicesImpl - entering addCompany company name:comp318 and company email:318@comp.co.il
+05-10-2024 17:01:07 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 1 and title: title749048
+05-10-2024 17:01:07 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:304@walla.co.il
+05-10-2024 17:01:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 1 couponId: 1
+05-10-2024 17:01:08 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 1
+05-10-2024 17:01:08 - c.c.services.CompanyServicesImpl - Entering deleteCoupon coupon id: 1
+05-10-2024 17:01:08 - c.c.services.CompanyServicesImpl - No such coupon to update, coupon id: 1
+05-10-2024 17:01:08 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:01:08 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:01:08 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:03:28 - c.c.services.CompanyServicesImplTest - Starting CompanyServicesImplTest using Java 18.0.1.1 with PID 3984 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:03:28 - c.c.services.CompanyServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:03:30 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:03:30 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 153 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:03:31 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:03:31 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:03:32 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:03:32 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:03:32 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:03:33 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@20faaf77
+05-10-2024 17:03:33 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:03:35 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:03:35 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:03:36 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:03:38 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:03:39 - c.c.services.CompanyServicesImplTest - Started CompanyServicesImplTest in 10.949 seconds (process running for 12.806)
+05-10-2024 17:03:40 - c.c.services.AdminServicesImpl - entering addCompany company name:comp462 and company email:462@comp.co.il
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title768298
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title374478
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title664865
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title551057
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title603035
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title691277
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title529505
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title885425
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title826335
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title717070
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title21333
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title140887
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title283217
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title323901
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title983972
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title775737
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title489931
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title243006
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title659119
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 2 and title: title852757
+05-10-2024 17:03:40 - c.c.services.CompanyServicesImpl - Entering getCompanyCoupons, using company id : 2
+05-10-2024 17:03:40 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:03:40 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:03:40 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:04:39 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 16352 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:04:39 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:04:41 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:04:41 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 157 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:04:42 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:04:42 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:04:43 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:04:43 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:04:43 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:04:44 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@56b05bd7
+05-10-2024 17:04:44 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:04:46 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:04:47 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:04:47 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:04:49 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:04:49 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 10.915 seconds (process running for 13.027)
+05-10-2024 17:04:50 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:357@walla.co.il
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering getCustomer using customerId: 2
+05-10-2024 17:04:51 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:307@walla.co.il
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering login using Email: 307@walla.co.il Password: 106936
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering login using Email: wrongemail@admin.com Password: 106936
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Login failed for Email: wrongemail@admin.com Password: 106936
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering login using Email: 307@walla.co.il Password: wrongpassword
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Login failed for Email: 307@walla.co.il Password: wrongpassword
+05-10-2024 17:04:51 - c.c.services.AdminServicesImpl - entering addCompany company name:comp791 and company email:791@comp.co.il
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title896444
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title857783
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title704676
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title189600
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title687217
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title749605
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title432699
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title198236
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title74784
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title414060
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title964626
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title451187
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title883245
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title774185
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title468552
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title62639
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title110483
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title251833
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title828929
+05-10-2024 17:04:51 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 3 and title: title771639
+05-10-2024 17:04:51 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:373@walla.co.il
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 22
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 23
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 24
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 25
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 26
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 27
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 28
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 29
+05-10-2024 17:04:51 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 30
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 31
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 32
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 33
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 34
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 35
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 36
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 37
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 38
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 39
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 40
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 4 couponId: 41
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 4
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 4
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 4 and category: ELECTRONICS
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 4 and category: ELECTRONICS
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 4 and max price of: 10.0
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 4 and max price of: 10.0
+05-10-2024 17:04:52 - c.c.services.AdminServicesImpl - entering addCompany company name:comp379 and company email:379@comp.co.il
+05-10-2024 17:04:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 4 and title: title47930
+05-10-2024 17:04:52 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:420@walla.co.il
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 42
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 5 couponId: 42
+05-10-2024 17:04:52 - c.c.services.CustomerServicesImpl - Purchase is not possible for customerId: 5 couponId: 42
+05-10-2024 17:04:52 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:04:52 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:04:52 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:11:06 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 1260 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:11:06 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:11:08 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:11:08 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 154 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:11:09 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:11:09 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:11:09 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:11:10 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:11:10 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:11:11 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@250a946
+05-10-2024 17:11:11 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:11:13 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:11:14 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:11:14 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:11:16 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:11:17 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.472 seconds (process running for 13.735)
+05-10-2024 17:11:17 - c.c.services.AdminServicesImpl - entering addCompany company name:comp29 and company email:29@comp.co.il
+05-10-2024 17:11:18 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 5 and title: title334489
+05-10-2024 17:11:18 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:365@walla.co.il
+05-10-2024 17:11:28 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 6 couponId: 43
+05-10-2024 17:11:54 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:11:54 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:11:54 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:13:02 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 14672 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:13:02 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:13:04 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:13:04 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 348 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:13:05 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:13:05 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:13:05 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:13:06 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:13:06 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:13:07 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5529522f
+05-10-2024 17:13:07 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:13:09 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:13:09 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:13:10 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:13:12 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:13:13 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.618 seconds (process running for 14.0)
+05-10-2024 17:13:13 - c.c.services.AdminServicesImpl - entering addCompany company name:comp981 and company email:981@comp.co.il
+05-10-2024 17:13:14 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 6 and title: title220190
+05-10-2024 17:13:14 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:719@walla.co.il
+05-10-2024 17:13:33 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 7 couponId: 44
+05-10-2024 17:17:33 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m54s626ms350µs499ns).
+05-10-2024 17:17:33 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:17:33 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:17:33 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:17:56 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 3588 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:17:56 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:17:58 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:17:58 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 151 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:17:59 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:18:00 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:18:00 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:18:01 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:18:01 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:18:01 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5fe5c68b
+05-10-2024 17:18:01 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:18:04 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:18:04 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:18:04 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:18:06 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:18:07 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.772 seconds (process running for 14.116)
+05-10-2024 17:18:08 - c.c.services.AdminServicesImpl - entering addCompany company name:comp593 and company email:593@comp.co.il
+05-10-2024 17:18:08 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 7 and title: title862308
+05-10-2024 17:18:08 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:765@walla.co.il
+05-10-2024 17:18:13 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 8 couponId: 45
+05-10-2024 17:19:37 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m5s233ms776µs600ns).
+05-10-2024 17:19:37 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 8 couponId: 45
+05-10-2024 17:20:19 - c.c.services.CustomerServicesImpl - Purchase is not possible for customerId: 8 couponId: 45
+05-10-2024 17:20:29 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:20:29 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:20:29 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:25:22 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 8696 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:25:22 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:25:24 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:25:25 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 152 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:25:25 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:25:26 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:25:26 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:25:27 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:25:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:25:27 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@72a3462f
+05-10-2024 17:25:27 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:25:29 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:25:30 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:25:30 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:25:32 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:25:32 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 10.437 seconds (process running for 12.419)
+05-10-2024 17:25:33 - c.c.services.AdminServicesImpl - entering addCompany company name:comp253 and company email:253@comp.co.il
+05-10-2024 17:25:33 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 8 and title: title981222
+05-10-2024 17:25:33 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:568@walla.co.il
+05-10-2024 17:25:34 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 9 couponId: 46
+05-10-2024 17:25:34 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 9 couponId: 46
+05-10-2024 17:25:34 - c.c.services.CustomerServicesImpl - Purchase is not possible for customerId: 9 couponId: 46
+05-10-2024 17:25:34 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:25:34 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:25:34 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:26:41 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 13276 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:26:41 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:26:43 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:26:43 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 149 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:26:44 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:26:44 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:26:44 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:26:45 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:26:45 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:26:46 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c70b7c3
+05-10-2024 17:26:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:26:48 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:26:48 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:26:49 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:26:50 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:26:51 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.065 seconds (process running for 12.97)
+05-10-2024 17:26:52 - c.c.services.AdminServicesImpl - entering addCompany company name:comp122 and company email:122@comp.co.il
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title221486
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title364507
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title306782
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title910515
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title591694
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title561003
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title77869
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title525730
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title502368
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title175044
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title965783
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title93558
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title555566
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title220907
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title510974
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title767947
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title664558
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title926162
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title8016
+05-10-2024 17:26:52 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 9 and title: title826846
+05-10-2024 17:26:53 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:860@walla.co.il
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 47
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 48
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 49
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 50
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 51
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 52
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 53
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 54
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 55
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 56
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 57
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 58
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 59
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 60
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 61
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 62
+05-10-2024 17:26:53 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 63
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 64
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 65
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 10 couponId: 66
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 10
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 10
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 10 and category: TRAVEL
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 10 and category: TRAVEL
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 10 and max price of: 10.0
+05-10-2024 17:26:54 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 10 and max price of: 10.0
+05-10-2024 17:26:54 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:26:54 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 17:26:54 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 17:49:41 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 3392 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 17:49:42 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 17:49:43 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 17:49:44 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 162 ms. Found 3 JPA repository interfaces.
+05-10-2024 17:49:44 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 17:49:45 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 17:49:45 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 17:49:46 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 17:49:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 17:49:46 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@538aa83f
+05-10-2024 17:49:46 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 17:49:49 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 17:49:49 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 17:49:50 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 17:49:51 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 17:49:53 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.756 seconds (process running for 13.926)
+05-10-2024 17:49:54 - c.c.services.AdminServicesImpl - entering addCompany company name:comp857 and company email:857@comp.co.il
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title735885
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title337787
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title365659
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title390087
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title795795
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title527341
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title623281
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title593877
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title65068
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title616978
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title940282
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title916113
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title940491
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title630723
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title895184
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title120721
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title759194
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title24765
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title543645
+05-10-2024 17:49:54 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 10 and title: title131705
+05-10-2024 17:49:54 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:678@walla.co.il
+05-10-2024 18:03:58 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14m11s177ms101µs599ns).
+05-10-2024 18:03:58 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 11 couponId: 67
+05-10-2024 18:03:58 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 18:03:58 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 18:03:58 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+05-10-2024 18:04:07 - c.c.s.CustomerServicesImplTest - Starting CustomerServicesImplTest using Java 18.0.1.1 with PID 7456 (started by speedy in G:\My Drive\javaProjects\couponsProject\PHASE TWO)
+05-10-2024 18:04:07 - c.c.s.CustomerServicesImplTest - No active profile set, falling back to 1 default profile: "default"
+05-10-2024 18:04:09 - o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+05-10-2024 18:04:09 - o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 150 ms. Found 3 JPA repository interfaces.
+05-10-2024 18:04:10 - o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+05-10-2024 18:04:11 - org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.2.Final
+05-10-2024 18:04:11 - o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+05-10-2024 18:04:12 - o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+05-10-2024 18:04:12 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+05-10-2024 18:04:12 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1851c7d2
+05-10-2024 18:04:12 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+05-10-2024 18:04:15 - o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+05-10-2024 18:04:15 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 18:04:16 - o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+05-10-2024 18:04:17 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+05-10-2024 18:04:18 - c.c.s.CustomerServicesImplTest - Started CustomerServicesImplTest in 11.557 seconds (process running for 13.957)
+05-10-2024 18:04:19 - c.c.services.AdminServicesImpl - entering addCompany company name:comp96 and company email:96@comp.co.il
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title951960
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title194430
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title723006
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title307695
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title25114
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title114677
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title85550
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title493056
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title148139
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title424276
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title738126
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title930806
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title722427
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title971648
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title277628
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title450222
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title636660
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title781647
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title460900
+05-10-2024 18:04:19 - c.c.services.CompanyServicesImpl - Entering addCoupon, company id: 11 and title: title861500
+05-10-2024 18:04:19 - c.c.services.AdminServicesImpl - Entering addCustomer customer email:184@walla.co.il
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 87
+05-10-2024 18:05:07 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=54s505ms683µs400ns).
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 88
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 89
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 90
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 91
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 92
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 93
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 94
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 95
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 96
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 97
+05-10-2024 18:05:07 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 98
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 99
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 100
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 101
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 102
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 103
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 104
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 105
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering couponPurchase using customerId: 12 couponId: 106
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 12
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 12
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 12 and category: FOOD
+05-10-2024 18:05:08 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 12 and category: FOOD
+05-10-2024 18:05:58 - com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=50s881ms72µs200ns).
+05-10-2024 18:06:20 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 12 and max price of: 74.22336990120377
+05-10-2024 18:06:26 - c.c.services.CustomerServicesImpl - Entering getCoupons using customerId: 12 and max price of: 74.22336990120377
+05-10-2024 18:07:17 - o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+05-10-2024 18:07:17 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+05-10-2024 18:07:17 - com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
