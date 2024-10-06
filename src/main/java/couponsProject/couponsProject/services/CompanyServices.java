@@ -20,7 +20,4 @@ public interface CompanyServices {
 
     List<Coupon> getCompanyCoupons(int companyId);
 
-    List<Coupon> getCompanyCoupons(int companyId, CategoryEnum category);
-
-    List<Coupon> getCompanyCoupons(int companyId, Double maxPrice);
 }

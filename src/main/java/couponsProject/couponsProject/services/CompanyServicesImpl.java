@@ -22,6 +22,16 @@ public class CompanyServicesImpl implements CompanyServices {
     private CompanyRepository companyRepository;
     private CouponRepository couponRepository;
 
+    /**
+     * Authenticates a company user and retrieves their ID.
+     *
+     * @param email The email address for login
+     * @param password The password for login
+     * @return The ID of the authenticated company
+     * @throws NoSuchElementException if no company matches the provided credentials
+     * @Transactional(readOnly = true) Indicates that this method is a read-only transaction
+     * @Override Overrides the login method from a parent class or interface
+     */
     @Transactional(readOnly = true)
     @Override
     public int login(String email, String password){
@@ -37,6 +47,14 @@ public class CompanyServicesImpl implements CompanyServices {
         }
     }
 
+    /**
+     * Retrieves detailed information about a specific company.
+     *
+     * @param companyId The ID of the company to retrieve
+     * @return The Company object containing detailed information
+     * @throws NoSuchElementException if no company exists with the given ID
+     * @Override Overrides the getCompanyDetails method from a parent class or interface
+     */
     @Override
     public Company getCompanyDetails(int companyId){
         log.info("Entering getCompanyDetails using company id : {}",companyId);
@@ -48,20 +66,34 @@ public class CompanyServicesImpl implements CompanyServices {
         }
     }
 
+    /**
+     * Adds a new coupon to the system for a specific company.
+     *
+     * @param coupon The Coupon object to be added
+     * @throws CouponException if a coupon with the same title already exists for the company
+     * @Override Overrides the addCoupon method from a parent class or interface
+     */
     @Override
     public void addCoupon(Coupon coupon){
         Company company =coupon.getCompany();
         log.info("Entering addCoupon, company id: {} and title: {}",company.getId(),coupon.getTitle());
-            if(company.getCoupons()!=null && company.getCoupons().stream().anyMatch(coupon::equals)){
-                log.error("Coupon already exists for company id: {} and title: {}",company.getId(),coupon.getTitle());
-                throw new CouponException("Coupon already exists");
-            }else {
-                couponRepository.save(coupon);
-              //  company.getCoupons().add(coupon);
-                log.debug("AddCoupon succeeded, coupon id {}",coupon.getId());
-            }
+        if(company.getCoupons()!=null && company.getCoupons().stream().anyMatch(coupon::equals)){
+            log.error("Coupon already exists for company id: {} and title: {}",company.getId(),coupon.getTitle());
+            throw new CouponException("Coupon already exists");
+        }else {
+            couponRepository.save(coupon);
+            //  company.getCoupons().add(coupon);
+            log.debug("AddCoupon succeeded, coupon id {}",coupon.getId());
+        }
     }
 
+    /**
+     * Updates an existing coupon in the system.
+     *
+     * @param coupon The Coupon object with updated information
+     * @throws NoSuchElementException if no coupon exists with the given ID
+     * @Override Overrides the updateCoupon method from a parent class or interface
+     */
     @Override
     public void updateCoupon(Coupon coupon){
         log.info("Entering updateCoupon, coupon id: {}", coupon.getId());
@@ -74,6 +106,14 @@ public class CompanyServicesImpl implements CompanyServices {
         }
     }
 
+    /**
+     * Deletes a coupon from the system and removes its associations.
+     *
+     * @param couponID The ID of the coupon to be deleted
+     * @throws NoSuchElementException if no coupon exists with the given ID
+     * @Transactional Ensures that all operations within the method are part of a single transaction
+     * @Override Overrides the deleteCoupon method from a parent class or interface
+     */
     @Transactional
     @Override
     public void deleteCoupon(int couponID){
@@ -89,29 +129,19 @@ public class CompanyServicesImpl implements CompanyServices {
         coupon.detachCompany();
         couponRepository.delete(coupon);
         log.debug("DeleteCoupon succeeded, coupon id {}",couponID);
-
-
     }
 
+    /**
+     * Retrieves all coupons associated with a specific company.
+     *
+     * @param companyId The ID of the company whose coupons are to be retrieved
+     * @return A List of Coupon objects associated with the specified company
+     * @Override Overrides the getCompanyCoupons method from a parent class or interface
+     */
     @Override
     public List<Coupon> getCompanyCoupons(int companyId){
         log.info("Entering getCompanyCoupons, using company id : {}",companyId);
         return couponRepository.findAllByCompanyId(companyId);
-    }
-
-
-  @Override
-    public List<Coupon> getCompanyCoupons(int companyId, CategoryEnum category){
-        log.info("Entering getCompanyCoupons, using company id : {} category : {}",companyId,category);
-        return couponRepository.findAllByCompanyIdAndCategory(companyId,category);
-    }
-
-
-
-    @Override
-    public List<Coupon> getCompanyCoupons(int companyId, Double maxPrice){
-        log.info("Entering getCompanyCoupons, using company id : {} maxPrice : {}",companyId,maxPrice);
-        return couponRepository.findAllByCompanyIdAndPriceIsLessThanEqual(companyId,maxPrice);
     }
 
 //

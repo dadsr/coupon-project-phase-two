@@ -5,11 +5,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.lang.NonNull;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
-
+/**
+ * Repository interface for Company entity operations.
+ * Extends JpaRepository for basic CRUD operations and JpaSpecificationExecutor for complex queries.
+ */
 public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaSpecificationExecutor<Company> {
 
     //@Query("select c from Company c where c.id = ?1")
@@ -27,8 +31,6 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
     @Query("select c from Company c")
     ArrayList<Company> getAllCompanies();
 
-
-
-    void delete(Company company);
+    void delete(@NonNull Company company);
 
 }

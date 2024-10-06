@@ -82,7 +82,7 @@ class CompanyServicesImplTest {
                 .as("test if adding coupon was successful")
                 .isEqualTo(1);
 
-//todo
+
         Assertions.assertThatThrownBy(() -> companyServices.addCoupon(coupon))
                 .as("test if adding exist coupon does throw exception")
                 .isInstanceOf(CouponException.class)
@@ -126,7 +126,7 @@ class CompanyServicesImplTest {
         Customer customer =TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
         customerServices.couponPurchase(customer.getId(), coupon.getId());
-;
+
 
         Assertions.assertThatCode(() -> companyServices.deleteCoupon(coupon.getId())).doesNotThrowAnyException();
 

@@ -27,7 +27,14 @@ public class AdminServicesImpl implements AdminServices {
     private final CustomerRepository customerRepository;
     private final CouponRepository couponRepository;
 
-
+    /**
+     * Authenticates an admin user.
+     *
+     * @param email The email address for login
+     * @param password The password for login
+     * @return 1 if authentication is successful (admin credentials match), 0 otherwise
+     * @Override Overrides the login method from a parent class or interface
+     */
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
@@ -36,6 +43,13 @@ public class AdminServicesImpl implements AdminServices {
 
     /****************************** Company methods **********************************/
 
+    /**
+     * Adds a new company to the system.
+     *
+     * @param company The Company object to be added
+     * @throws CompanyException if a company with the same name or email already exists
+     * @Override Overrides the addCompany method from a parent class or interface
+     */
     @Override
     public void addCompany(Company company)  {
         log.info("entering addCompany company name:{} and company email:{}",company.getName(), company.getEmail());
@@ -47,7 +61,13 @@ public class AdminServicesImpl implements AdminServices {
         }
     }
 
-    //todo is it possible to change Email ? this can cause problems in DB
+    /**
+     * Updates an existing company in the system.
+     *
+     * @param company The Company object with updated information
+     * @throws NoSuchElementException if no company exists with the given ID
+     * @Override Overrides the updateCompany method from a parent class or interface
+     */
     @Override
     public void updateCompany(Company company){
         log.info("entering updateCompany, using company id:{}",company.getId());
@@ -59,6 +79,16 @@ public class AdminServicesImpl implements AdminServices {
             throw new NoSuchElementException("Company does not exist");
         }
     }
+
+    /**
+     * Deletes a company and its associated coupons from the system.
+     * This method is transactional to ensure data consistency.
+     *
+     * @param companyID The ID of the company to be deleted
+     * @throws NoSuchElementException if no company exists with the given ID
+     * @Transactional Ensures that all operations within the method are part of a single transaction
+     * @Override Overrides the deleteCompany method from a parent class or interface
+     */
     @Transactional
     @Override
     public void deleteCompany(int companyID) {
@@ -82,6 +112,14 @@ public class AdminServicesImpl implements AdminServices {
 
     }
 
+    /**
+     * Retrieves a single company by its ID.
+     *
+     * @param companyId The ID of the company to retrieve
+     * @return The Company object if found
+     * @throws NoSuchElementException if no company exists with the given ID
+     * @Override Overrides the getOneCompany method from a parent class or interface
+     */
     @Override
     public Company getOneCompany(int companyId){
         log.info("Entering getOneCompany using company id: {}",companyId);
@@ -93,8 +131,12 @@ public class AdminServicesImpl implements AdminServices {
         }
     }
 
-    //todo
-    //  @Override
+    /**
+     * Retrieves all companies from the system.
+     *
+     * @return An ArrayList containing all Company objects
+     * @Override Overrides the getAllCompanies method from a parent class or interface
+     */
     @Override
     public ArrayList<Company> getAllCompanies(){
         log.info("entering getAllCompanies");
@@ -103,6 +145,13 @@ public class AdminServicesImpl implements AdminServices {
 
     /****************************** Customer methods **********************************/
 
+    /**
+     * Adds a new customer to the system.
+     *
+     * @param customer The Customer object to be added
+     * @throws CustomerException if a customer with the same email already exists
+     * @Override Overrides the addCustomer method from a parent class or interface
+     */
     @Override
     public void addCustomer(Customer customer){
         log.info("Entering addCustomer customer email:{}",customer.getEmail());
@@ -114,6 +163,13 @@ public class AdminServicesImpl implements AdminServices {
         }
     }
 
+    /**
+     * Updates an existing customer in the system.
+     *
+     * @param customer The Customer object with updated information
+     * @throws NoSuchElementException if no customer exists with the given ID
+     * @Override Overrides the updateCustomer method from a parent class or interface
+     */
     @Override
     public void updateCustomer(Customer customer){
         log.info("entering updateCustomer using customer id:{}",customer.getId());
@@ -125,11 +181,17 @@ public class AdminServicesImpl implements AdminServices {
         }
     }
 
+    /**
+     * Deletes a customer from the system by their ID.
+     *
+     * @param customerID The ID of the customer to be deleted
+     * @throws NoSuchElementException if no customer exists with the given ID
+     * @Override Overrides the deleteCustomer method from a parent class or interface
+     */
     @Override
     public void deleteCustomer(int customerID){
         log.info("entering deleteCustomer using customer id:{}",customerID);
         if(customerRepository.existsById(customerID)) {
-            //todo should check if cascade deletes perches too
             customerRepository.deleteById(customerID);
             log.debug("deleteCustomer succeeded, customer id:{}",customerID);
         }else {
@@ -137,7 +199,14 @@ public class AdminServicesImpl implements AdminServices {
             throw new NoSuchElementException("customer does not exists");
         }
     }
-
+    /**
+     * Retrieves a single customer from the system by their ID.
+     *
+     * @param customerID The ID of the customer to retrieve
+     * @return The Customer object if found
+     * @throws NoSuchElementException if no customer exists with the given ID
+     * @Override Overrides the getOneCustomer method from a parent class or interface
+     */
     @Override
     public Customer getOneCustomer(int customerID){
         log.info("entering getOneCustomer using customer id:{}",customerID);
@@ -151,50 +220,29 @@ public class AdminServicesImpl implements AdminServices {
         }
     }
 
-    //todo
-    // @Override
+    /**
+     * Retrieves all customers from the system.
+     *
+     * @return An ArrayList containing all Customer objects
+     * @Override Overrides the getAllCustomers method from a parent class or interface
+     */
     @Override
     public ArrayList<Customer> getAllCustomers(){
         log.info("entering getAllCustomers");
         return customerRepository.findAll();
     }
 
+    /**
+     * Retrieves all coupons from the system.
+     *
+     * @return A List containing all Coupon objects
+     * @Override Overrides the getAllCoupons method from a parent class or interface
+     */
     @Override
     public List<Coupon> getAllCoupons() {
         log.info("entering getAllCoupons");
         return couponRepository.findAll();
     }
 
-    /****************************** service methods **********************************/
-
-    // for company login
-    private Company getOneCompany(String email, String password){
-        log.info("entering getOneCompany using Email: {} Password: {}", email, password);
-        Company company =companyRepository.findCompaniesByEmailAndPassword(email,password);
-        if(company != null) {
-            log.debug("getOneCompany succeeded, Email: {} Password: {}", email, password);
-            return company;
-        }else{
-            log.error("No such Company, Email: {} Password: {}", email, password);
-            throw new NoSuchElementException("no such company to get");
-        }
-    }
-    // for customer login
-    private Customer getOneCustomer(String email, String password){
-        log.info("Entering getOneCustomer, using Email: {} Password: {}", email, password);
-        Customer customer =customerRepository.findCustomerByEmailAndPassword(email,password);
-        if(customer != null) {
-            log.debug("getOneCustomer succeeded, Email: {} Password: {}", email, password);
-            return customer;
-        }else{
-            log.error("getOneCustomer throw NoSuchElementException Email: {} Password: {}", email, password);
-            throw new NoSuchElementException("Customer dose not exists");
-        }
-    }
-
-    private void deleteCoupons(int companyId) {
-        log.info("Entering deleteCoupons using company Id: {}", companyId);
-        companyRepository.deleteById(companyId);
-    }
     //
 }

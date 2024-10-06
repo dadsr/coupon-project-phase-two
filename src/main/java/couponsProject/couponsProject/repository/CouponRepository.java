@@ -6,9 +6,14 @@ import couponsProject.couponsProject.beans.Coupon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
 
+/**
+ * Repository interface for Coupon entity operations.
+ * Extends JpaRepository for basic CRUD operations.
+ */
 public interface CouponRepository extends JpaRepository<Coupon, Integer> {
     //@Query("delete from Coupon c where c.company.id = ?1")
     void deleteCouponByCompanyId(int companyID);
@@ -39,6 +44,6 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
     @Query("select c from Coupon c where c.id = ?1")
     Coupon getCouponById(int couponId);
 
-    void delete(Coupon coupon);
+    void delete(@NonNull Coupon coupon);
 
 }

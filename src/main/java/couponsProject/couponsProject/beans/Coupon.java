@@ -11,6 +11,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Represents a Coupon entity in the system.
+ *
+ * @NoArgsConstructor Generates a no-argument constructor
+ * @Getter/@Setter Generate getter and setter methods for fields
+ * @Entity Marks this class as a JPA entity
+ * @Table(name = "coupons") Specifies the database table name
+ * <p>
+ * Fields:
+ * - id: Unique identifier (auto-generated, immutable)
+ * - company: Associated Company (Many-to-One relationship)
+ * - category: Coupon category (Enumerated type)
+ * - title: Coupon title
+ * - description: Coupon description
+ * - startDate: Coupon validity start date
+ * - endDate: Coupon expiration date
+ * - amount: Available quantity of the coupon
+ * - price: Price of the coupon
+ * - image: Image URL or path for the coupon
+ * - customers: List of customers who purchased this coupon (Many-to-Many relationship)
+ *
+ * Note: The customers relationship is eagerly fetched and mapped by the 'coupons' field in the Customer entity.
+ */
 @NoArgsConstructor
 @Getter
 @Setter
@@ -74,11 +97,33 @@ public class Coupon {
         }
     }
 
+    /**
+     * @Builder Enables builder pattern for flexible object creation
+     * <p>
+     * Factory method for creating Coupon instances.
+     * @param company Associated Company
+     * @param category Coupon category
+     * @param title Coupon title
+     * @param description Coupon description
+     * @param startDate Validity start date
+     * @param endDate Expiration date
+     * @param amount Available quantity
+     * @param price Coupon price
+     * @param image Image URL or path
+     * @return A new Coupon instance with no associated customers
+     */
     @Builder
     public static Coupon createInstance(Company company, CategoryEnum category, String title, String description, Date startDate, Date endDate, int amount, double price, String image){
         return new Coupon(company, category, title, description, startDate, endDate, amount, price,image, null);
     }
 
+    /**
+     * Adds a customer to this coupon's list of customers.
+     * Initializes the customers list if it's null.
+     * Also adds this coupon to the customer's list of coupons.
+     *
+     * @param customer The customer to be added
+     */
     public void addCustomer(Customer customer) {
         if(customers==null) {
             customers = new ArrayList<>();
@@ -87,11 +132,25 @@ public class Coupon {
         customers.add(customer);
     }
 
+    /**
+     * Removes a customer from this coupon's list of customers.
+     * Also removes this coupon from the customer's list of coupons.
+     *
+     * @param customer The customer to be removed
+     */
     public void removeCustomer(Customer customer) {
         customers.remove(customer);
         customer.getCoupons().remove(this);
     }
 
+    /**
+     * Compares this coupon with another object for equality.
+     * Coupons are considered equal if they have the same title and belong to the same company.
+     *
+     * @param o The object to compare with this coupon
+     * @return true if the objects are equal, false otherwise
+     * @Override Overrides Object.equals(Object)
+     */
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
@@ -101,6 +160,11 @@ public class Coupon {
                 Objects.equals(company.getId(), coupon.company.getId());
     }
 
+    /**
+     * Detaches this coupon from its associated company.
+     * Removes this coupon from the company's list of coupons and sets the company reference to null.
+     * This method maintains the bidirectional relationship between Coupon and Company.
+     */
     public void detachCompany() {
         getCompany().getCoupons().remove(this);
         setCompany(null);

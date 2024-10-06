@@ -15,11 +15,15 @@ import java.util.function.Supplier;
 public  class TestsUtils {
     static Random rand = new Random();
 
+    private static Date getStartDate() {
+        return new Date(System.currentTimeMillis());
+    }
+
     public static Date getRandomDateFromNow(int maxDays) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new java.util.Date());
         cal.add(Calendar.DAY_OF_YEAR, rand.nextInt(maxDays));
-        return (Date) cal.getTime();
+        return new Date(cal.getTimeInMillis());
     }
 
     // Generic method to create a list of entities
@@ -33,10 +37,9 @@ public  class TestsUtils {
 
 
     public static List<Company> createCompanies(int num) {
-        int rndNum = rand.nextInt(1,1000);
         return createEntities(num, () -> Company.builder()
-                .name("comp" + rndNum)
-                .email(rndNum + "@comp.co.il")
+                .name("comp" + rand.nextInt(1,1000))
+                .email(rand.nextInt(1,1000) + "@comp.co.il")
                 .password(String.valueOf(rand.nextInt(1,1000000)))
                 .build());
     }
@@ -44,7 +47,7 @@ public  class TestsUtils {
 
     public static List<Customer> createCustomers(int num) {
         return createEntities(num, () -> Customer.builder()
-                .firstName("first" + Math.random())
+                .firstName("first" + rand.nextInt(1,1000))
                 .lastName("last")
                 .email(rand.nextInt(1,1000) + "@walla.co.il")
                 .password(String.valueOf(rand.nextInt(1,1000000)))
@@ -60,15 +63,13 @@ public  class TestsUtils {
                 .category(CategoryEnum.fromId(rand.nextInt(CategoryEnum.values().length)))
                 .title("title" + rand.nextInt(1,1000000))
                 .description("desc" + rand.nextInt(1,1000000))
-                .startDate((Date) new java.util.Date())
+                .startDate(getStartDate())
                 .endDate(getRandomDateFromNow(30))
                 .amount(rand.nextInt(1, 30))
                 .price(rand.nextDouble(100.00))
                 .image(null)
                 .build());
     }
-
-
 
 
 }

@@ -12,7 +12,6 @@ public interface AdminServices {
 
     void addCompany(Company company);
 
-    //todo is it possible to change Email ? this can cause problems in DB
     void updateCompany(Company company);
 
     void deleteCompany(int companyID);

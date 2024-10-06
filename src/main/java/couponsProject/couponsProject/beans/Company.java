@@ -9,6 +9,23 @@ import lombok.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents a Company entity in the system.
+ * <p>
+ * Annotations:
+ * - @NoArgsConstructor: Generates a no-argument constructor.
+ * - @Getter/@Setter: Generates getter/setter methods for fields.
+ * - @Entity: Marks this class as a persistent entity.
+ * - @Table(name = "companies"): Specifies the database table name.
+ * <p>
+ * Fields:
+ * - id: Unique identifier (primary key, auto-generated).
+ * - name: Name of the company (setter access restricted).
+ * - email: Company's email address.
+ * - password: Company's account password.
+ * - childEntities: One-to-many relationship with associated entities.
+ *   Fetches eagerly, cascades all operations, and removes orphaned entities.
+ */
 @NoArgsConstructor
 @Getter
 @Setter
@@ -55,16 +72,32 @@ public class  Company {
         else this.coupons = new ArrayList<>();
     }
 
+    /**
+     * @Builder Enables builder pattern for flexible object creation
+     * <p>
+     * Factory method for creating Company instances.
+     * @param name Company name
+     * @param email Company email
+     * @param password Account password
+     * @param coupons List of associated coupons
+     * @return A new Company instance
+     */
     @Builder
     public static Company createInstance(String name, String email, String password, List<Coupon> coupons) {
         return new Company(name, email, password, coupons);
     }
-
+    /**
+     * Adds a coupon to the company and sets the company reference in the coupon.
+     * @param coupon The coupon to be added
+     */
     public void addCoupon(Coupon coupon) {
         this.coupons.add(coupon);
         coupon.setCompany(this);
     }
-
+    /**
+     * Removes a coupon from the company and clears the company reference in the coupon.
+     * @param coupon The coupon to be removed
+     */
     public void removeCoupon(Coupon coupon) {
         this.coupons.remove(coupon);
         coupon.setCompany(null);

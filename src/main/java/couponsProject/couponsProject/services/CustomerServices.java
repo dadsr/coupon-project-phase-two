@@ -12,7 +12,6 @@ public interface CustomerServices {
 
     Customer getCustomer(int customerId);
 
-    //todo where to put transaction
     @Transactional
     void couponPurchase(int customerId, int couponId);
 
