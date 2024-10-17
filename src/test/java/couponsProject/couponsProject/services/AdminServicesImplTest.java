@@ -4,8 +4,8 @@ import couponsProject.couponsProject.TestsUtils;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.controllers.exseptions.CompanyException;
-import couponsProject.couponsProject.controllers.exseptions.CustomerException;
+import couponsProject.couponsProject.exseptions.CompanyException;
+import couponsProject.couponsProject.exseptions.CustomerException;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -229,7 +229,6 @@ class AdminServicesImplTest {
     @Test
     void getAllCustomers() {
         int size = adminServices.getAllCustomers().size();
-
         List<Customer> customers = TestsUtils.createCustomers(10);
 
         for (Customer customer : customers) {

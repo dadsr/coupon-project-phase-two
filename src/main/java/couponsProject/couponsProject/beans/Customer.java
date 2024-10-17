@@ -112,7 +112,6 @@ public class Customer {
      * @param coupon The coupon to be removed
      */
     public void removeCoupon(Coupon coupon) {
-        coupons.remove(coupon);
         coupon.getCustomers().remove(this);
     }
 

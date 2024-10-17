@@ -38,19 +38,19 @@ public  class TestsUtils {
 
     public static List<Company> createCompanies(int num) {
         return createEntities(num, () -> Company.builder()
-                .name("comp" + rand.nextInt(1,1000))
+                .name("comp" + rand.nextInt(1,999999999))
                 .email(rand.nextInt(1,1000) + "@comp.co.il")
-                .password(String.valueOf(rand.nextInt(1,1000000)))
+                .password(String.valueOf(rand.nextInt(1,999999999)))
                 .build());
     }
 
 
     public static List<Customer> createCustomers(int num) {
         return createEntities(num, () -> Customer.builder()
-                .firstName("first" + rand.nextInt(1,1000))
+                .firstName("first" + rand.nextInt(1,999999999))
                 .lastName("last")
                 .email(rand.nextInt(1,1000) + "@walla.co.il")
-                .password(String.valueOf(rand.nextInt(1,1000000)))
+                .password(String.valueOf(rand.nextInt(1,999999999)))
                 .build());
     }
 
@@ -61,8 +61,8 @@ public  class TestsUtils {
         return createEntities(num,() -> Coupon.builder()
                 .company(company)
                 .category(CategoryEnum.fromId(rand.nextInt(CategoryEnum.values().length)))
-                .title("title" + rand.nextInt(1,1000000))
-                .description("desc" + rand.nextInt(1,1000000))
+                .title("title" + rand.nextInt(1,999999999))
+                .description("desc" + rand.nextInt(1,999999999))
                 .startDate(getStartDate())
                 .endDate(getRandomDateFromNow(30))
                 .amount(rand.nextInt(1, 30))

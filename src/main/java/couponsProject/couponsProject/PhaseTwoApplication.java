@@ -44,6 +44,8 @@ public class PhaseTwoApplication {
         System.out.print(coupons.get(0).getCustomers());
 
 
+        Company comp = Company.createInstance("","","",null);
+        comp = ctx.getBean(Company.class);
 
 
 

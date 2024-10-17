@@ -3,11 +3,12 @@ package couponsProject.couponsProject.services;
 import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
+import couponsProject.couponsProject.services.login.ClientServices;
 import jakarta.transaction.Transactional;
 
 import java.util.List;
 
-public interface CustomerServices {
+public interface CustomerServices  extends ClientServices {
     int login(String email, String password);
 
     Customer getCustomer(int customerId);

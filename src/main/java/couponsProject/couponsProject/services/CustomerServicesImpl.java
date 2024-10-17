@@ -3,47 +3,32 @@ package couponsProject.couponsProject.services;
 import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.controllers.exseptions.CouponException;
+import couponsProject.couponsProject.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CouponRepository;
 import couponsProject.couponsProject.repository.CustomerRepository;
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Slf4j
 @Service
+@Scope("singleton")
 public class CustomerServicesImpl implements CustomerServices {
     private CustomerRepository customerRepository;
     private CouponRepository couponRepository;
 
-    /**
-     * Authenticates a customer and retrieves their ID.
-     *
-     * @param email The email address for login
-     * @param password The password for login
-     * @return The ID of the authenticated customer
-     * @throws NoSuchElementException if no customer matches the provided credentials
-     * @Override Overrides the login method from a parent class or interface
-     */
+
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-        Integer id = customerRepository.getCustomerByEmailAndPassword(email,password);
-        if (id != null && id > 0) {
-            log.debug("Login succeeded, customer id {}", id);
-            return id;
-        }else {
-            log.error("Login failed for Email: {} Password: {}", email, password);
-            throw new NoSuchElementException("No such customer");
-        }
+        return customerRepository.getCustomerByEmailAndPassword(email,password);
     }
 
     /**
@@ -68,21 +53,25 @@ public class CustomerServicesImpl implements CustomerServices {
      * @Transactional Ensures that all operations within the method are part of a single transaction
      * @Override Overrides the couponPurchase method from a parent class or interface
      */
-    @Transactional
+     @Transactional
     @Override
     public void couponPurchase(int customerId, int couponId){
         log.info("Entering couponPurchase using customerId: {} couponId: {}", customerId, couponId);
         Coupon coupon = couponRepository.getCouponById(couponId);
-        if((!couponRepository.existsPurchase(customerId,couponId)) && coupon.getAmount()>0){
+        if((!couponRepository.existsPurchase(customerId,couponId)) && coupon.getAmount() > 0){
             Customer customer = customerRepository.getCustomerById(customerId);
             coupon.addCustomer(customer);
             coupon.setAmount(coupon.getAmount()-1);
             customer.addCoupon(coupon);
+            couponRepository.save(coupon);
+            customerRepository.save(customer);
         }else {
-            log.error("Purchase is not possible for customerId: {} couponId: {}", customerId, couponId);
+            log.error("Purchase is not possible for customerId: {} couponId: {} amount: {}", customerId, couponId,coupon.getAmount());
             throw new CouponException("Purchase is not possible");
         }
+
     }
+
 
     /**
      * Retrieves all coupons purchased by a specific customer.

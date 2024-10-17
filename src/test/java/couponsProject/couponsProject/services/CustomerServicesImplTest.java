@@ -5,20 +5,16 @@ import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.controllers.exseptions.CouponException;
+import couponsProject.couponsProject.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.event.annotation.BeforeTestMethod;
 
-import java.util.Calendar;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
-import java.util.concurrent.atomic.AtomicReference;
 
 @SpringBootTest
 class CustomerServicesImplTest {

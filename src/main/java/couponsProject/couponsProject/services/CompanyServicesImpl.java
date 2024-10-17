@@ -1,14 +1,14 @@
 package couponsProject.couponsProject.services;
 
-import couponsProject.couponsProject.beans.CategoryEnum;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.controllers.exseptions.CouponException;
+import couponsProject.couponsProject.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import couponsProject.couponsProject.repository.CouponRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,33 +18,16 @@ import java.util.NoSuchElementException;
 @AllArgsConstructor
 @Slf4j
 @Service
+@Scope("singleton")
 public class CompanyServicesImpl implements CompanyServices {
     private CompanyRepository companyRepository;
     private CouponRepository couponRepository;
 
-    /**
-     * Authenticates a company user and retrieves their ID.
-     *
-     * @param email The email address for login
-     * @param password The password for login
-     * @return The ID of the authenticated company
-     * @throws NoSuchElementException if no company matches the provided credentials
-     * @Transactional(readOnly = true) Indicates that this method is a read-only transaction
-     * @Override Overrides the login method from a parent class or interface
-     */
-    @Transactional(readOnly = true)
+
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-        Integer id = companyRepository.getCompanyIdByEmailAndPassword(email,password);
-
-        if (id != null && id > 0) {
-            log.debug("Login succeeded, company id {}", id);
-            return id;
-        }else {
-            log.error("Login failed for Email: {} Password: {}", email, password);
-            throw new NoSuchElementException("No such company");
-        }
+        return companyRepository.getCompanyIdByEmailAndPassword(email,password);
     }
 
     /**
@@ -74,17 +57,19 @@ public class CompanyServicesImpl implements CompanyServices {
      * @Override Overrides the addCoupon method from a parent class or interface
      */
     @Override
-    public void addCoupon(Coupon coupon){
-        Company company =coupon.getCompany();
-        log.info("Entering addCoupon, company id: {} and title: {}",company.getId(),coupon.getTitle());
-        if(company.getCoupons()!=null && company.getCoupons().stream().anyMatch(coupon::equals)){
-            log.error("Coupon already exists for company id: {} and title: {}",company.getId(),coupon.getTitle());
+    public void addCoupon(Coupon coupon) {
+        Company company = coupon.getCompany();
+
+        log.info("Entering addCoupon, company id: {} and title: {}", company.getId(), coupon.getTitle());
+        if (company.getCoupons().size() != 0 && company.getCoupons().stream().anyMatch(coupon::equals)) {
+            log.error("Coupon already exists for company id: {} and title: {}", company.getId(), coupon.getTitle());
             throw new CouponException("Coupon already exists");
-        }else {
+        } else {
             couponRepository.save(coupon);
-            //  company.getCoupons().add(coupon);
-            log.debug("AddCoupon succeeded, coupon id {}",coupon.getId());
+            company.getCoupons().add(coupon);
+            log.debug("AddCoupon succeeded, coupon id {}", coupon.getId());
         }
+
     }
 
     /**

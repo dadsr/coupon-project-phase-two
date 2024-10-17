@@ -170,4 +170,7 @@ public class Coupon {
         setCompany(null);
     }
 
+    public Company getCompany() {
+        return company;
+    }
 }

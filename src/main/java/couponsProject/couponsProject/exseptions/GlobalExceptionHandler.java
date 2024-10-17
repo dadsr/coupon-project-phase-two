@@ -1,4 +1,4 @@
-package couponsProject.couponsProject.controllers.exseptions;
+package couponsProject.couponsProject.exseptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

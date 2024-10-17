@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.lang.NonNull;
 
+import java.sql.Date;
 import java.util.List;
 
 /**
@@ -46,4 +47,6 @@ public interface CouponRepository extends JpaRepository<Coupon, Integer> {
 
     void delete(@NonNull Coupon coupon);
 
+    //@Query("select c from Coupon c where c.endDate < ?1")
+    List<Coupon> findByEndDateBefore(Date date);
 }

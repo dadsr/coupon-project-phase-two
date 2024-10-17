@@ -4,25 +4,24 @@ package couponsProject.couponsProject.services;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.controllers.exseptions.CompanyException;
-import couponsProject.couponsProject.controllers.exseptions.CustomerException;
+import couponsProject.couponsProject.exseptions.CompanyException;
+import couponsProject.couponsProject.exseptions.CustomerException;
 import couponsProject.couponsProject.repository.CompanyRepository;
 import couponsProject.couponsProject.repository.CouponRepository;
 import couponsProject.couponsProject.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Objects;
+import java.util.*;
 
 @AllArgsConstructor
 @Slf4j
 @Service
-public class AdminServicesImpl implements AdminServices {
+@Scope("singleton")
+public class AdminServicesImpl implements AdminServices{
     private final CompanyRepository companyRepository;
     private final CustomerRepository customerRepository;
     private final CouponRepository couponRepository;
@@ -242,6 +241,12 @@ public class AdminServicesImpl implements AdminServices {
     public List<Coupon> getAllCoupons() {
         log.info("entering getAllCoupons");
         return couponRepository.findAll();
+    }
+
+    @Override
+    public List<Coupon> findByEndDateBefore(java.sql.Date date) {
+        log.info("entering findByEndDateBefore: {}", date);
+        return couponRepository.findByEndDateBefore(date);
     }
 
     //

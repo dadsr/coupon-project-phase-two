@@ -1,4 +1,4 @@
-package couponsProject.couponsProject.controllers.exseptions;
+package couponsProject.couponsProject.exseptions;
 
 public class CustomerException extends RuntimeException {
     public CustomerException(String message) {
