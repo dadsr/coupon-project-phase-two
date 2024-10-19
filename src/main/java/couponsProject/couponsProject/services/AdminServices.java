@@ -28,9 +28,7 @@ public interface AdminServices  extends ClientServices {
 
     Customer getOneCustomer(int customerID);
 
-    ArrayList<Customer> getAllCustomers();
-
-    List<Coupon> getAllCoupons();
+    List<Customer> getAllCustomers();
 
     List<Coupon> findByEndDateBefore(java.sql.Date date);
 }

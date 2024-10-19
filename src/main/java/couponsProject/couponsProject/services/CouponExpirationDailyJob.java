@@ -20,6 +20,18 @@ public class CouponExpirationDailyJob{
     private final AdminServices adminServices;
     private final CouponRepository couponRepository;
 
+    /**
+     * Executes a scheduled daily job to remove expired coupons and update related entities.
+     * This method is automatically triggered based on the cron expression defined in the application properties.
+     *
+     * The job performs the following tasks:
+     * 1. Finds all coupons that have expired (end date before current date)
+     * 2. Removes these expired coupons from associated customers
+     * 3. Removes the expired coupons from their respective companies
+     * 4. Deletes the expired coupons from the database
+     *
+     * The cron schedule is configured using the 'app.scheduler.cron' property in the application configuration.
+     */
     @Scheduled(cron = "${app.scheduler.cron}")
     public void executeDailyJob() {
         log.info("Daily job started at {} on thread {}", LocalDateTime.now(), Thread.currentThread().getName());

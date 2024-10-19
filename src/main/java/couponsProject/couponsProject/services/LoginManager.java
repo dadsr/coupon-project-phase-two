@@ -19,7 +19,15 @@ public class LoginManager {
     private  CustomerServices customerServices;
 
 
-
+    /**
+     * Authenticates a client based on their email, password, and client type.
+     *
+     * @param email      The email address of the client
+     * @param password   The password of the client
+     * @param clientType The type of client (ADMINISTRATOR, COMPANY, or CUSTOMER)
+     * @return A ClientServices object corresponding to the authenticated client type
+     * @throws LoginManagerException If authentication fails or an unexpected error occurs
+     */
     public  ClientServices  login(String email, String password, ClientTypeEnum clientType) throws LoginManagerException {
         log.info("Entering login for: {} using Email: {} Password: {}",clientType,email, password);
         try {

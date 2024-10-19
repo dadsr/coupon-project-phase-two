@@ -25,6 +25,16 @@ public class CustomerServicesImpl implements CustomerServices {
     private CouponRepository couponRepository;
 
 
+    /**
+     * Authenticates a customer using their email and password.
+     *
+     * @param email    The email address of the customer
+     * @param password The password of the customer
+     * @return An integer representing the result of the login attempt:
+     *         Typically, a positive value (e.g., customer ID) indicates successful login,
+     *         while 0 or a negative value might indicate failed login
+     * @throws "SomeSpecificException" if there's an issue with the database connection or query execution
+     */
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
@@ -71,7 +81,6 @@ public class CustomerServicesImpl implements CustomerServices {
         }
 
     }
-
 
     /**
      * Retrieves all coupons purchased by a specific customer.

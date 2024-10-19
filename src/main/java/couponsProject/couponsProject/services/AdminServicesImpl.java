@@ -226,23 +226,17 @@ public class AdminServicesImpl implements AdminServices{
      * @Override Overrides the getAllCustomers method from a parent class or interface
      */
     @Override
-    public ArrayList<Customer> getAllCustomers(){
+    public List<Customer> getAllCustomers(){
         log.info("entering getAllCustomers");
         return customerRepository.findAll();
     }
 
     /**
-     * Retrieves all coupons from the system.
+     * Retrieves a list of coupons that expire before the specified date.
      *
-     * @return A List containing all Coupon objects
-     * @Override Overrides the getAllCoupons method from a parent class or interface
+     * @param date The date to compare against coupon end dates
+     * @return A list of Coupon objects with end dates before the given date
      */
-    @Override
-    public List<Coupon> getAllCoupons() {
-        log.info("entering getAllCoupons");
-        return couponRepository.findAll();
-    }
-
     @Override
     public List<Coupon> findByEndDateBefore(java.sql.Date date) {
         log.info("entering findByEndDateBefore: {}", date);

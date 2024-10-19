@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @Slf4j
@@ -68,7 +69,7 @@ public class AdminController {
     }
 
     @GetMapping("customer/all")
-    public ArrayList<Customer> getAllCustomers() {
+    public List<Customer> getAllCustomers() {
         return adminServices.getAllCustomers();
     }
 

@@ -15,10 +15,23 @@ import java.util.function.Supplier;
 public  class TestsUtils {
     static Random rand = new Random();
 
+    /**
+     * Returns the current date as a java.sql.Date object.
+     * This method is typically used to set the start date for entities like coupons.
+     *
+     * @return A java.sql.Date object representing the current date
+     */
     private static Date getStartDate() {
         return new Date(System.currentTimeMillis());
     }
 
+    /**
+     * Generates a random Date within a specified number of days from the current date.
+     *
+     * @param maxDays The maximum number of days from now for the random date
+     * @return A random Date object within the specified range
+     * @throws IllegalArgumentException if maxDays is less than or equal to 0
+     */
     public static Date getRandomDateFromNow(int maxDays) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new java.util.Date());
@@ -26,7 +39,15 @@ public  class TestsUtils {
         return new Date(cal.getTimeInMillis());
     }
 
-    // Generic method to create a list of entities
+    /**
+     * A generic method to create a list of entities.
+     *
+     * @param <T> The type of entity to create
+     * @param num The number of entities to create
+     * @param entitySupplier A Supplier functional interface that provides new instances of the entity
+     * @return A List of newly created entities of type T
+     * @throws IllegalArgumentException if num is less than or equal to 0
+     */
     public static <T> List<T> createEntities(int num, Supplier<T> entitySupplier) {
         List<T> entities = new ArrayList<>();
         for (int i = 0; i < num; i++) {
@@ -35,7 +56,13 @@ public  class TestsUtils {
         return entities;
     }
 
-
+    /**
+     * Generates a list of random Company objects.
+     *
+     * @param num The number of Company objects to create
+     * @return A List of randomly generated Company objects
+     * @throws IllegalArgumentException if num is less than or equal to 0
+     */
     public static List<Company> createCompanies(int num) {
         return createEntities(num, () -> Company.builder()
                 .name("comp" + rand.nextInt(1,999999999))
@@ -44,7 +71,13 @@ public  class TestsUtils {
                 .build());
     }
 
-
+    /**
+     * Generates a list of random Customer objects.
+     *
+     * @param num The number of Customer objects to create
+     * @return A List of randomly generated Customer objects
+     * @throws IllegalArgumentException if num is less than or equal to 0
+     */
     public static List<Customer> createCustomers(int num) {
         return createEntities(num, () -> Customer.builder()
                 .firstName("first" + rand.nextInt(1,999999999))
@@ -55,7 +88,12 @@ public  class TestsUtils {
     }
 
     /**
-     * dose not update company for coupon
+     * Generates a list of random Coupon objects associated with a given Company.
+     * This method does not update the company for the created coupons in the database.
+     *
+     * @param company The Company object to associate with the created coupons
+     * @param num The number of Coupon objects to create
+     * @return A List of randomly generated Coupon objects
      */
     public static List<Coupon> createCoupons(Company company ,int num) {
         return createEntities(num,() -> Coupon.builder()

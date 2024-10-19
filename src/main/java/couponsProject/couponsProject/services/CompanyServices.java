@@ -19,6 +19,4 @@ public interface CompanyServices extends ClientServices {
 
     List<Coupon> getCompanyCoupons(int companyId);
 
-
-
 }

@@ -27,6 +27,4 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     @Query("select c.id from Customer c where c.email = ?1 and c.password = ?2")
     Integer getCustomerByEmailAndPassword(String email, String password);
 
-   @Override
-   ArrayList <Customer> findAll();
 }

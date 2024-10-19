@@ -23,7 +23,16 @@ public class CompanyServicesImpl implements CompanyServices {
     private CompanyRepository companyRepository;
     private CouponRepository couponRepository;
 
-
+    /**
+     * Authenticates a company user with the provided email and password.
+     *
+     * @param email    The email address of the company user
+     * @param password The password of the company user
+     * @return An integer representing the result of the login attempt:
+     *         Typically, a positive value indicates successful login (e.g., company ID),
+     *         while 0 or a negative value might indicate failed login
+     * @throws "SomeSpecificException" if there's an issue with the database connection or query execution
+     */
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
