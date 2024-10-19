@@ -3,7 +3,6 @@ package couponsProject.couponsProject.services;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.services.login.ClientServices;
 
 import java.util.ArrayList;
 import java.util.List;

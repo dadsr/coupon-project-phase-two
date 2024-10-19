@@ -32,6 +32,6 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
 
     void delete(@NonNull Company company);
 
-    //@Query("select c from Company c where c.email = ?1 and c.password = ?2")
-    Integer getCompanyIdByEmailAndPassword(String email, String password);
+   @Query("select c from Company c where c.email = ?1 and c.password = ?2")
+    int getCompanyByEmailAndPassword(String email, String password);
 }

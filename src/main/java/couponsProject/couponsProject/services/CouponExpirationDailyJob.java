@@ -26,8 +26,8 @@ public class CouponExpirationDailyJob{
         List<Coupon> coupons = adminServices.findByEndDateBefore(new Date(System.currentTimeMillis()));
         for (Coupon coupon : coupons) {
             List<Customer> customers = coupon.getCustomers();
-            for (Customer customer : customers) {
-                customer.removeCoupon(coupon);
+            for (int i = 0; i < customers.size(); i++) {
+                customers.get(i).removeCoupon(coupon);
             }
             coupon.getCompany().removeCoupon(coupon);
             coupon.setCompany(null);

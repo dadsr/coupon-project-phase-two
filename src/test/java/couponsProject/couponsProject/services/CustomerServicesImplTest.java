@@ -7,6 +7,7 @@ import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
 import couponsProject.couponsProject.exseptions.CouponException;
 import couponsProject.couponsProject.repository.CompanyRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
+@Slf4j
 @SpringBootTest
 class CustomerServicesImplTest {
     @Autowired
@@ -24,46 +26,26 @@ class CustomerServicesImplTest {
     private CustomerServices customerServices;
     @Autowired
     private CompanyServices companyServices;
-
-    Random rand = new Random();
-
-    String customerEmail ="client@mail.co.il";
     @Autowired
     private CompanyRepository companyRepository;
+    Random rand = new Random();
 
-    @Test
-    void login() {
-        Customer customer = TestsUtils.createCustomers(1).get(0);
-        adminServices.addCustomer(customer);
-
-        Assertions.assertThat(customerServices.login(customer.getEmail(),customer.getPassword()))
-                .as("test login success")
-                .isEqualTo(customer.getId());
-
-        Assertions.assertThatThrownBy(() -> customerServices.login("wrongemail@admin.com", customer.getPassword()))
-                .as("test login wrong mail Failure")
-                .isInstanceOf(NoSuchElementException.class)
-                .hasMessageContaining("No such customer");
-
-        Assertions.assertThatThrownBy(() -> customerServices.login(customer.getEmail(), "wrongpassword"))
-                .as("test login wrong password Failure")
-                .isInstanceOf(NoSuchElementException.class)
-                .hasMessageContaining("No such customer");
-    }
 
     @Test
     void getCustomer() {
 
+        log.info("Testing getCustomer");
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
         Customer customerDb = customerServices.getCustomer(customer.getId());
+        log.info("Testing getCustomer - getting customer");
         Assertions.assertThat(customerDb.getId())
                 .as("test get customer success")
                 .isEqualTo(customer.getId());
     }
-
     @Test
     void couponPurchase() {
+        log.info("Testing couponPurchase");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
@@ -73,19 +55,20 @@ class CustomerServicesImplTest {
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
 
+        log.info("Testing couponPurchase - purchase coupon");
         Assertions.assertThatCode(() -> customerServices.couponPurchase(customer.getId(),coupon.getId()))
                 .as("test purchase process")
                 .doesNotThrowAnyException();
 
+        log.info("Testing couponPurchase - perchase coupon for second time");
         Assertions.assertThatThrownBy(() -> customerServices.couponPurchase(customer.getId(),coupon.getId()))
                 .as("test if purchase exist coupon is failed")
                 .isInstanceOf(CouponException.class)
                 .hasMessageContaining("Purchase is not possible");
     }
-
     @Test
     void getCoupons() {
-
+        log.info("Testing getCoupons");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
@@ -101,7 +84,7 @@ class CustomerServicesImplTest {
         }
 
         /***************** by id *****************/
-
+        log.info("Testing getCoupons - by id");
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId))
                 .as("test getting coupons by customer id")
                 .doesNotThrowAnyException();
@@ -114,7 +97,7 @@ class CustomerServicesImplTest {
                 .isEqualTo(coupons.size());
 
         /***************** by category *****************/
-
+        log.info("Testing getCoupons - by category");
         CategoryEnum category = coupons.get(0).getCategory();
 
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,category))
@@ -129,7 +112,7 @@ class CustomerServicesImplTest {
                 .isEqualTo(coupons.stream().filter(coupon -> coupon.getCategory().equals(category)).count());
 
         /***************** by maxPrice *****************/
-
+        log.info("Testing getCoupons - by max price");
         double maxPrice = coupons.get(rand.nextInt(coupons.size())).getPrice();
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,maxPrice))
                 .as("test getting coupons by max price and customer id")

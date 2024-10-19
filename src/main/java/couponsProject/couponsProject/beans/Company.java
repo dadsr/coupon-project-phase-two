@@ -5,6 +5,7 @@ import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.repository.CouponRepository;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ import java.util.List;
  * - childEntities: One-to-many relationship with associated entities.
  *   Fetches eagerly, cascades all operations, and removes orphaned entities.
  */
+@Slf4j
 @NoArgsConstructor
 @Getter
 @Setter
@@ -91,6 +93,7 @@ public class  Company {
      * @param coupon The coupon to be added
      */
     public void addCoupon(Coupon coupon) {
+        log.info("Entering addCoupon using coupon id: {}", coupon.getId());
         this.coupons.add(coupon);
         coupon.setCompany(this);
     }
@@ -99,6 +102,7 @@ public class  Company {
      * @param coupon The coupon to be removed
      */
     public void removeCoupon(Coupon coupon) {
+        log.info("Entering removeCoupon using coupon id: {}", coupon.getId());
         this.coupons.remove(coupon);
         coupon.setCompany(null);
     }

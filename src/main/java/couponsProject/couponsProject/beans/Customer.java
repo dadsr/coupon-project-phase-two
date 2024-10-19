@@ -2,7 +2,9 @@ package couponsProject.couponsProject.beans;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,7 @@ import java.util.List;
  *   - joinColumns: Maps the customer_id
  *   - inverseJoinColumns: Maps the coupons_id
  */
+@Slf4j
 @NoArgsConstructor
 @Getter
 @Setter
@@ -100,6 +103,7 @@ public class Customer {
      * @param coupon The coupon to be added
      */
     public void addCoupon(Coupon coupon) {
+        log.info("Entering addCoupon using coupon id: {}", coupon.getId());
         coupons.add(coupon);
         coupon.getCustomers().add(this);
     }
@@ -112,6 +116,7 @@ public class Customer {
      * @param coupon The coupon to be removed
      */
     public void removeCoupon(Coupon coupon) {
+        log.info("Entering removeCoupon using coupon id: {}", coupon.getId());
         coupon.getCustomers().remove(this);
     }
 

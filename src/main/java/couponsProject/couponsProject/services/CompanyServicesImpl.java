@@ -27,7 +27,7 @@ public class CompanyServicesImpl implements CompanyServices {
     @Override
     public int login(String email, String password){
         log.info("Entering login using Email: {} Password: {}", email, password);
-        return companyRepository.getCompanyIdByEmailAndPassword(email,password);
+        return companyRepository.getCompanyByEmailAndPassword(email,password);
     }
 
     /**

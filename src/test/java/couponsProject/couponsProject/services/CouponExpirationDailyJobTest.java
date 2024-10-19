@@ -31,6 +31,7 @@ class CouponExpirationDailyJobTest {
     @Transactional
     @Test
     void executeDailyJob() {
+        log.info("Testing executeDailyJob");
         List<Company> companies = TestsUtils.createCompanies(2);
 
         for (Company company : companies) {
@@ -46,12 +47,11 @@ class CouponExpirationDailyJobTest {
 
             for (Customer customer : customers) {
 
-                    adminServices.addCustomer(customer);
+                adminServices.addCustomer(customer);
             }
             for (Coupon coupon : coupons) {
                 for (Customer customer : customers) {
                     if (coupon.getAmount() > 0) {
-                        log.error("XXXXXXXXXXXXXXXXXXXXXXXXXX for customerId: {} couponId: {} amount: {}", customer.getId(), coupon.getId(), coupon.getAmount());
                         customerServices.couponPurchase(customer.getId(), coupon.getId());
                     }
                 }
@@ -59,9 +59,9 @@ class CouponExpirationDailyJobTest {
         }
 
         couponExpirationDailyJob.executeDailyJob();
-  /*      Assertions.assertThatCode()
+        Assertions.assertThatCode(() -> couponExpirationDailyJob.executeDailyJob())
                 .as("test executeDailyJob")
                 .doesNotThrowAnyException();
-*/
+
     }
 }

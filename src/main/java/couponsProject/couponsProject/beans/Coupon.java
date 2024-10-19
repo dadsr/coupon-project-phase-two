@@ -2,6 +2,7 @@ package couponsProject.couponsProject.beans;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.proxy.HibernateProxy;
 import org.hibernate.type.SqlTypes;
@@ -34,6 +35,7 @@ import java.util.Objects;
  *
  * Note: The customers relationship is eagerly fetched and mapped by the 'coupons' field in the Customer entity.
  */
+@Slf4j
 @NoArgsConstructor
 @Getter
 @Setter
@@ -153,6 +155,7 @@ public class Coupon {
      */
     @Override
     public final boolean equals(Object o) {
+        log.info("Entering equals using coupon title: {} and this coupon title: {} ",((Coupon)o).getTitle(), this.getTitle());
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Coupon coupon = (Coupon) o;
@@ -166,6 +169,7 @@ public class Coupon {
      * This method maintains the bidirectional relationship between Coupon and Company.
      */
     public void detachCompany() {
+        log.info("Entering detachCompany using company id: {}", this.getId());
         getCompany().getCoupons().remove(this);
         setCompany(null);
     }
