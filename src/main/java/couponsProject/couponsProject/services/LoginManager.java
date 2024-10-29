@@ -1,11 +1,9 @@
 package couponsProject.couponsProject.services;
 
 import couponsProject.couponsProject.exseptions.LoginManagerException;
-import jakarta.persistence.NoResultException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
-import org.springframework.orm.jpa.JpaSystemException;
 import org.springframework.stereotype.Component;
 
 

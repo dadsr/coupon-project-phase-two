@@ -33,22 +33,22 @@ class AdminServicesImplTest {
     @BeforeEach
     @Test
     void addCompany() {
-        log.info("Testing addCompany");
+        log.info(" *********************** Testing addCompany *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
 
-        log.info("Testing addCompany - adding company does not throw any exception");
+        log.info("Testing addCompany - *********************** adding company does not throw any exception *********************** ");
         Assertions.assertThatCode(
                         () -> adminServices.addCompany(company))
                 .as("addCompany - testing adding company does not throw any exception")
                 .doesNotThrowAnyException();
 
-        log.info("Testing addCompany - testing add company");
+        log.info("Testing addCompany - *********************** testing add company *********************** ");
         Assertions.assertThat(
                         adminServices.getAllCompanies().stream().filter(c -> c.getName().equals(company.getName())&& c.getEmail().equals(company.getEmail())).count())
                 .as("addCompany - testing add company")
                 .isEqualTo(1);
 
-        log.info("Testing addCompany - adding exist company does throw exception");
+        log.info("Testing addCompany - *********************** adding exist company does throw exception *********************** ");
         Assertions.assertThatThrownBy(
                         () -> adminServices.addCompany(company))
                 .as("addCompany - testing if adding exist company does throw exception")
@@ -58,25 +58,25 @@ class AdminServicesImplTest {
     }
     @Test
     void updateCompany() {
-        log.info("Testing updateCompany");
+        log.info(" *********************** Testing updateCompany *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
         String updatedEmail ="update" + company.getEmail();
         company.setEmail(updatedEmail);
 
-        log.info("Testing updateCompany - update does not throw exception");
+        log.info("Testing updateCompany - *********************** update does not throw exception *********************** ");
         Assertions.assertThatCode(() -> adminServices.updateCompany(company))
                 .as("updateCompany - update does not throw exception")
                 .doesNotThrowAnyException();
 
-        log.info("Testing updateCompany - updated company was updated successful");
+        log.info("Testing updateCompany - *********************** updated company was updated successful *********************** ");
         Assertions.assertThat(
                         adminServices.getOneCompany(company.getId()).getEmail())
                 .as("updateCompany - test if updated company was updated successful")
                 .isEqualTo(updatedEmail);
 
-        log.info("Testing updateCompany - updating a non-existent company");
-        //creating non existing company and updateing it
+        log.info("Testing updateCompany - *********************** updating a non-existent company *********************** ");
+        //creating non existing company and updating it
         Company company2 = TestsUtils.createCompanies(1).get(0);
 
         Assertions.assertThatThrownBy(() -> adminServices.updateCompany(company2))
@@ -87,17 +87,17 @@ class AdminServicesImplTest {
     @Test
     void getOneCompany() {
 
-        log.info("Testing getOneCompany");
+        log.info(" *********************** Testing getOneCompany *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
-        log.info("Testing getOneCompany - getting company by id");
+        log.info("Testing getOneCompany - *********************** getting company by id *********************** ");
         Assertions.assertThat(company)
                 .as("getOneCompany - test getting company by id")
                 .isNotNull()
                 .hasFieldOrPropertyWithValue("id",company.getId());
 
-        log.info("Testing getOneCompany - when company dose not exist");
+        log.info("Testing getOneCompany - *********************** when company dose not exist *********************** ");
         Assertions.assertThatThrownBy(() -> adminServices.getOneCompany(9999))
                 .as("getOneCompany - test when company dose not exist")
                 .isInstanceOf(NoSuchElementException.class)
@@ -106,7 +106,7 @@ class AdminServicesImplTest {
     @Test
     void deleteCompany() {
 
-        log.info("Testing deleteCompany");
+        log.info(" *********************** Testing deleteCompany *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
@@ -124,16 +124,16 @@ class AdminServicesImplTest {
             customerServices.couponPurchase(customer.getId(),coupon.getId());
         }
 
-        log.info("Testing deleteCompany - deletion of company");
+        log.info("Testing deleteCompany - *********************** deletion of company *********************** ");
         Assertions.assertThatCode(() -> adminServices.deleteCompany(company.getId()))
                 .as("deleteCompany - test deletion of company")
                 .doesNotThrowAnyException();
 
         Assertions.assertThat(customerServices.getCoupons(customer.getId()))
-                .as("deleteCompany - test deletion of coupons and purchases")
+                .as("deleteCompany - *********************** test deletion of coupons and purchases *********************** ")
                 .isNullOrEmpty();
 
-        log.info("Testing deleteCompany - deletion of non existing company");
+        log.info("Testing deleteCompany - *********************** deletion of non existing company *********************** ");
         Assertions.assertThatThrownBy(
                         () -> adminServices.deleteCompany(company.getId()))
                 .as("test if company was deleted successful")
@@ -143,7 +143,7 @@ class AdminServicesImplTest {
     @Test
     void getAllCompanies() {
 
-        log.info("Testing getAllCompanies");
+        log.info(" *********************** Testing getAllCompanies *********************** ");
         int size = adminServices.getAllCompanies().size();
 
         List<Company> companies = TestsUtils.createCompanies(10);
@@ -159,10 +159,10 @@ class AdminServicesImplTest {
     @Test
     void addCustomer() {
 
-        log.info("Testing addCustomer");
+        log.info(" *********************** Testing addCustomer *********************** ");
         Customer customer = TestsUtils.createCustomers(1).get(0);
 
-        log.info("Testing addCustomer - adding customer");
+        log.info("Testing addCustomer - *********************** adding customer *********************** ");
         Assertions.assertThatCode(() -> adminServices.addCustomer(customer))
                 .as("test if adding customer does not throw any exception")
                 .doesNotThrowAnyException();
@@ -176,7 +176,7 @@ class AdminServicesImplTest {
                 .as("test if adding customer was successful")
                 .isEqualTo(1);
 
-        log.info("Testing addCustomer - adding existing customer");
+        log.info("Testing addCustomer - *********************** adding existing customer *********************** ");
         Assertions.assertThatThrownBy(
                         () -> adminServices.addCustomer(customer))
                 .as("test if adding existing customer does not throw exception")
@@ -186,12 +186,12 @@ class AdminServicesImplTest {
     @Test
     void updateCustomer() {
 
-        log.info("Testing updateCustomer");
+        log.info(" *********************** Testing updateCustomer *********************** ");
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
         customer.setEmail("update" + customer.getEmail());
 
-        log.info("Testing updateCustomer - updating customer");
+        log.info("Testing updateCustomer - *********************** updating customer *********************** ");
         Assertions.assertThatCode(() -> adminServices.updateCustomer(customer)).doesNotThrowAnyException();
 
         Assertions.assertThat(
@@ -200,7 +200,7 @@ class AdminServicesImplTest {
                 .isEqualTo(customer.getEmail());
 
         //NoSuchElementException
-        log.info("Testing updateCustomer - updating non-existent customer");
+        log.info("Testing updateCustomer - *********************** updating non-existent customer *********************** ");
         Customer customer2 = TestsUtils.createCustomers(1).get(0);
         Assertions.assertThatThrownBy(() -> adminServices.updateCustomer(customer2))
                 .as("Test if updating a non-existent customer throws NoSuchElementException")
@@ -209,19 +209,19 @@ class AdminServicesImplTest {
     }
     @Test
     void getOneCustomer() {
-        log.info("Testing getOneCustomer");
+        log.info(" *********************** Testing getOneCustomer *********************** ");
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
 
         Customer customerDb = adminServices.getOneCustomer(customer.getId());
 
-        log.info("Testing getOneCustomer - getting customer by id");
+        log.info("Testing getOneCustomer - *********************** getting customer by id *********************** ");
         Assertions.assertThat(customerDb)
                 .as("test getting customer by id")
                 .isNotNull()
                 .hasFieldOrPropertyWithValue("id",customer.getId());
 
-        log.info("Testing getOneCustomer - getting non existing customer by id");
+        log.info("Testing getOneCustomer - *********************** getting non existing customer by id *********************** ");
         Assertions.assertThatThrownBy(() -> adminServices.getOneCustomer(9999))
                 .as("test when customer dose not exist")
                 .isInstanceOf(NoSuchElementException.class)
@@ -230,11 +230,11 @@ class AdminServicesImplTest {
     @Test
     void deleteCustomer() {
 
-        log.info("Testing deleteCustomer");
+        log.info(" *********************** Testing deleteCustomer *********************** ");
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
 
-        log.info("Testing deleteCustomer - deleting customer by id");
+        log.info("Testing deleteCustomer - *********************** deleting customer by id *********************** ");
         Assertions.assertThatCode(() -> adminServices.deleteCustomer(customer.getId())).doesNotThrowAnyException();
         //NoSuchElementException
         Assertions.assertThatThrownBy(() -> adminServices.deleteCustomer(customer.getId()))
@@ -246,7 +246,7 @@ class AdminServicesImplTest {
     @Test
     void getAllCustomers() {
 
-        log.info("Testing getAllCustomers");
+        log.info(" *********************** Testing getAllCustomers *********************** ");
         int size = adminServices.getAllCustomers().size();
         List<Customer> customers = TestsUtils.createCustomers(10);
 

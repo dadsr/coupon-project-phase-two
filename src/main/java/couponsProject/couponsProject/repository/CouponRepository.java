@@ -1,7 +1,6 @@
 package couponsProject.couponsProject.repository;
 
 import couponsProject.couponsProject.beans.CategoryEnum;
-import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

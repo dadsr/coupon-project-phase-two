@@ -3,10 +3,6 @@ package couponsProject.couponsProject.repository;
 import couponsProject.couponsProject.beans.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.lang.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Repository interface for Customer entity operations.
  * Extends JpaRepository for basic CRUD operations.

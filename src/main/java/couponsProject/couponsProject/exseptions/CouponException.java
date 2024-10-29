@@ -7,5 +7,5 @@ public class CouponException extends RuntimeException {
     public CouponException(String message) {
         super(message);
         log.info("throwing CouponException message: {}", message);
-        }
+    }
 }

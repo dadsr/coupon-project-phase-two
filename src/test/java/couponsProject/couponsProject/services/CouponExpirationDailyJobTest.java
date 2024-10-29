@@ -4,7 +4,6 @@ import couponsProject.couponsProject.TestsUtils;
 import couponsProject.couponsProject.beans.Company;
 import couponsProject.couponsProject.beans.Coupon;
 import couponsProject.couponsProject.beans.Customer;
-import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -13,8 +12,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Date;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @Slf4j
 @SpringBootTest
@@ -28,10 +25,9 @@ class CouponExpirationDailyJobTest {
     @Autowired
     private CustomerServices customerServices;
 
-    @Transactional
     @Test
     void executeDailyJob() {
-        log.info("Testing executeDailyJob");
+        log.info(" *********************** Testing executeDailyJob *********************** ");
         List<Company> companies = TestsUtils.createCompanies(2);
 
         for (Company company : companies) {
@@ -49,16 +45,18 @@ class CouponExpirationDailyJobTest {
 
                 adminServices.addCustomer(customer);
             }
+            int countPurchases =0;
             for (Coupon coupon : coupons) {
                 for (Customer customer : customers) {
-                    if (coupon.getAmount() > 0) {
+                    if (coupon.getAmount() > 3) {
                         customerServices.couponPurchase(customer.getId(), coupon.getId());
+                        countPurchases++;
                     }
                 }
             }
+            log.info(" *********************** counting {} coupons and {} purchases *********************** ",coupons.size(),countPurchases);
         }
 
-        couponExpirationDailyJob.executeDailyJob();
         Assertions.assertThatCode(() -> couponExpirationDailyJob.executeDailyJob())
                 .as("test executeDailyJob")
                 .doesNotThrowAnyException();

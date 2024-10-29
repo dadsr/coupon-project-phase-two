@@ -1,8 +1,6 @@
 package couponsProject.couponsProject.services;
 
 import couponsProject.couponsProject.beans.Coupon;
-import couponsProject.couponsProject.beans.Customer;
-import couponsProject.couponsProject.repository.CouponRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,35 +16,32 @@ import java.util.List;
 @Service
 public class CouponExpirationDailyJob{
     private final AdminServices adminServices;
-    private final CouponRepository couponRepository;
+    private final CompanyServices companyServices;
 
     /**
-     * Executes a scheduled daily job to remove expired coupons and update related entities.
-     * This method is automatically triggered based on the cron expression defined in the application properties.
+     * Executes a daily scheduled job to clean up expired coupons.
+     * This method is scheduled to run based on the cron expression defined in the application properties.
      *
      * The job performs the following tasks:
-     * 1. Finds all coupons that have expired (end date before current date)
-     * 2. Removes these expired coupons from associated customers
-     * 3. Removes the expired coupons from their respective companies
-     * 4. Deletes the expired coupons from the database
+     * 1. Logs the start time and the thread on which it's running.
+     * 2. Retrieves all coupons with an end date before the current system time.
+     * 3. Iterates through the expired coupons and deletes each one.
      *
-     * The cron schedule is configured using the 'app.scheduler.cron' property in the application configuration.
+     * @throws RuntimeException if there's an error during coupon deletion or database operations
+     *
+     * @see AdminServices#findByEndDateBefore(Date)
+     * @see CompanyServices#deleteCoupon(int)
+     *
+     * @since 1.0
      */
     @Scheduled(cron = "${app.scheduler.cron}")
     public void executeDailyJob() {
         log.info("Daily job started at {} on thread {}", LocalDateTime.now(), Thread.currentThread().getName());
         List<Coupon> coupons = adminServices.findByEndDateBefore(new Date(System.currentTimeMillis()));
         for (Coupon coupon : coupons) {
-            List<Customer> customers = coupon.getCustomers();
-            for (int i = 0; i < customers.size(); i++) {
-                customers.get(i).removeCoupon(coupon);
-            }
-            coupon.getCompany().removeCoupon(coupon);
-            coupon.setCompany(null);
-            couponRepository.delete(coupon);
+            companyServices.deleteCoupon(coupon.getId());
         }
         log.info("Daily job Ended at {} on thread {}", LocalDateTime.now(), Thread.currentThread().getName());
-
     }
 }
 

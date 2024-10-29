@@ -3,10 +3,8 @@ package couponsProject.couponsProject.repository;
 import couponsProject.couponsProject.beans.Company;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.lang.NonNull;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 
@@ -32,6 +30,6 @@ public interface CompanyRepository extends JpaRepository<Company, Integer>, JpaS
 
     void delete(@NonNull Company company);
 
-   @Query("select c from Company c where c.email = ?1 and c.password = ?2")
+    @Query("select c from Company c where c.email = ?1 and c.password = ?2")
     int getCompanyByEmailAndPassword(String email, String password);
 }

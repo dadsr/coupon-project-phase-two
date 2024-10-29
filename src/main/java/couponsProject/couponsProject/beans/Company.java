@@ -1,8 +1,6 @@
 package couponsProject.couponsProject.beans;
 
 
-import couponsProject.couponsProject.beans.Coupon;
-import couponsProject.couponsProject.repository.CouponRepository;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;

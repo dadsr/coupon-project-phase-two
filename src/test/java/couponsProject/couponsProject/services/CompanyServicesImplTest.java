@@ -27,17 +27,17 @@ class CompanyServicesImplTest {
     /**********************************************************************************/
     @Test
     void getCompanyDetails() {
-        log.info("Testing getCompanyDetails");
+        log.info(" *********************** Testing getCompanyDetails *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
-        log.info("Testing getCompanyDetails - getting company by id");
+        log.info("Testing getCompanyDetails - *********************** getting company by id *********************** ");
         Company companyDb = companyServices.getCompanyDetails(company.getId());
         Assertions.assertThat(companyDb).as("test getting company by id")
                 .isNotNull()
                 .hasFieldOrPropertyWithValue("id",company.getId());
 
-        log.info("Testing getCompanyDetails - getting non existing company");
+        log.info("Testing getCompanyDetails - *********************** getting non existing company *********************** ");
         Assertions.assertThatThrownBy(() -> companyServices.getCompanyDetails(9999))
                 .as("test when company does not exist")
                 .isInstanceOf(NoSuchElementException.class)
@@ -45,12 +45,12 @@ class CompanyServicesImplTest {
     }
     @Test
     void addCoupon() {
-        log.info("Testing addCoupon");
+        log.info(" *********************** Testing addCoupon *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
         Coupon coupon= TestsUtils.createCoupons(company,1).get(0);
 
-        log.info("Testing addCoupon - adding coupon");
+        log.info(" *********************** Testing addCoupon - adding coupon *********************** ");
         Assertions.assertThatCode(() -> companyServices.addCoupon(coupon))
                 .as("test if adding coupon does not throw any exception")
                 .doesNotThrowAnyException();
@@ -60,7 +60,7 @@ class CompanyServicesImplTest {
                 .as("test if adding coupon was successful")
                 .isEqualTo(1);
 
-        log.info("Testing addCoupon - adding existing coupon");
+        log.info("Testing addCoupon - *********************** adding existing coupon *********************** ");
         Assertions.assertThatThrownBy(() -> companyServices.addCoupon(coupon))
                 .as("test if adding exist coupon does throw exception")
                 .isInstanceOf(CouponException.class)
@@ -69,7 +69,7 @@ class CompanyServicesImplTest {
     }
     @Test
     void updateCoupon() {
-        log.info("Testing updateCoupon");
+        log.info(" *********************** Testing updateCoupon *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
         Coupon coupon= TestsUtils.createCoupons(company,1).get(0);
@@ -79,7 +79,7 @@ class CompanyServicesImplTest {
         Double price = coupon.getPrice()/2;
         couponDb.setPrice(price);
 
-        log.info("Testing updateCoupon - updating coupon");
+        log.info("Testing updateCoupon - *********************** updating coupon *********************** ");
         Assertions.assertThatCode(() -> companyServices.updateCoupon(couponDb)).doesNotThrowAnyException();
 
         Assertions.assertThat(companyServices.getCompanyCoupons(company.getId()).get(0).getPrice())
@@ -87,7 +87,7 @@ class CompanyServicesImplTest {
                 .isEqualTo(price);
 
         //NoSuchElementException
-        log.info("Testing updateCoupon - updating non existing coupon");
+        log.info("Testing updateCoupon - *********************** updating non existing coupon *********************** ");
         Coupon coupon2 = TestsUtils.createCoupons(company,1).get(0);
 
         Assertions.assertThatThrownBy(() -> companyServices.updateCoupon(coupon2))
@@ -95,10 +95,10 @@ class CompanyServicesImplTest {
                 .isInstanceOf(NoSuchElementException.class)
                 .hasMessageContaining("Coupon does not exists");
     }
-    //todo
+
     @Test
     void deleteCoupon() {
-        log.info("Testing deleteCoupon");
+        log.info(" *********************** Testing deleteCoupon *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
         Coupon coupon= TestsUtils.createCoupons(company,1).get(0);
@@ -108,7 +108,7 @@ class CompanyServicesImplTest {
         customerServices.couponPurchase(customer.getId(), coupon.getId());
 
 
-        log.info("Testing deleteCoupon - deleting coupon");
+        log.info("Testing deleteCoupon - *********************** deleting coupon *********************** ");
         Assertions.assertThatCode(() -> companyServices.deleteCoupon(coupon.getId()))
                 .doesNotThrowAnyException();
 
@@ -121,7 +121,7 @@ class CompanyServicesImplTest {
     }
     @Test
     void getCompanyCoupons() {
-        log.info("Testing getCompanyCoupons");
+        log.info(" *********************** Testing getCompanyCoupons *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
         List <Coupon> coupons = TestsUtils.createCoupons(company,20);

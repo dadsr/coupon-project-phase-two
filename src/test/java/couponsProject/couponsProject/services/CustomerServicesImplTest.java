@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Random;
 
 @Slf4j
@@ -34,18 +33,18 @@ class CustomerServicesImplTest {
     @Test
     void getCustomer() {
 
-        log.info("Testing getCustomer");
+        log.info(" *********************** Testing getCustomer *********************** ");
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
         Customer customerDb = customerServices.getCustomer(customer.getId());
-        log.info("Testing getCustomer - getting customer");
+        log.info("Testing getCustomer - *********************** getting customer *********************** ");
         Assertions.assertThat(customerDb.getId())
                 .as("test get customer success")
                 .isEqualTo(customer.getId());
     }
     @Test
     void couponPurchase() {
-        log.info("Testing couponPurchase");
+        log.info(" *********************** Testing couponPurchase *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
@@ -55,12 +54,12 @@ class CustomerServicesImplTest {
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
 
-        log.info("Testing couponPurchase - purchase coupon");
+        log.info("Testing couponPurchase - *********************** purchase coupon *********************** ");
         Assertions.assertThatCode(() -> customerServices.couponPurchase(customer.getId(),coupon.getId()))
                 .as("test purchase process")
                 .doesNotThrowAnyException();
 
-        log.info("Testing couponPurchase - perchase coupon for second time");
+        log.info("Testing couponPurchase - *********************** purchase coupon for second time *********************** ");
         Assertions.assertThatThrownBy(() -> customerServices.couponPurchase(customer.getId(),coupon.getId()))
                 .as("test if purchase exist coupon is failed")
                 .isInstanceOf(CouponException.class)
@@ -68,7 +67,7 @@ class CustomerServicesImplTest {
     }
     @Test
     void getCoupons() {
-        log.info("Testing getCoupons");
+        log.info(" *********************** Testing getCoupons *********************** ");
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
@@ -84,7 +83,7 @@ class CustomerServicesImplTest {
         }
 
         /***************** by id *****************/
-        log.info("Testing getCoupons - by id");
+        log.info("Testing getCoupons - *********************** by id *********************** ");
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId))
                 .as("test getting coupons by customer id")
                 .doesNotThrowAnyException();
@@ -97,7 +96,7 @@ class CustomerServicesImplTest {
                 .isEqualTo(coupons.size());
 
         /***************** by category *****************/
-        log.info("Testing getCoupons - by category");
+        log.info("Testing getCoupons - *********************** by category *********************** ");
         CategoryEnum category = coupons.get(0).getCategory();
 
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,category))
@@ -112,7 +111,7 @@ class CustomerServicesImplTest {
                 .isEqualTo(coupons.stream().filter(coupon -> coupon.getCategory().equals(category)).count());
 
         /***************** by maxPrice *****************/
-        log.info("Testing getCoupons - by max price");
+        log.info("Testing getCoupons - *********************** by max price *********************** ");
         double maxPrice = coupons.get(rand.nextInt(coupons.size())).getPrice();
         Assertions.assertThatCode(() -> customerServices.getCoupons(customerId,maxPrice))
                 .as("test getting coupons by max price and customer id")

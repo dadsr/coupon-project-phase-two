@@ -63,7 +63,7 @@ public class CustomerServicesImpl implements CustomerServices {
      * @Transactional Ensures that all operations within the method are part of a single transaction
      * @Override Overrides the couponPurchase method from a parent class or interface
      */
-     @Transactional
+    @Transactional
     @Override
     public void couponPurchase(int customerId, int couponId){
         log.info("Entering couponPurchase using customerId: {} couponId: {}", customerId, couponId);

@@ -26,9 +26,9 @@ class LoginManagerTest {
 
     @Test
     void login() {
-        log.info("Testing login");
+        log.info(" *********************** Testing login *********************** ");
 
-        log.info("Testing login - ADMINISTRATOR");
+        log.info("Testing login - *********************** ADMINISTRATOR *********************** ");
         Assertions.assertThatCode(
                         ()-> loginManager.login("admin@admin.com", "admin", ClientTypeEnum.ADMINISTRATOR))
                 .as("test login success")
@@ -42,21 +42,21 @@ class LoginManagerTest {
             throw new RuntimeException(e);
         }
 
-        log.info("Testing login - ADMINISTRATOR wrong mail");
+        log.info("Testing login - *********************** ADMINISTRATOR wrong mail *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login("wrongemail@admin.com", "admin",ClientTypeEnum.ADMINISTRATOR))
                 .as("test login wrong mail Failure")
                 .isInstanceOf(LoginManagerException.class)
                 .hasMessageContaining("Your account name or password is incorrect.");
 
-        log.info("Testing login - ADMINISTRATOR wrong password");
+        log.info("Testing login - *********************** ADMINISTRATOR wrong password *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login("admin@admin.com", "wrongPass",ClientTypeEnum.ADMINISTRATOR))
                 .as("test login wrong password Failure")
                 .isInstanceOf(LoginManagerException.class)
                 .hasMessageContaining("Your account name or password is incorrect.");
 
-        log.info("Testing login - ADMINISTRATOR wrong ClientType");
+        log.info("Testing login - *********************** ADMINISTRATOR wrong ClientType *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login("wrongemail@admin.com", "admin",ClientTypeEnum.COMPANY))
                 .as("test login wrong ClientType Failure")
@@ -73,38 +73,21 @@ class LoginManagerTest {
         Company company = TestsUtils.createCompanies(1).get(0);
         adminServices.addCompany(company);
 
-        //todo throw exception
-/*
-       log.info("Testing login - COMPANY");
-       Assertions.assertThatCode(
-                        ()-> loginManager.login(company.getEmail(), company.getPassword(),ClientTypeEnum.COMPANY))
-                .as("test login success")
-                .doesNotThrowAnyException();
-
-        try {
-            ClientServices result = loginManager.login(company.getEmail(), company.getPassword(),ClientTypeEnum.COMPANY);
-            Assertions.assertThat(result)
-                    .as("Login result should be an instance of CompanyServices")
-                    .isInstanceOf(CompanyServices.class);
-        } catch (LoginManagerException e) {
-            throw new RuntimeException(e);
-        }
-*/
-        log.info("Testing login - COMPANY wrong mail");
+        log.info("Testing login - *********************** COMPANY wrong mail *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login("wrongemail@admin.com",  company.getPassword(),ClientTypeEnum.COMPANY))
                 .as("test login wrong mail Failure")
                 .isInstanceOf(LoginManagerException.class)
                 .hasMessageContaining("Your account name or password is incorrect.");
 
-        log.info("Testing login - COMPANY wrong password");
+        log.info("Testing login - *********************** COMPANY wrong password *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login( company.getEmail(), "wrongpassword",ClientTypeEnum.COMPANY))
                 .as("test login wrong password Failure")
                 .isInstanceOf(LoginManagerException.class)
                 .hasMessageContaining("Your account name or password is incorrect.");
 
-        log.info("Testing login - COMPANY wrong ClientType");
+        log.info("Testing login - *********************** COMPANY wrong ClientType *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login( company.getEmail(), company.getPassword(),ClientTypeEnum.CUSTOMER))
                 .as("test login wrong ClientType Failure")
@@ -112,7 +95,7 @@ class LoginManagerTest {
                 .hasMessageContaining("Your account name or password is incorrect.");
 
         //CUSTOMER
-        log.info("Testing login - CUSTOMER");
+        log.info("Testing login - *********************** CUSTOMER *********************** ");
         Customer customer = TestsUtils.createCustomers(1).get(0);
         adminServices.addCustomer(customer);
 
@@ -129,21 +112,21 @@ class LoginManagerTest {
             throw new RuntimeException(e);
         }
 
-        log.info("Testing login - CUSTOMER wrong mail");
+        log.info("Testing login - *********************** CUSTOMER wrong mail *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login("wrongemail@admin.com", customer.getPassword(),ClientTypeEnum.CUSTOMER))
                 .as("test login wrong mail Failure")
                 .isInstanceOf(LoginManagerException.class)
                 .hasMessageContaining("Your account name or password is incorrect.");
 
-        log.info("Testing login - CUSTOMER wrong password");
+        log.info("Testing login - *********************** CUSTOMER wrong password *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login(customer.getEmail(), "wrongpassword",ClientTypeEnum.CUSTOMER))
                 .as("test login wrong password Failure")
                 .isInstanceOf(LoginManagerException.class)
                 .hasMessageContaining("Your account name or password is incorrect.");
 
-        log.info("Testing login - CUSTOMER wrong ClientType");
+        log.info("Testing login - *********************** CUSTOMER wrong ClientType *********************** ");
         Assertions.assertThatThrownBy(
                         ()-> loginManager.login(customer.getEmail(), customer.getPassword(),ClientTypeEnum.COMPANY))
                 .as("test login wrong ClientType Failure")
